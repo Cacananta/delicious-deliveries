@@ -36,7 +36,27 @@
     "public": false
   },
   "Customer": {
-    "dataSource": "db",
+    "dataSource": "MongoDB",
+    "public": true
+  },
+  "Owner": {
+    "dataSource": "MongoDB",
+    "public": true
+  },
+  "Restaurant": {
+    "dataSource": "MongoDB",
+    "public": true
+  },
+  "Menu": {
+    "dataSource": "MongoDB",
+    "public": true
+  },
+  "Menu-Items": {
+    "dataSource": "MongoDB",
+    "public": true
+  },
+  "Orders": {
+    "dataSource": "MongoDB",
     "public": true
   }
 }

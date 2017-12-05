@@ -1,0 +1,16 @@
+{
+  "name": "Orders",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "delivery-address": "string",
+    "required": true
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

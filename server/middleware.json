@@ -28,6 +28,9 @@
     "helmet#noSniff": {},
     "helmet#noCache": {
       "enabled": false
+    },
+    "morgan": {
+      "params": ["dev", { "buffer": true } ]
     }
   },
   "session": {},
@@ -40,7 +43,11 @@
       ]
     }
   },
-  "files": {},
+  "files": {
+    "loopback#static": {
+      "params": "$!../client"
+    }
+  },
   "final": {
     "loopback#urlNotFound": {}
   },

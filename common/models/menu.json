@@ -1,0 +1,19 @@
+{
+  "name": "Menu",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {},
+  "validations": [],
+  "relations": {
+    "menu-Items": {
+      "type": "hasMany",
+      "model": "Menu-Items",
+      "foreignKey": "MenuId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
