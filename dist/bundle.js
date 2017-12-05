@@ -25763,15 +25763,6 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var background = {
-    backgroundImage: 'url(./DD-landing.jpg)',
-    height: '500px',
-    width: '200px',
-    backgroundPosition: 'center',
-    backgroundRepeat: 'no-repeat',
-    backgroundSize: 'cover'
-};
-
 var Landing = function (_Component) {
     _inherits(Landing, _Component);
 
@@ -25786,7 +25777,7 @@ var Landing = function (_Component) {
         value: function render() {
             return _react2.default.createElement(
                 'div',
-                null,
+                { className: 'container' },
                 _react2.default.createElement(
                     'nav',
                     { className: 'navbar fixed-top navbar-expand-lg navbar-light bg-light mb-5' },
@@ -25797,13 +25788,8 @@ var Landing = function (_Component) {
                     ),
                     _react2.default.createElement(
                         'a',
-                        { className: 'navbar-brand order-1 font-weight-bold float-right', href: '#' },
+                        { className: 'navbar-brand order-2 font-weight-bold', href: '#' },
                         'Sign-Up'
-                    ),
-                    _react2.default.createElement(
-                        'button',
-                        { className: 'navbar-toggler', type: 'button', 'data-toggle': 'collapse', 'data-target': '#navbarNavAltMarkup', 'aria-controls': 'navbarNavAltMarkup', 'aria-expanded': 'false', 'aria-label': 'Toggle navigation' },
-                        _react2.default.createElement('span', { className: 'navbar-toggler-icon' })
                     ),
                     _react2.default.createElement(
                         'div',
@@ -25813,14 +25799,98 @@ var Landing = function (_Component) {
                             { className: 'navbar-nav' },
                             _react2.default.createElement(
                                 'a',
-                                { className: 'nav-item nav-link', href: '/' },
+                                { className: 'nav-item nav-link font-weight-bold', href: '/' },
                                 'Delicious Deliveries'
                             )
                         )
                     )
                 ),
-                _react2.default.createElement('div', { style: background }),
-                _react2.default.createElement('br', null)
+                _react2.default.createElement('br', null),
+                _react2.default.createElement('br', null),
+                _react2.default.createElement('br', null),
+                _react2.default.createElement('br', null),
+                _react2.default.createElement('br', null),
+                _react2.default.createElement('br', null),
+                _react2.default.createElement('br', null),
+                _react2.default.createElement('br', null),
+                _react2.default.createElement('br', null),
+                _react2.default.createElement('br', null),
+                _react2.default.createElement('br', null),
+                _react2.default.createElement('br', null),
+                _react2.default.createElement('br', null),
+                _react2.default.createElement('br', null),
+                _react2.default.createElement('br', null),
+                _react2.default.createElement('br', null),
+                _react2.default.createElement('br', null),
+                _react2.default.createElement(
+                    'div',
+                    { className: 'container' },
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'row' },
+                        _react2.default.createElement('div', { className: 'col-lg-2' }),
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'col-lg-8 h1 text-center font-italic' },
+                            'Delicious Deliveries'
+                        ),
+                        _react2.default.createElement('div', { className: 'col-lg-2' })
+                    ),
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'row' },
+                        _react2.default.createElement('div', { className: 'col-lg-2' }),
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'col-lg-8' },
+                            _react2.default.createElement(
+                                'div',
+                                { className: 'input-group' },
+                                _react2.default.createElement('input', { type: 'text', className: 'form-control' }),
+                                _react2.default.createElement(
+                                    'span',
+                                    { className: 'input-group-btn' },
+                                    _react2.default.createElement(
+                                        'button',
+                                        { className: 'btn btn-primary', type: 'button' },
+                                        'Go!'
+                                    )
+                                )
+                            )
+                        ),
+                        _react2.default.createElement('div', { className: 'col-lg-2' })
+                    )
+                ),
+                _react2.default.createElement(
+                    'nav',
+                    { className: 'navbar fixed-bottom navbar-light bg-light' },
+                    _react2.default.createElement(
+                        'div',
+                        null,
+                        _react2.default.createElement(
+                            'ul',
+                            { className: 'navbar-nav' },
+                            _react2.default.createElement(
+                                'li',
+                                { className: 'nav-item' },
+                                _react2.default.createElement(
+                                    'a',
+                                    { href: '#', className: 'nav-item' },
+                                    'About Us'
+                                )
+                            ),
+                            _react2.default.createElement(
+                                'li',
+                                { className: 'nav-item float-right' },
+                                _react2.default.createElement(
+                                    'a',
+                                    { href: '#', className: 'nav-item' },
+                                    'Contact us'
+                                )
+                            )
+                        )
+                    )
+                )
             );
         }
     }]);
