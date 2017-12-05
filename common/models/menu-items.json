@@ -8,7 +8,7 @@
   "properties": {
     "category": {
       "type": "string",
-      "required": "true"
+      "required": true
     },
     "price": {
       "type": "number",

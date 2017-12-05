@@ -8,7 +8,7 @@
   "properties": {
     "name": {
       "type": "string",
-      "required": "true"
+      "required": true
     },
     "email": {
       "type": "string",
