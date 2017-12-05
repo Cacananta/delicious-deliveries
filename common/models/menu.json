@@ -8,10 +8,15 @@
   "properties": {},
   "validations": [],
   "relations": {
-    "menu-Items": {
+    "restaurants": {
       "type": "hasMany",
-      "model": "Menu-Items",
-      "foreignKey": "MenuId"
+      "model": "Restaurant",
+      "foreignKey": ""
+    },
+    "menuItems": {
+      "type": "hasMany",
+      "model": "Menu_items",
+      "foreignKey": ""
     }
   },
   "acls": [],

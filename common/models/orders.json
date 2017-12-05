@@ -10,7 +10,18 @@
     "required": true
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "customers": {
+      "type": "hasOne",
+      "model": "Customer",
+      "foreignKey": ""
+    },
+    "restaurants": {
+      "type": "hasOne",
+      "model": "Restaurant",
+      "foreignKey": ""
+    }
+  },
   "acls": [],
   "methods": {}
 }

@@ -45,7 +45,12 @@
     "menus": {
       "type": "hasOne",
       "model": "Menu",
-      "foreignKey": "RestaurantId"
+      "foreignKey": ""
+    },
+    "owners": {
+      "type": "hasOne",
+      "model": "Owner",
+      "foreignKey": ""
     },
     "orders": {
       "type": "hasMany",
