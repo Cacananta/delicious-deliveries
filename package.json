@@ -8,10 +8,12 @@
   "scripts": {
     "build": "npm run less && webpack -w",
     "lint": "eslint .",
-    "start": "npm run build && node client/server/index.js",
+    "start": "node client/server/index.js",
     "less": "lessc client/src/css/style.less dist/css/style.css",
     "test": "mocha test/*.spec.js",
-    "posttest": "npm run lint && nsp check"
+    "posttest": "npm run lint && nsp check",
+    "loopback": "node .",
+    "all": "npm start && npm loopback"
   },
   "dependencies": {
     "axios": "^0.17.1",
