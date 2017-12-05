@@ -6,12 +6,13 @@
     "node": ">=4"
   },
   "scripts": {
-    "build": "npm run less && webpack -w",
+    "build": "npm run less && webpack",
     "lint": "eslint .",
-    "start": "node .",
+    "start": "npm run build && nodemon .",
     "less": "lessc common/src/css/style.less dist/css/style.css",
     "test": "mocha test/*.spec.js",
-    "posttest": "npm run lint && nsp check"
+    "posttest": "npm run lint && nsp check",
+    "postinstall": "npm run start"
   },
   "dependencies": {
     "axios": "^0.17.1",
