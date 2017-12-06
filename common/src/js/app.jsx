@@ -5,14 +5,8 @@ import RestaurantDetails from './components/restaurantDetails';
 import UserLogin from './components/userlogin';
 import OwnerLogin from './components/ownerlogin';
 import SignUp from './components/signup';
-<<<<<<< HEAD
-=======
 import About from './components/about'
-
-
->>>>>>> master
 import SearchResults from './components/searchResults';
-
 
 export default class App extends Component {
     render() {
