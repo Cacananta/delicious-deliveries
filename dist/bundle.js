@@ -34152,10 +34152,14 @@ var createBrowserHistory = function createBrowserHistory() {
 
     var unblock = transitionManager.setPrompt(prompt);
 
+<<<<<<< HEAD
+var _userlogin = __webpack_require__(144);
+=======
     if (!isBlocked) {
       checkDOMListeners(1);
       isBlocked = true;
     }
+>>>>>>> master
 
     return function () {
       if (isBlocked) {
@@ -34163,19 +34167,27 @@ var createBrowserHistory = function createBrowserHistory() {
         checkDOMListeners(-1);
       }
 
+<<<<<<< HEAD
+var _ownerlogin = __webpack_require__(145);
+=======
       return unblock();
     };
   };
+>>>>>>> master
 
   var listen = function listen(listener) {
     var unlisten = transitionManager.appendListener(listener);
     checkDOMListeners(1);
 
+<<<<<<< HEAD
+var _signup = __webpack_require__(146);
+=======
     return function () {
       checkDOMListeners(-1);
       unlisten();
     };
   };
+>>>>>>> master
 
   var history = {
     length: globalHistory.length,
@@ -34191,8 +34203,16 @@ var createBrowserHistory = function createBrowserHistory() {
     listen: listen
   };
 
+<<<<<<< HEAD
+var _about = __webpack_require__(147);
+
+var _about2 = _interopRequireDefault(_about);
+
+var _searchResults = __webpack_require__(148);
+=======
   return history;
 };
+>>>>>>> master
 
 exports.default = createBrowserHistory;
 
@@ -34236,6 +34256,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
                     _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/ownerlogin', component: _ownerlogin2.default }),
                     _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/restaurant/:restaurant', component: _restaurantDetails2.default }),
                     _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/signup', component: _signup2.default }),
+                    _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/about', component: _about2.default }),
                     _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/searchresults', component: _searchResults2.default })
                 )
             );
@@ -39636,7 +39657,7 @@ var Landing = function (_Component) {
                         { className: 'nav-item' },
                         _react2.default.createElement(
                             'a',
-                            { className: 'nav-link font-weight-bold text-dark bg-light', href: '#' },
+                            { className: 'nav-link font-weight-bold text-dark bg-light', href: '#/about' },
                             'About Us'
                         )
                     ),
@@ -41561,6 +41582,8 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _restaurantDetailsActions = __webpack_require__(143);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -41569,7 +41592,14 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-// import { addShoppingCart } from './actions/restaurantDetailsActions';
+var menuList = [{
+  category: "Dinner",
+  price: 14.95,
+  description: "A delicious Cantonese dish of stir-fried veggies and chicken",
+  name: "Moo Goo Gai Pan",
+  id: "5a2852a55d45520014574d72",
+  menuId: "5a2730b89f1b16003e75eac4"
+}];
 
 var RestaurantDetails = function (_React$Component) {
   _inherits(RestaurantDetails, _React$Component);
@@ -41598,17 +41628,51 @@ var RestaurantDetails = function (_React$Component) {
     key: 'addCart',
     value: function addCart(e) {
 <<<<<<< HEAD
+      console.log(e.target.id);
+=======
+<<<<<<< HEAD
 =======
       console.log('hello');
 >>>>>>> master
+>>>>>>> master
       // const { dispatch } = this.props;
-      // const index = menuItem.map(item => item.id).indexOf(e.target.id);
-      // dispatch(addShoppingCart(menuItem[index]));
+      var index = menuList.map(function (item) {
+        return item.id;
+      }).indexOf(e.target.id);
+      var cartItem = {
+        quantity: 1,
+        menuItem: menuList[index].name,
+        price: menuList[index].price
+      };
+      console.log(cartItem);
+      // dispatch(addShoppingCart(cartItem));
     }
   }, {
     key: 'render',
     value: function render() {
+      var _this2 = this;
+
       //pull in props here
+      var breakfastList = menuList.filter(function (item) {
+        return item.category === 'Breakfast';
+      });
+      var lunchList = menuList.filter(function (item) {
+        return item.category === 'Lunch';
+      });
+      var dinnerList = menuList.filter(function (item) {
+        return item.category === 'Dinner';
+      });
+      var snackList = menuList.filter(function (item) {
+        return item.category === 'Snack';
+      });
+      var drinkList = menuList.filter(function (item) {
+        return item.category === 'Drink';
+      });
+      console.log(1, breakfastList);
+      console.log(2, lunchList);
+      console.log(3, dinnerList);
+      console.log(4, snackList);
+      console.log(5, drinkList);
       return _react2.default.createElement(
         'div',
         { className: 'container' },
@@ -41650,8 +41714,11 @@ var RestaurantDetails = function (_React$Component) {
             )
           )
         ),
-        _react2.default.createElement(
+        breakfastList.length > 0 ? _react2.default.createElement(
           'div',
+<<<<<<< HEAD
+          null,
+=======
           { className: 'mt-2' },
           _react2.default.createElement(
             'h4',
@@ -41873,64 +41940,61 @@ var RestaurantDetails = function (_React$Component) {
         _react2.default.createElement(
           'div',
           { className: 'row' },
+>>>>>>> master
           _react2.default.createElement(
 >>>>>>> master
             'div',
-            { className: 'col-6 px-2 d-flex' },
+            { className: 'mt-2' },
             _react2.default.createElement(
-              'span',
-              { className: 'mr-auto pt-2' },
-              _react2.default.createElement(
-                'p',
-                null,
-                _react2.default.createElement(
-                  'strong',
-                  null,
-                  'Carne Asada Burrito'
-                ),
-                '   $7.99'
-              )
+              'h4',
+              null,
+              'Breakfast'
             ),
-            _react2.default.createElement(
-              'div',
-              { className: 'py-2 ml-auto' },
-              _react2.default.createElement(
-                'button',
-                { className: 'btn btn-primary btn-sm', onClick: this.addCart },
-                'Add to Cart'
-              )
-            )
+            _react2.default.createElement('hr', null)
           ),
           _react2.default.createElement(
             'div',
-            { className: 'col-6 px-2 d-flex' },
-            _react2.default.createElement(
-              'span',
-              { className: 'mr-auto pt-2' },
-              _react2.default.createElement(
-                'p',
-                null,
+            { className: 'row' },
+            breakfastList.map(function (item) {
+              return _react2.default.createElement(
+                'div',
+                { className: 'col-6 px-2 d-flex' },
                 _react2.default.createElement(
-                  'strong',
-                  null,
-                  'Carne Asada Burrito'
+                  'span',
+                  { className: 'mr-auto pt-2' },
+                  _react2.default.createElement(
+                    'p',
+                    null,
+                    _react2.default.createElement(
+                      'strong',
+                      null,
+                      item.name
+                    ),
+                    '   $',
+                    item.price
+                  )
                 ),
-                '   $7.99'
-              )
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'py-2 ml-auto' },
-              _react2.default.createElement(
-                'button',
-                { className: 'btn btn-primary btn-sm', onClick: this.addCart },
-                'Add to Cart'
-              )
-            )
+                _react2.default.createElement(
+                  'div',
+                  { className: 'py-2 ml-auto' },
+                  _react2.default.createElement(
+                    'button',
+                    { id: item.id, className: 'btn btn-primary btn-sm', onClick: _this2.addCart },
+                    'Add to Cart'
+                  )
+                )
+              );
+            })
           )
-        ),
-        _react2.default.createElement(
+        ) : _react2.default.createElement('div', null),
+        lunchList.length > 0 ? _react2.default.createElement(
           'div',
+<<<<<<< HEAD
+          null,
+          _react2.default.createElement(
+            'div',
+            { className: 'mt-2' },
+=======
           { className: 'mt-2' },
           _react2.default.createElement(
             'h4',
@@ -41950,32 +42014,23 @@ var RestaurantDetails = function (_React$Component) {
             'div',
             { className: 'col-6 px-2 d-flex' },
 <<<<<<< HEAD
+>>>>>>> master
             _react2.default.createElement(
-              'span',
-              { className: 'mr-auto pt-2' },
-              _react2.default.createElement(
-                'p',
-                null,
-                _react2.default.createElement(
-                  'strong',
-                  null,
-                  'Carne Asada Burrito'
-                ),
-                '   $7.99'
-              )
+              'h4',
+              null,
+              'Lunch'
             ),
-            _react2.default.createElement(
-              'div',
-              { className: 'py-2 ml-auto' },
-              _react2.default.createElement(
-                'button',
-                { className: 'btn btn-primary btn-sm', onClick: this.addCart },
-                'Add to Cart'
-              )
-            )
+            _react2.default.createElement('hr', null)
           ),
           _react2.default.createElement(
             'div',
+<<<<<<< HEAD
+            { className: 'row' },
+            lunchList.map(function (item) {
+              return _react2.default.createElement(
+                'div',
+                { className: 'col-6 px-2 d-flex' },
+=======
             { className: 'col-6 px-2 d-flex' },
             _react2.default.createElement(
               'span',
@@ -41989,11 +42044,35 @@ var RestaurantDetails = function (_React$Component) {
 >>>>>>> master
                 'p',
                 null,
+>>>>>>> master
                 _react2.default.createElement(
-                  'strong',
-                  null,
-                  'Carne Asada Burrito'
+                  'span',
+                  { className: 'mr-auto pt-2' },
+                  _react2.default.createElement(
+                    'p',
+                    null,
+                    _react2.default.createElement(
+                      'strong',
+                      null,
+                      item.name
+                    ),
+                    '   $',
+                    item.price
+                  )
                 ),
+<<<<<<< HEAD
+                _react2.default.createElement(
+                  'div',
+                  { className: 'py-2 ml-auto' },
+                  _react2.default.createElement(
+                    'button',
+                    { id: item.id, className: 'btn btn-primary btn-sm', onClick: _this2.addCart },
+                    'Add to Cart'
+                  )
+                )
+              );
+            })
+=======
                 '   $7.99'
               )
             ),
@@ -42007,38 +42086,23 @@ var RestaurantDetails = function (_React$Component) {
                 'Add to Cart'
               )
             )
+>>>>>>> master
           )
-        ),
-        _react2.default.createElement(
+        ) : _react2.default.createElement('div', null),
+        dinnerList.length > 0 ? _react2.default.createElement(
           'div',
-          { className: 'mt-2' },
-          _react2.default.createElement(
-            'h4',
-            null,
-            'Dinner'
-          ),
-          _react2.default.createElement('hr', null)
-        ),
-        _react2.default.createElement(
-          'div',
-          { className: 'row' },
+          null,
           _react2.default.createElement(
             'div',
-            { className: 'col-6 px-2 d-flex' },
+            { className: 'mt-2' },
             _react2.default.createElement(
-              'span',
-              { className: 'mr-auto pt-2' },
-              _react2.default.createElement(
-                'p',
-                null,
-                _react2.default.createElement(
-                  'strong',
-                  null,
-                  'Carne Asada Burrito'
-                ),
-                '   $7.99'
-              )
+              'h4',
+              null,
+              'Dinner'
             ),
+<<<<<<< HEAD
+            _react2.default.createElement('hr', null)
+=======
             _react2.default.createElement(
               'div',
               { className: 'py-2 ml-auto' },
@@ -42048,21 +42112,43 @@ var RestaurantDetails = function (_React$Component) {
                 'Add to Cart'
               )
             )
+>>>>>>> master
           ),
           _react2.default.createElement(
             'div',
-            { className: 'col-6 px-2 d-flex' },
-            _react2.default.createElement(
-              'span',
-              { className: 'mr-auto pt-2' },
-              _react2.default.createElement(
-                'p',
-                null,
+            { className: 'row' },
+            dinnerList.map(function (item) {
+              return _react2.default.createElement(
+                'div',
+                { className: 'col-6 px-2 d-flex' },
                 _react2.default.createElement(
-                  'strong',
-                  null,
-                  'Carne Asada Burrito'
+                  'span',
+                  { className: 'mr-auto pt-2' },
+                  _react2.default.createElement(
+                    'p',
+                    null,
+                    _react2.default.createElement(
+                      'strong',
+                      null,
+                      item.name
+                    ),
+                    '   $',
+                    item.price
+                  )
                 ),
+<<<<<<< HEAD
+                _react2.default.createElement(
+                  'div',
+                  { className: 'py-2 ml-auto' },
+                  _react2.default.createElement(
+                    'button',
+                    { id: item.id, className: 'btn btn-primary btn-sm', onClick: _this2.addCart },
+                    'Add to Cart'
+                  )
+                )
+              );
+            })
+=======
                 '   $7.99'
               )
             ),
@@ -42079,131 +42165,122 @@ var RestaurantDetails = function (_React$Component) {
               )
             )
 <<<<<<< HEAD
+>>>>>>> master
           )
-        ),
-        _react2.default.createElement(
+        ) : _react2.default.createElement('div', null),
+        snackList.length > 0 ? _react2.default.createElement(
           'div',
-          { className: 'mt-2' },
-          _react2.default.createElement(
-            'h4',
-            null,
-            'Snacks'
-          ),
-          _react2.default.createElement('hr', null)
-        ),
-        _react2.default.createElement(
-          'div',
-          { className: 'row' },
+          null,
           _react2.default.createElement(
             'div',
-            { className: 'col-6 px-2 d-flex' },
+            { className: 'mt-2' },
             _react2.default.createElement(
-              'span',
-              { className: 'mr-auto pt-2' },
+              'h4',
+              null,
+              'Snacks'
+            ),
+            _react2.default.createElement('hr', null)
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'row' },
+            _react2.default.createElement(
+              'div',
+              { className: 'col-6 px-2 d-flex' },
               _react2.default.createElement(
-                'p',
-                null,
+                'span',
+                { className: 'mr-auto pt-2' },
                 _react2.default.createElement(
-                  'strong',
+                  'p',
                   null,
-                  'Carne Asada Burrito'
-                ),
-                '   $7.99'
+                  _react2.default.createElement(
+                    'strong',
+                    null,
+                    'Carne Asada Burrito'
+                  ),
+                  '   $7.99'
+                )
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'py-2 ml-auto' },
+                _react2.default.createElement(
+                  'button',
+                  { className: 'btn btn-primary btn-sm', onClick: this.addCart },
+                  'Add to Cart'
+                )
               )
             ),
             _react2.default.createElement(
               'div',
-              { className: 'py-2 ml-auto' },
+              { className: 'col-6 px-2 d-flex' },
               _react2.default.createElement(
-                'button',
-                { className: 'btn btn-primary btn-sm', onClick: this.addCart },
-                'Add to Cart'
-              )
-            )
-          ),
-          _react2.default.createElement(
-            'div',
-            { className: 'col-6 px-2 d-flex' },
-            _react2.default.createElement(
-              'span',
-              { className: 'mr-auto pt-2' },
-              _react2.default.createElement(
-                'p',
-                null,
+                'span',
+                { className: 'mr-auto pt-2' },
                 _react2.default.createElement(
-                  'strong',
+                  'p',
                   null,
-                  'Carne Asada Burrito'
-                ),
-                '   $7.99'
-              )
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'py-2 ml-auto' },
+                  _react2.default.createElement(
+                    'strong',
+                    null,
+                    'Carne Asada Burrito'
+                  ),
+                  '   $7.99'
+                )
+              ),
               _react2.default.createElement(
-                'button',
-                { className: 'btn btn-primary btn-sm', onClick: this.addCart },
-                'Add to Cart'
+                'div',
+                { className: 'py-2 ml-auto' },
+                _react2.default.createElement(
+                  'button',
+                  { className: 'btn btn-primary btn-sm', onClick: this.addCart },
+                  'Add to Cart'
+                )
               )
             )
           )
-        ),
-        _react2.default.createElement(
+        ) : _react2.default.createElement('div', null),
+        drinkList.length > 0 ? _react2.default.createElement(
           'div',
-          { className: 'mt-2' },
-          _react2.default.createElement(
-            'h4',
-            null,
-            'Drinks'
-          ),
-          _react2.default.createElement('hr', null)
-        ),
-        _react2.default.createElement(
-          'div',
-          { className: 'row' },
+          null,
           _react2.default.createElement(
             'div',
-            { className: 'col-6 px-2 d-flex' },
+            { className: 'mt-2' },
             _react2.default.createElement(
-              'span',
-              { className: 'mr-auto pt-2' },
-              _react2.default.createElement(
-                'p',
-                null,
-                _react2.default.createElement(
-                  'strong',
-                  null,
-                  'Carne Asada Burrito'
-                ),
-                '   $7.99'
-              )
+              'h4',
+              null,
+              'Drink'
             ),
+            _react2.default.createElement('hr', null)
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'row' },
             _react2.default.createElement(
               'div',
-              { className: 'py-2 ml-auto' },
+              { className: 'col-6 px-2 d-flex' },
               _react2.default.createElement(
-                'button',
-                { className: 'btn btn-primary btn-sm', onClick: this.addCart },
-                'Add to Cart'
-              )
-            )
-          ),
-          _react2.default.createElement(
-            'div',
-            { className: 'col-6 px-2 d-flex' },
-            _react2.default.createElement(
-              'span',
-              { className: 'mr-auto pt-2' },
-              _react2.default.createElement(
-                'p',
-                null,
+                'span',
+                { className: 'mr-auto pt-2' },
                 _react2.default.createElement(
-                  'strong',
+                  'p',
                   null,
-                  'Carne Asada Burrito'
-                ),
-                '   $7.99'
+                  _react2.default.createElement(
+                    'strong',
+                    null,
+                    'Carne Asada Burrito'
+                  ),
+                  '   $7.99'
+                )
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'py-2 ml-auto' },
+                _react2.default.createElement(
+                  'button',
+                  { className: 'btn btn-primary btn-sm', onClick: this.addCart },
+                  'Add to Cart'
+                )
               )
 =======
           ),
@@ -42227,15 +42304,33 @@ var RestaurantDetails = function (_React$Component) {
             ),
             _react2.default.createElement(
               'div',
-              { className: 'py-2 ml-auto' },
+              { className: 'col-6 px-2 d-flex' },
               _react2.default.createElement(
-                'button',
-                { className: 'btn btn-primary btn-sm', onClick: this.addCart },
-                'Add to Cart'
+                'span',
+                { className: 'mr-auto pt-2' },
+                _react2.default.createElement(
+                  'p',
+                  null,
+                  _react2.default.createElement(
+                    'strong',
+                    null,
+                    'Carne Asada Burrito'
+                  ),
+                  '   $7.99'
+                )
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'py-2 ml-auto' },
+                _react2.default.createElement(
+                  'button',
+                  { className: 'btn btn-primary btn-sm', onClick: this.addCart },
+                  'Add to Cart'
+                )
               )
             )
           )
-        )
+        ) : _react2.default.createElement('div', null)
       );
     }
   }]);
@@ -42336,6 +42431,24 @@ exports.default = UserLogin;
 =======
 
 Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.addShoppingCart = addShoppingCart;
+function addShoppingCart(food) {
+  return {
+    type: 'ADD_SHOPPING_CART',
+    payload: food
+  };
+}
+
+/***/ }),
+/* 144 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
@@ -42409,7 +42522,7 @@ var UserLogin = function (_Component) {
 exports.default = UserLogin;
 
 /***/ }),
-/* 144 */
+/* 145 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -42509,7 +42622,7 @@ var OwnerLogin = function (_Component) {
 exports.default = OwnerLogin;
 
 /***/ }),
-/* 145 */
+/* 146 */
 /***/ (function(module, exports, __webpack_require__) {
 >>>>>>> master
 
@@ -42662,7 +42775,127 @@ var SignUp = function (_Component) {
 exports.default = SignUp;
 
 /***/ }),
-/* 146 */
+/* 147 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var About = function (_Component) {
+    _inherits(About, _Component);
+
+    function About() {
+        _classCallCheck(this, About);
+
+        return _possibleConstructorReturn(this, (About.__proto__ || Object.getPrototypeOf(About)).apply(this, arguments));
+    }
+
+    _createClass(About, [{
+        key: 'render',
+        value: function render() {
+            return _react2.default.createElement(
+                'div',
+                { className: 'homepage', style: background },
+                _react2.default.createElement(
+                    'nav',
+                    { className: 'navbar fixed-top navbar-expand-lg navbar-light bg-light mb-5' },
+                    _react2.default.createElement(
+                        'a',
+                        { className: 'order-1 font-weight-bold nav-link text-dark', href: '#/userlogin' },
+                        'User Login'
+                    ),
+                    _react2.default.createElement(
+                        'a',
+                        { className: 'order-2 font-weight-bold nav-link text-dark', href: '#/ownerlogin' },
+                        'Owner Login'
+                    ),
+                    _react2.default.createElement(
+                        'a',
+                        { className: 'order-3 font-weight-bold nav-link text-dark', href: '#/signup' },
+                        'Sign Up'
+                    ),
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'collapse navbar-collapse', id: 'navbarNavAltMarkup' },
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'navbar-nav' },
+                            _react2.default.createElement(
+                                'a',
+                                { className: 'nav-item nav-link font-weight-bold', href: '/' },
+                                'Delicious Deliveries'
+                            )
+                        )
+                    )
+                ),
+                _react2.default.createElement(
+                    'div',
+                    { className: 'container', style: { paddingTop: '300px' } },
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'row' },
+                        _react2.default.createElement('div', { className: 'col-lg-2' }),
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'col-lg-8 h1 text-center font-italic' },
+                            'Delicious Deliveries'
+                        ),
+                        _react2.default.createElement('div', { className: 'col-lg-2' })
+                    ),
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'row' },
+                        _react2.default.createElement('div', { className: 'col-lg-2' }),
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'col-lg-6 offset-1' },
+                            _react2.default.createElement('div', { className: 'input-group' })
+                        ),
+                        _react2.default.createElement('div', { className: 'col-lg-2' })
+                    )
+                ),
+                _react2.default.createElement(
+                    'ul',
+                    { className: 'nav justify-content-center fixed-bottom' },
+                    _react2.default.createElement(
+                        'li',
+                        { className: 'nav-item' },
+                        _react2.default.createElement(
+                            'a',
+                            { className: 'nav-link font-weight-bold text-dark bg-light', href: '#' },
+                            'Contact Us'
+                        )
+                    )
+                )
+            );
+        }
+    }]);
+
+    return About;
+}(_react.Component);
+
+exports.default = About;
+
+/***/ }),
+/* 148 */
 /***/ (function(module, exports, __webpack_require__) {
 >>>>>>> master
 
@@ -42741,7 +42974,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _searchResultsActions = __webpack_require__(147);
+var _searchResultsActions = __webpack_require__(149);
 
 var _reactRouterDom = __webpack_require__(43);
 
@@ -43218,36 +43451,106 @@ exports.default = SearchResults;
 
 /***/ }),
 /* 149 */
+<<<<<<< HEAD
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.restaurantDetails = restaurantDetails;
+
+var _axios = __webpack_require__(25);
+
+var _axios2 = _interopRequireDefault(_axios);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function restaurantDetails(placeholder) {
+  return {
+    type: 'ADD_CITY',
+    payload: placeholder
+  };
+}
+
+/***/ }),
+/* 150 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _rootReducer = __webpack_require__(151);
+
+var _rootReducer2 = _interopRequireDefault(_rootReducer);
+
+var _redux = __webpack_require__(17);
+
+var _reduxPromiseMiddleware = __webpack_require__(156);
+
+var _reduxPromiseMiddleware2 = _interopRequireDefault(_reduxPromiseMiddleware);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || _redux.compose;
+
+var rootStore = (0, _redux.createStore)(_rootReducer2.default, composeEnhancers((0, _redux.applyMiddleware)((0, _reduxPromiseMiddleware2.default)())));
+
+exports.default = rootStore;
+
+/***/ }),
+/* 151 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
 =======
+=======
+>>>>>>> master
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
 var _redux = __webpack_require__(17);
 
-var _landingReducers = __webpack_require__(150);
+var _landingReducers = __webpack_require__(152);
 
 var _landingReducers2 = _interopRequireDefault(_landingReducers);
 
-var _searchBarReducers = __webpack_require__(151);
+var _searchBarReducers = __webpack_require__(153);
 
 var _searchBarReducers2 = _interopRequireDefault(_searchBarReducers);
 
-var _searchResultsReducers = __webpack_require__(152);
+var _searchResultsReducers = __webpack_require__(154);
 
 var _searchResultsReducers2 = _interopRequireDefault(_searchResultsReducers);
+
+var _restaurantDetailsReducers = __webpack_require__(155);
+
+var _restaurantDetailsReducers2 = _interopRequireDefault(_restaurantDetailsReducers);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var rootReducer = (0, _redux.combineReducers)({
-  searchBar: _searchBarReducers2.default
-
+  searchBar: _searchBarReducers2.default,
+  restaurantDetails: _restaurantDetailsReducers2.default
 });
 
 exports.default = rootReducer;
 
 /***/ }),
+<<<<<<< HEAD
+/* 152 */
+=======
 /* 150 */
+>>>>>>> master
 >>>>>>> master
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -43302,7 +43605,11 @@ function LandingReducers() {
 }
 
 /***/ }),
+<<<<<<< HEAD
+/* 153 */
+=======
 /* 151 */
+>>>>>>> master
 >>>>>>> master
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -43368,7 +43675,7 @@ function searchDisplayReducer() {
 }
 
 /***/ }),
-/* 152 */
+/* 154 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -43400,7 +43707,47 @@ function SearchResultsReducers() {
 }
 
 /***/ }),
-/* 153 */
+/* 155 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = restaurantDetailsReducers;
+
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
+var defaultState = {
+  shoppingCart: []
+};
+
+function restaurantDetailsReducers() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : defaultState;
+  var action = arguments[1];
+  var type = action.type,
+      payload = action.payload;
+
+
+  switch (type) {
+    case 'ADD_SHOPPING_CART':
+      {
+        return {
+          shoppingCart: [payload].concat(_toConsumableArray(state.shoppingCart))
+        };
+      }
+    //next case here
+    default:
+      {
+        return state;
+      }
+  }
+}
+
+/***/ }),
+/* 156 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 >>>>>>> master
 
@@ -43410,7 +43757,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FULFILLED", function() { return FULFILLED; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "REJECTED", function() { return REJECTED; });
 /* harmony export (immutable) */ __webpack_exports__["default"] = promiseMiddleware;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__isPromise_js__ = __webpack_require__(154);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__isPromise_js__ = __webpack_require__(157);
 var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
@@ -43744,7 +44091,7 @@ function SearchResultsReducers() {
 }
 
 /***/ }),
-/* 154 */
+/* 157 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 >>>>>>> master
 

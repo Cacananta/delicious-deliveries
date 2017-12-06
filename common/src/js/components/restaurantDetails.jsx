@@ -1,6 +1,15 @@
 import React from 'react';
-// import { addShoppingCart } from './actions/restaurantDetailsActions';
-
+import { addShoppingCart } from '../actions/restaurantDetailsActions';
+const menuList = [
+  {
+    category: "Dinner",
+    price: 14.95,
+    description: "A delicious Cantonese dish of stir-fried veggies and chicken",
+    name: "Moo Goo Gai Pan",
+    id: "5a2852a55d45520014574d72",
+    menuId: "5a2730b89f1b16003e75eac4"
+  }
+];
 export default class RestaurantDetails extends React.Component {
   constructor(props) {
     super(props);
@@ -9,14 +18,30 @@ this.addCart = this.addCart.bind(this);
   }
 
   addCart(e){
-    console.log('hello');
+    console.log(e.target.id);
     // const { dispatch } = this.props;
-    // const index = menuItem.map(item => item.id).indexOf(e.target.id);
-    // dispatch(addShoppingCart(menuItem[index]));
+    const index = menuList.map(item => item.id).indexOf(e.target.id);
+    const cartItem = {
+      quantity: 1,
+      menuItem: menuList[index].name,
+      price: menuList[index].price
+    };
+    console.log(cartItem);
+    // dispatch(addShoppingCart(cartItem));
   }
 
   render() {
   //pull in props here
+  const breakfastList = menuList.filter(item => item.category === 'Breakfast');
+  const lunchList = menuList.filter(item => item.category === 'Lunch');
+  const dinnerList = menuList.filter(item => item.category === 'Dinner');
+  const snackList = menuList.filter(item => item.category === 'Snack');
+  const drinkList = menuList.filter(item => item.category === 'Drink');
+  console.log(1, breakfastList);
+  console.log(2, lunchList);
+  console.log(3, dinnerList);
+  console.log(4, snackList);
+  console.log(5, drinkList);
     return(
       <div className='container'>
         <h1 className='text-center'>Esmeralda's Tortilleria</h1>
@@ -31,96 +56,104 @@ this.addCart = this.addCart.bind(this);
             <p>Asian</p>
           </div>
         </div>
-        <div className='mt-2'>
-          <h4>Breakfast</h4>
-          <hr/>
-        </div>
-        <div className='row'>
-          <div className='col-6 px-2 d-flex'>
-            <span className='mr-auto pt-2'><p><strong>Carne Asada Burrito</strong>   $7.99</p></span>
-            <div className='py-2 ml-auto'>
-              <button className='btn btn-primary btn-sm' onClick={ this.addCart }>Add to Cart</button>
-            </div>
+        { breakfastList.length > 0 ?
+        <div>
+          <div className='mt-2'>
+            <h4>Breakfast</h4>
+            <hr/>
           </div>
-          <div className='col-6 px-2 d-flex'>
-            <span className='mr-auto pt-2'><p><strong>Carne Asada Burrito</strong>   $7.99</p></span>
-            <div className='py-2 ml-auto'>
-              <button className='btn btn-primary btn-sm' onClick={ this.addCart }>Add to Cart</button>
+          <div className='row'>
+          {breakfastList.map(item => 
+            <div className='col-6 px-2 d-flex'>
+              <span className='mr-auto pt-2'><p><strong>{ item.name }</strong>   ${item.price}</p></span>
+              <div className='py-2 ml-auto'>
+                <button id={ item.id } className='btn btn-primary btn-sm' onClick={ this.addCart }>Add to Cart</button>
+              </div>
             </div>
-          </div>
-        </div>
-        <div className='mt-2'>
-          <h4>Lunch</h4>
-          <hr/>
-        </div>
-        <div className='row'>
-          <div className='col-6 px-2 d-flex'>
-            <span className='mr-auto pt-2'><p><strong>Carne Asada Burrito</strong>   $7.99</p></span>
-            <div className='py-2 ml-auto'>
-              <button className='btn btn-primary btn-sm' onClick={ this.addCart }>Add to Cart</button>
-            </div>
-          </div>
-          <div className='col-6 px-2 d-flex'>
-            <span className='mr-auto pt-2'><p><strong>Carne Asada Burrito</strong>   $7.99</p></span>
-            <div className='py-2 ml-auto'>
-              <button className='btn btn-primary btn-sm' onClick={ this.addCart }>Add to Cart</button>
-            </div>
+            )}
           </div>
         </div>
-        <div className='mt-2'>
-          <h4>Dinner</h4>
-          <hr/>
-        </div>
-        <div className='row'>
-          <div className='col-6 px-2 d-flex'>
-            <span className='mr-auto pt-2'><p><strong>Carne Asada Burrito</strong>   $7.99</p></span>
-            <div className='py-2 ml-auto'>
-              <button className='btn btn-primary btn-sm' onClick={ this.addCart }>Add to Cart</button>
-            </div>
+        : <div />}
+        { lunchList.length > 0 ?
+        <div>
+          <div className='mt-2'>
+            <h4>Lunch</h4>
+            <hr/>
           </div>
-          <div className='col-6 px-2 d-flex'>
-            <span className='mr-auto pt-2'><p><strong>Carne Asada Burrito</strong>   $7.99</p></span>
-            <div className='py-2 ml-auto'>
-              <button className='btn btn-primary btn-sm' onClick={ this.addCart }>Add to Cart</button>
+          <div className='row'>
+          { lunchList.map(item => 
+            <div className='col-6 px-2 d-flex'>
+              <span className='mr-auto pt-2'><p><strong>{ item.name }</strong>   ${item.price}</p></span>
+              <div className='py-2 ml-auto'>
+                <button id={ item.id } className='btn btn-primary btn-sm' onClick={ this.addCart }>Add to Cart</button>
+              </div>
             </div>
-          </div>
-        </div>
-        <div className='mt-2'>
-          <h4>Snacks</h4>
-          <hr/>
-        </div>
-        <div className='row'>
-          <div className='col-6 px-2 d-flex'>
-            <span className='mr-auto pt-2'><p><strong>Carne Asada Burrito</strong>   $7.99</p></span>
-            <div className='py-2 ml-auto'>
-              <button className='btn btn-primary btn-sm' onClick={ this.addCart }>Add to Cart</button>
-            </div>
-          </div>
-          <div className='col-6 px-2 d-flex'>
-            <span className='mr-auto pt-2'><p><strong>Carne Asada Burrito</strong>   $7.99</p></span>
-            <div className='py-2 ml-auto'>
-              <button className='btn btn-primary btn-sm' onClick={ this.addCart }>Add to Cart</button>
-            </div>
+            )}
           </div>
         </div>
-        <div className='mt-2'>
-          <h4>Drinks</h4>
-          <hr/>
-        </div>
-        <div className='row'>
-          <div className='col-6 px-2 d-flex'>
-            <span className='mr-auto pt-2'><p><strong>Carne Asada Burrito</strong>   $7.99</p></span>
-            <div className='py-2 ml-auto'>
-              <button className='btn btn-primary btn-sm' onClick={ this.addCart }>Add to Cart</button>
+        : <div />}
+        { dinnerList.length > 0 ?
+          <div>
+            <div className='mt-2'>
+              <h4>Dinner</h4>
+              <hr/>
+            </div>
+            <div className='row'>
+            { dinnerList.map(item => 
+              <div className='col-6 px-2 d-flex'>
+                <span className='mr-auto pt-2'><p><strong>{ item.name }</strong>   ${item.price}</p></span>
+                <div className='py-2 ml-auto'>
+                  <button id={ item.id } className='btn btn-primary btn-sm' onClick={ this.addCart }>Add to Cart</button>
+                </div>
+              </div>
+              )}
             </div>
           </div>
-          <div className='col-6 px-2 d-flex'>
-            <span className='mr-auto pt-2'><p><strong>Carne Asada Burrito</strong>   $7.99</p></span>
-            <div className='py-2 ml-auto'>
-              <button className='btn btn-primary btn-sm' onClick={ this.addCart }>Add to Cart</button>
+          : <div />}
+        { snackList.length > 0 ?
+          <div>
+            <div className='mt-2'>
+              <h4>Snacks</h4>
+              <hr/>
+            </div>
+            <div className='row'>
+              <div className='col-6 px-2 d-flex'>
+                <span className='mr-auto pt-2'><p><strong>Carne Asada Burrito</strong>   $7.99</p></span>
+                <div className='py-2 ml-auto'>
+                  <button className='btn btn-primary btn-sm' onClick={ this.addCart }>Add to Cart</button>
+                </div>
+              </div>
+              <div className='col-6 px-2 d-flex'>
+                <span className='mr-auto pt-2'><p><strong>Carne Asada Burrito</strong>   $7.99</p></span>
+                <div className='py-2 ml-auto'>
+                  <button className='btn btn-primary btn-sm' onClick={ this.addCart }>Add to Cart</button>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
+          : <div />}
+        { drinkList.length > 0 ?
+          <div>
+            <div className='mt-2'>
+              <h4>Drink</h4>
+              <hr/>
+            </div>
+            <div className='row'>
+              <div className='col-6 px-2 d-flex'>
+                <span className='mr-auto pt-2'><p><strong>Carne Asada Burrito</strong>   $7.99</p></span>
+                <div className='py-2 ml-auto'>
+                  <button className='btn btn-primary btn-sm' onClick={ this.addCart }>Add to Cart</button>
+                </div>
+              </div>
+              <div className='col-6 px-2 d-flex'>
+                <span className='mr-auto pt-2'><p><strong>Carne Asada Burrito</strong>   $7.99</p></span>
+                <div className='py-2 ml-auto'>
+                  <button className='btn btn-primary btn-sm' onClick={ this.addCart }>Add to Cart</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          : <div />}
       </div>
     )
   }
