@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { updateSearchLocation } from "../actions/searchBarActions";
+import { Link } from 'react-router-dom';
 
 export default class Searchbar extends Component {
     constructor(props) {
@@ -17,7 +19,6 @@ export default class Searchbar extends Component {
     handleClick() {
         const { dispatch } = this.props;
         var input = document.getElementById('searchBarInput').value;
-        console.log(input);
         dispatch(updateSearchLocation(input));
       }
 
@@ -31,11 +32,8 @@ export default class Searchbar extends Component {
             type="text"
             className="form-control"
             />
-       
-            <button className="btn btn-primary" onClick={this.handleClick} type='button'>Go!</button>
-        
+            <Link to={'/searchresults'}><button className="btn btn-primary" onClick={this.handleClick} type='button'>Go!</button></Link>
         </div>
         );
     }
-
 }
