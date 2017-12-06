@@ -7,6 +7,7 @@ import OwnerLogin from './components/ownerlogin';
 import SignUp from './components/signup';
 
 
+import SearchResults from './components/searchResults';
 
 
 export default class App extends Component {
@@ -18,6 +19,7 @@ export default class App extends Component {
                     <Route exact path='/userlogin' component={UserLogin} />
                     <Route exact path='/ownerlogin' component={OwnerLogin} />
                     <Route exact path='/signup' component={SignUp} />
+                    <Route exact path='/searchresults' component={SearchResults} />
                 </div>
             </Router>
             

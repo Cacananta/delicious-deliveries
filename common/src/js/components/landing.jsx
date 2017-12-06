@@ -10,6 +10,16 @@ const background = {
 }
 
 export default class Landing extends Component {
+    constructor(props) {
+        super(props);
+    
+        this.searchClick = this.searchClick.bind(this);
+    }
+
+    searchClick() {
+        
+    }
+
     render() {
         return (
             <div className='homepage' style={background}>

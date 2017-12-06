@@ -14,9 +14,10 @@ export default class Searchbar extends Component {
         new google.maps.places.Autocomplete(input, restrictions);
     }
 
-    handleClick(e) {
+    handleClick() {
         const { dispatch } = this.props;
         var input = document.getElementById('searchBarInput').value;
+        console.log(input);
         dispatch(updateSearchLocation(input));
       }
 
