@@ -25912,6 +25912,8 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _searchBarActions = __webpack_require__(117);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -25926,30 +25928,43 @@ var Searchbar = function (_Component) {
     function Searchbar(props) {
         _classCallCheck(this, Searchbar);
 
-        return _possibleConstructorReturn(this, (Searchbar.__proto__ || Object.getPrototypeOf(Searchbar)).call(this, props));
+        var _this = _possibleConstructorReturn(this, (Searchbar.__proto__ || Object.getPrototypeOf(Searchbar)).call(this, props));
+
+        _this.handleClick = _this.handleClick.bind(_this);
+        return _this;
     }
 
     _createClass(Searchbar, [{
         key: 'componentDidMount',
         value: function componentDidMount() {
-            var input = document.getElementById('searchbarinput');
+            var input = document.getElementById('searchBarInput');
             var restrictions = { componentRestrictions: { country: 'us' } };
             new google.maps.places.Autocomplete(input, restrictions);
         }
     }, {
+        key: 'handleClick',
+        value: function handleClick(e) {
+            var dispatch = this.props.dispatch;
+
+            var input = document.getElementById('searchBarInput').value;
+            dispatch((0, _searchBarActions.updateSearchLocation)(input));
+        }
+    }, {
         key: 'render',
         value: function render() {
+
             return _react2.default.createElement(
                 'div',
                 { className: 'input-group' },
                 _react2.default.createElement('input', {
-                    id: 'searchbarinput',
+                    placeholder: 'Enter an address...',
+                    id: 'searchBarInput',
                     type: 'text',
                     className: 'form-control'
                 }),
                 _react2.default.createElement(
                     'button',
-                    { className: 'btn btn-primary ', type: 'button' },
+                    { className: 'btn btn-primary', onClick: this.handleClick, type: 'button' },
                     'Go!'
                 )
             );
@@ -25960,6 +25975,29 @@ var Searchbar = function (_Component) {
 }(_react.Component);
 
 exports.default = Searchbar;
+
+/***/ }),
+/* 117 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.updateSearchLocation = updateSearchLocation;
+var types = exports.types = {
+  UPDATE_SEARCH_LOCATION: 'UPDATE_SEARCH_LOCATION'
+};
+function updateSearchLocation(input) {
+  return {
+    type: types.UPDATE_SEARCH_LOCATION,
+    payload: {
+      location: input
+    }
+  };
+}
 
 /***/ })
 /******/ ]);

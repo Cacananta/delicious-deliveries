@@ -42,8 +42,6 @@ export default class Landing extends Component {
                         <div className="col-lg-6 offset-1">
                             <div className="input-group">
                             <Searchbar/>
-                                {/* <input type="text" className="form-control"/>
-                                */}
                             </div>
                         </div>
                         <div className="col-lg-2"></div>
