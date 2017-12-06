@@ -1,9 +1,13 @@
 import { combineReducers } from 'redux';
 import landingReducers from './reducers/landingReducers';
-import searchResultsReducers from './reducers/searchResultsReducers';
+import searchBarReducer from './reducers/searchBarReducers';
+import searchResultsReducer from './reducers/searchResultsReducers';
+import restaurantDetailsReducers from './reducers/restaurantDetailsReducers';
 
 const rootReducer = combineReducers({
-  initialSearch: 'placeholder',
+  searchBar: searchDisplayReducer,
+  restaurantDetails: restaurantDetailsReducers,
+  initialSearch : searchBarReducer
 
 })
 

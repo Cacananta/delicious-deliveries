@@ -3,8 +3,7 @@ import Landing from '../components/landing';
 
 function mapStoreToProps(store) {
   return {
-    //add store here:
-    //key: value
+    
   };
 }
 

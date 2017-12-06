@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Searchbar from "./Searchbar.jsx"
+import Searchbar from '../index/searchBarIndex';
 const background = {
     backgroundImage: 'url(DD-landing.jpg)',
     height: '100%',
@@ -10,6 +10,16 @@ const background = {
 }
 
 export default class Landing extends Component {
+    constructor(props) {
+        super(props);
+    
+        this.searchClick = this.searchClick.bind(this);
+    }
+
+    searchClick() {
+        
+    }
+
     render() {
         return (
             <div className='homepage' id='homepage' style={background}>
@@ -42,7 +52,7 @@ export default class Landing extends Component {
                 {/* <nav className="navbar navbar-expand-lg justify-content-center fixed-bottom navbar-light bg-light"> */}
                     <ul className="nav justify-content-center fixed-bottom">
                         <li className="nav-item">
-                            <a className="nav-link font-weight-bold text-dark bg-light" href="#">About Us</a>
+                            <a className="nav-link font-weight-bold text-dark bg-light" href="#/about">About Us</a>
                         </li>
                         <li className="nav-item">
                             <a className="nav-link font-weight-bold text-dark bg-light" href="#">Contact Us</a>
