@@ -1,37 +1,29 @@
 import React, { Component } from 'react';
 import Searchbar from "./Searchbar.jsx"
+const background = {
+    backgroundImage: 'url(DD-landing.jpg)',
+    height: '100%',
+    width: '100%',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: 'cover'
+}
 
 export default class Landing extends Component {
     render() {
         return (
-            <div className='container'>
+            <div className='homepage' style={background}>
                 <nav className="navbar fixed-top navbar-expand-lg navbar-light bg-light mb-5">
-                    <a className='navbar-brand order-1 font-weight-bold' href="#">Login</a>
-                    <a className="navbar-brand order-2 font-weight-bold" href='#'>Sign-Up</a>
+                    <a className="order-1 font-weight-bold nav-link text-dark" href='#/userlogin'>User Login</a>
+                    <a className="order-2 font-weight-bold nav-link text-dark" href='#/ownerlogin'>Owner Login</a>
+                    <a className="order-3 font-weight-bold nav-link text-dark" href='#/signup'>Sign Up</a>
                     <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                         <div className="navbar-nav">
                             <a className="nav-item nav-link font-weight-bold" href="/">Delicious Deliveries</a>
                         </div>
                     </div>
                 </nav>
-                <br />
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <div className="container">
+                <div className="container" style={{paddingTop: '300px'}}>
                     <div className="row">
                         <div className="col-lg-2"></div>
                         <div className="col-lg-8 h1 text-center font-italic">Delicious Deliveries</div>
@@ -47,18 +39,17 @@ export default class Landing extends Component {
                         <div className="col-lg-2"></div>
                     </div>                                       
                 </div>
-                <nav className="navbar fixed-bottom navbar-light bg-light">
-                    <div>
-                        <ul className="navbar-nav">
-                            <li className="nav-item">
-                                <a href="#" className="nav-item">About Us</a>
-                            </li>
-                            <li className="nav-item float-right">
-                                <a href="#" className="nav-item">Contact us</a>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
+                {/* <nav className="navbar navbar-expand-lg justify-content-center fixed-bottom navbar-light bg-light"> */}
+                    <ul className="nav justify-content-center fixed-bottom">
+                        <li className="nav-item">
+                            <a className="nav-link font-weight-bold text-dark bg-light" href="#">About Us</a>
+                        </li>
+                        <li className="nav-item">
+                            <a className="nav-link font-weight-bold text-dark bg-light" href="#">Contact Us</a>
+                        </li>
+                    </ul>
+                {/* </nav> */}            
+
             </div>
             
         );

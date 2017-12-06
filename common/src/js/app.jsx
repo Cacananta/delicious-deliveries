@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import { HashRouter as Router, Route } from 'react-router-dom';
 import Landing from './components/landing';
+import UserLogin from './components/userlogin';
+import OwnerLogin from './components/ownerlogin';
+import SignUp from './components/signup';
+
 
 export default class App extends Component {
     render() {
@@ -8,6 +12,9 @@ export default class App extends Component {
             <Router>
                 <div>
                     <Route exact path='/' component={Landing} />
+                    <Route exact path='/userlogin' component={UserLogin} />
+                    <Route exact path='/ownerlogin' component={OwnerLogin} />
+                    <Route exact path='/signup' component={SignUp} />
                 </div>
             </Router>
             
