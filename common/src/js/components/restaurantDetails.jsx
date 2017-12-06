@@ -9,6 +9,7 @@ this.addCart = this.addCart.bind(this);
   }
 
   addCart(e){
+    console.log('hello');
     // const { dispatch } = this.props;
     // const index = menuItem.map(item => item.id).indexOf(e.target.id);
     // dispatch(addShoppingCart(menuItem[index]));
