@@ -10,6 +10,16 @@ const background = {
 }
 
 export default class Landing extends Component {
+    constructor(props) {
+        super(props);
+    
+        this.searchClick = this.searchClick.bind(this);
+    }
+
+    searchClick() {
+
+    }
+
     render() {
         return (
             <div className='homepage' style={background}>
@@ -33,7 +43,14 @@ export default class Landing extends Component {
                         <div className="col-lg-2"></div>
                         <div className="col-lg-6 offset-1">
                             <div className="input-group">
+<<<<<<< HEAD
                             <Searchbar/>
+=======
+                                <input type="text" className="form-control"/>
+                                <span className="input-group-btn">
+                                    <button onClick={this.searchClick} className="btn btn-primary" type='button'>Go!</button>
+                                </span>
+>>>>>>> beginning store wiring with axios in components
                             </div>
                         </div>
                         <div className="col-lg-2"></div>
