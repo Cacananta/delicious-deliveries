@@ -3,7 +3,7 @@ import Searchbar from '../components/Searchbar';
 
 function mapStoreToProps(store) {
   return {
-    location: store.searchBar.location
+    location: store.initialSearch.location
   };
 }
 
