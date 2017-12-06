@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-<<<<<<< Updated upstream
 import Searchbar from "./Searchbar.jsx"
 const background = {
     backgroundImage: 'url(DD-landing.jpg)',
@@ -9,12 +8,6 @@ const background = {
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover'
 }
-=======
-<<<<<<< Updated upstream
-=======
-import Searchbar from "./Searchbar"
->>>>>>> Stashed changes
->>>>>>> Stashed changes
 
 export default class Landing extends Component {
     constructor(props) {
@@ -50,14 +43,7 @@ export default class Landing extends Component {
                         <div className="col-lg-2"></div>
                         <div className="col-lg-6 offset-1">
                             <div className="input-group">
-<<<<<<< HEAD
                             <Searchbar/>
-=======
-                                <input type="text" className="form-control"/>
-                                <span className="input-group-btn">
-                                    <button onClick={this.searchClick} className="btn btn-primary" type='button'>Go!</button>
-                                </span>
->>>>>>> beginning store wiring with axios in components
                             </div>
                         </div>
                         <div className="col-lg-2"></div>
