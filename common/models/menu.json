@@ -15,7 +15,7 @@
     },
     "menuItems": {
       "type": "hasMany",
-      "model": "Menu_items",
+      "model": "Menu-Items",
       "foreignKey": ""
     }
   },
