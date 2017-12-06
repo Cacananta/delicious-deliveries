@@ -3343,7 +3343,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 /* eslint-disable no-underscore-dangle */
 var composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || _redux.compose;
-// import reducers from './reducers';
+// import rootReducer from './root-reducers';
 
 
 var store = (0, _redux.createStore)(composeEnhancers((0, _redux.applyMiddleware)((0, _reduxPromiseMiddleware2.default)())));
@@ -22683,6 +22683,10 @@ var _landing = __webpack_require__(115);
 
 var _landing2 = _interopRequireDefault(_landing);
 
+
+var _restaurantDetails = __webpack_require__(116);
+
+var _restaurantDetails2 = _interopRequireDefault(_restaurantDetails);
 var _userlogin = __webpack_require__(118);
 
 var _userlogin2 = _interopRequireDefault(_userlogin);
@@ -26242,6 +26246,447 @@ var SignUp = function (_Component) {
 }(_react.Component);
 
 exports.default = SignUp;
+
+/***/ }),
+/* 116 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+// import { addShoppingCart } from './actions/restaurantDetailsActions';
+
+var RestaurantDetails = function (_React$Component) {
+  _inherits(RestaurantDetails, _React$Component);
+
+  function RestaurantDetails(props) {
+    _classCallCheck(this, RestaurantDetails);
+
+    //bind functions here
+    var _this = _possibleConstructorReturn(this, (RestaurantDetails.__proto__ || Object.getPrototypeOf(RestaurantDetails)).call(this, props));
+
+    _this.addCart = _this.addCart.bind(_this);
+    return _this;
+  }
+
+  _createClass(RestaurantDetails, [{
+    key: 'addCart',
+    value: function addCart(e) {
+      // const { dispatch } = this.props;
+      // const index = menuItem.map(item => item.id).indexOf(e.target.id);
+      // dispatch(addShoppingCart(menuItem[index]));
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      //pull in props here
+      return _react2.default.createElement(
+        'div',
+        { className: 'container' },
+        _react2.default.createElement(
+          'h1',
+          { className: 'text-center' },
+          'Esmeralda\'s Tortilleria'
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'row mb-2' },
+          _react2.default.createElement(
+            'div',
+            { className: 'col-6' },
+            _react2.default.createElement('img', { src: 'http://cdn.partyearth.com/photos/4e9d1dc9a23a99187f9e39230082010e/tortilla-republic_s345x230.jpg?1375196583', className: 'img-fluid rounded', alt: 'Responsive image' })
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'text-center col-6' },
+            _react2.default.createElement(
+              'p',
+              null,
+              '145 Market st.'
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
+              'San Diego, CA 92109'
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
+              '6197530972'
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
+              'Asian'
+            )
+          )
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'mt-2' },
+          _react2.default.createElement(
+            'h4',
+            null,
+            'Breakfast'
+          ),
+          _react2.default.createElement('hr', null)
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'row' },
+          _react2.default.createElement(
+            'div',
+            { className: 'col-6 px-2 d-flex' },
+            _react2.default.createElement(
+              'span',
+              { className: 'mr-auto pt-2' },
+              _react2.default.createElement(
+                'p',
+                null,
+                _react2.default.createElement(
+                  'strong',
+                  null,
+                  'Carne Asada Burrito'
+                ),
+                '   $7.99'
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'py-2 ml-auto' },
+              _react2.default.createElement(
+                'button',
+                { className: 'btn btn-primary btn-sm', onClick: this.addCart },
+                'Add to Cart'
+              )
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'col-6 px-2 d-flex' },
+            _react2.default.createElement(
+              'span',
+              { className: 'mr-auto pt-2' },
+              _react2.default.createElement(
+                'p',
+                null,
+                _react2.default.createElement(
+                  'strong',
+                  null,
+                  'Carne Asada Burrito'
+                ),
+                '   $7.99'
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'py-2 ml-auto' },
+              _react2.default.createElement(
+                'button',
+                { className: 'btn btn-primary btn-sm', onClick: this.addCart },
+                'Add to Cart'
+              )
+            )
+          )
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'mt-2' },
+          _react2.default.createElement(
+            'h4',
+            null,
+            'Lunch'
+          ),
+          _react2.default.createElement('hr', null)
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'row' },
+          _react2.default.createElement(
+            'div',
+            { className: 'col-6 px-2 d-flex' },
+            _react2.default.createElement(
+              'span',
+              { className: 'mr-auto pt-2' },
+              _react2.default.createElement(
+                'p',
+                null,
+                _react2.default.createElement(
+                  'strong',
+                  null,
+                  'Carne Asada Burrito'
+                ),
+                '   $7.99'
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'py-2 ml-auto' },
+              _react2.default.createElement(
+                'button',
+                { className: 'btn btn-primary btn-sm', onClick: this.addCart },
+                'Add to Cart'
+              )
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'col-6 px-2 d-flex' },
+            _react2.default.createElement(
+              'span',
+              { className: 'mr-auto pt-2' },
+              _react2.default.createElement(
+                'p',
+                null,
+                _react2.default.createElement(
+                  'strong',
+                  null,
+                  'Carne Asada Burrito'
+                ),
+                '   $7.99'
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'py-2 ml-auto' },
+              _react2.default.createElement(
+                'button',
+                { className: 'btn btn-primary btn-sm', onClick: this.addCart },
+                'Add to Cart'
+              )
+            )
+          )
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'mt-2' },
+          _react2.default.createElement(
+            'h4',
+            null,
+            'Dinner'
+          ),
+          _react2.default.createElement('hr', null)
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'row' },
+          _react2.default.createElement(
+            'div',
+            { className: 'col-6 px-2 d-flex' },
+            _react2.default.createElement(
+              'span',
+              { className: 'mr-auto pt-2' },
+              _react2.default.createElement(
+                'p',
+                null,
+                _react2.default.createElement(
+                  'strong',
+                  null,
+                  'Carne Asada Burrito'
+                ),
+                '   $7.99'
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'py-2 ml-auto' },
+              _react2.default.createElement(
+                'button',
+                { className: 'btn btn-primary btn-sm' },
+                'Add to Cart'
+              )
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'col-6 px-2 d-flex' },
+            _react2.default.createElement(
+              'span',
+              { className: 'mr-auto pt-2' },
+              _react2.default.createElement(
+                'p',
+                null,
+                _react2.default.createElement(
+                  'strong',
+                  null,
+                  'Carne Asada Burrito'
+                ),
+                '   $7.99'
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'py-2 ml-auto' },
+              _react2.default.createElement(
+                'button',
+                { className: 'btn btn-primary btn-sm', onClick: this.addCart },
+                'Add to Cart'
+              )
+            )
+          )
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'mt-2' },
+          _react2.default.createElement(
+            'h4',
+            null,
+            'Snacks'
+          ),
+          _react2.default.createElement('hr', null)
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'row' },
+          _react2.default.createElement(
+            'div',
+            { className: 'col-6 px-2 d-flex' },
+            _react2.default.createElement(
+              'span',
+              { className: 'mr-auto pt-2' },
+              _react2.default.createElement(
+                'p',
+                null,
+                _react2.default.createElement(
+                  'strong',
+                  null,
+                  'Carne Asada Burrito'
+                ),
+                '   $7.99'
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'py-2 ml-auto' },
+              _react2.default.createElement(
+                'button',
+                { className: 'btn btn-primary btn-sm', onClick: this.addCart },
+                'Add to Cart'
+              )
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'col-6 px-2 d-flex' },
+            _react2.default.createElement(
+              'span',
+              { className: 'mr-auto pt-2' },
+              _react2.default.createElement(
+                'p',
+                null,
+                _react2.default.createElement(
+                  'strong',
+                  null,
+                  'Carne Asada Burrito'
+                ),
+                '   $7.99'
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'py-2 ml-auto' },
+              _react2.default.createElement(
+                'button',
+                { className: 'btn btn-primary btn-sm', onClick: this.addCart },
+                'Add to Cart'
+              )
+            )
+          )
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'mt-2' },
+          _react2.default.createElement(
+            'h4',
+            null,
+            'Drinks'
+          ),
+          _react2.default.createElement('hr', null)
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'row' },
+          _react2.default.createElement(
+            'div',
+            { className: 'col-6 px-2 d-flex' },
+            _react2.default.createElement(
+              'span',
+              { className: 'mr-auto pt-2' },
+              _react2.default.createElement(
+                'p',
+                null,
+                _react2.default.createElement(
+                  'strong',
+                  null,
+                  'Carne Asada Burrito'
+                ),
+                '   $7.99'
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'py-2 ml-auto' },
+              _react2.default.createElement(
+                'button',
+                { className: 'btn btn-primary btn-sm', onClick: this.addCart },
+                'Add to Cart'
+              )
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'col-6 px-2 d-flex' },
+            _react2.default.createElement(
+              'span',
+              { className: 'mr-auto pt-2' },
+              _react2.default.createElement(
+                'p',
+                null,
+                _react2.default.createElement(
+                  'strong',
+                  null,
+                  'Carne Asada Burrito'
+                ),
+                '   $7.99'
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'py-2 ml-auto' },
+              _react2.default.createElement(
+                'button',
+                { className: 'btn btn-primary btn-sm', onClick: this.addCart },
+                'Add to Cart'
+              )
+            )
+          )
+        )
+      );
+    }
+  }]);
+
+  return RestaurantDetails;
+}(_react2.default.Component);
+
+exports.default = RestaurantDetails;
 
 /***/ })
 /******/ ]);

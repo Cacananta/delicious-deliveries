@@ -1,8 +1,6 @@
-import Axios from 'axios';
-
-export function Placeholder(placeholder) {
+export function addShoppingCart(food) {
   return {
-    type: 'ADD_CITY',
-    payload: placeholder
+    type: 'ADD_SHOPPING_CART',
+    payload: food
   }
 }

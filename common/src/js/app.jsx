@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import { HashRouter as Router, Route } from 'react-router-dom';
 import Landing from './components/landing';
+import RestaurantDetails from './components/restaurantDetails';
 import UserLogin from './components/userlogin';
 import OwnerLogin from './components/ownerlogin';
 import SignUp from './components/signup';
+
 
 
 export default class App extends Component {
