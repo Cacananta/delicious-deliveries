@@ -1,13 +1,15 @@
 const defaultState = {
-  placeholder: 'placeholder'
-}
+  shoppingCart: []
+};
 
 export default function RestaurantDetailsReducers(state = defaultState, action) {
-  switch(type) {
-    case 'PLACEHOLDER': {
-      return {
+  const { type, payload } = action;
 
-      }
+  switch(type) {
+    case 'ADD_SHOPPING_CART': {
+      return {
+        shoppingCart: payload
+      };
     }
     //next case here
   default: {

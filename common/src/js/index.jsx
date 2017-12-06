@@ -3,7 +3,7 @@ import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, compose } from 'redux';
 import promiseMiddleware from 'redux-promise-middleware';
-// import reducers from './reducers';
+// import rootReducer from './root-reducers';
 import App from './app';
 
 /* eslint-disable no-underscore-dangle */
