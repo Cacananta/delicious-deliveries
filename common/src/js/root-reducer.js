@@ -6,7 +6,7 @@ import restaurantDetailsReducers from './reducers/restaurantDetailsReducers';
 
 const rootReducer = combineReducers({
   searchBar: searchDisplayReducer,
-  restaurantDetails: restaurantDetailsReducers
+  restaurantDetails: restaurantDetailsReducers,
   initialSearch : searchBarReducer
 
 })
