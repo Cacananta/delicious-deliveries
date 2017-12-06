@@ -1,28 +1,19 @@
 import React, { Component } from 'react';
 import Searchbar from "./Searchbar.jsx"
-const background = {
-    backgroundImage: 'url(DD-landing.jpg)',
-    height: '100%',
-    width: '100%',
-    backgroundPosition: 'center',
-    backgroundRepeat: 'no-repeat',
-    backgroundSize: 'cover'
-}
+
 
 export default class Landing extends Component {
     constructor(props) {
         super(props);
     
-        this.searchClick = this.searchClick.bind(this);
+    
     }
 
-    searchClick() {
-        
-    }
+    
 
     render() {
         return (
-            <div className='homepage' style={background}>
+            <div className='homepage'>
                 <nav className="navbar fixed-top navbar-expand-lg navbar-light bg-light mb-5">
                     <a className="order-1 font-weight-bold nav-link text-dark" href='#/userlogin'>User Login</a>
                     <a className="order-2 font-weight-bold nav-link text-dark" href='#/ownerlogin'>Owner Login</a>

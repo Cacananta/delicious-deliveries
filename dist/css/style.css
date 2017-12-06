@@ -4,3 +4,12 @@ body,
 #root > div {
   height: 100%;
 }
+.homepage,
+.about {
+  background-image: url('DD-landing.jpg');
+  height: 100%;
+  width: 100%;
+  background-position: 'center';
+  background-repeat: 'no-repeat';
+  background-size: 'auto';
+}
