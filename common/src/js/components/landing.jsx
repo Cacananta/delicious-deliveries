@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+<<<<<<< Updated upstream
 import Searchbar from "./Searchbar.jsx"
 const background = {
     backgroundImage: 'url(DD-landing.jpg)',
@@ -8,6 +9,12 @@ const background = {
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover'
 }
+=======
+<<<<<<< Updated upstream
+=======
+import Searchbar from "./Searchbar"
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
 
 export default class Landing extends Component {
     constructor(props) {

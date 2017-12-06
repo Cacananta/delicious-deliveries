@@ -1,11 +1,10 @@
 import { connect } from 'react-redux';
-import SearchBar from '../components/SearchBar';
+import Searchbar from '../components/Searchbar';
 
 function mapStoreToProps(store) {
   return {
-    //add store here:
-    //key: value
+    location: store.searchBar.location
   };
 }
 
-export default connect(mapStoreToProps)(SearchBar);
+export default connect(mapStoreToProps)(Searchbar);

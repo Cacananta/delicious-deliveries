@@ -1,20 +1,12 @@
 import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
-import { createStore, applyMiddleware, compose } from 'redux';
-import promiseMiddleware from 'redux-promise-middleware';
-// import rootReducer from './root-reducers';
+// import reducers from './reducers';
 import App from './app';
-
-/* eslint-disable no-underscore-dangle */
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-
-const store = createStore( composeEnhancers(applyMiddleware(promiseMiddleware())));
-/* eslint-enable */
-
+import rootStore from './root-store';
 
 render(
-  <Provider store={ store }>
+  <Provider store={ rootStore }>
     <App />
   </Provider>,
   document.getElementById('root')
