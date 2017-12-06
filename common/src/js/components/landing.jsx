@@ -17,7 +17,7 @@ export default class Landing extends Component {
     }
 
     searchClick() {
-
+        
     }
 
     render() {
