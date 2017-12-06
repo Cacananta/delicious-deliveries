@@ -1,5 +1,5 @@
 import React from 'react';
-import { addShoppingCart } from './actions/restaurantDetailsActions';
+// import { addShoppingCart } from './actions/restaurantDetailsActions';
 
 export default class RestaurantDetails extends React.Component {
   constructor(props) {
@@ -9,9 +9,9 @@ this.addCart = this.addCart.bind(this);
   }
 
   addCart(e){
-    const { dispatch } = this.props;
-    const index = menuItem.map(item => item.id).indexOf(e.target.id);
-    dispatch(addShoppingCart(menuItem[index]));
+    // const { dispatch } = this.props;
+    // const index = menuItem.map(item => item.id).indexOf(e.target.id);
+    // dispatch(addShoppingCart(menuItem[index]));
   }
 
   render() {

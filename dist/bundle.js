@@ -22713,7 +22713,7 @@ var App = function (_Component) {
                 _react2.default.createElement(
                     'div',
                     null,
-                    _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _restaurantDetails2.default })
+                    _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _landing2.default })
                 )
             );
         }
@@ -25929,7 +25929,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-// import {} from './actions/restaurantDetailsActions';
+// import { addShoppingCart } from './actions/restaurantDetailsActions';
 
 var RestaurantDetails = function (_React$Component) {
   _inherits(RestaurantDetails, _React$Component);
@@ -25937,11 +25937,21 @@ var RestaurantDetails = function (_React$Component) {
   function RestaurantDetails(props) {
     _classCallCheck(this, RestaurantDetails);
 
-    return _possibleConstructorReturn(this, (RestaurantDetails.__proto__ || Object.getPrototypeOf(RestaurantDetails)).call(this, props));
     //bind functions here
+    var _this = _possibleConstructorReturn(this, (RestaurantDetails.__proto__ || Object.getPrototypeOf(RestaurantDetails)).call(this, props));
+
+    _this.addCart = _this.addCart.bind(_this);
+    return _this;
   }
 
   _createClass(RestaurantDetails, [{
+    key: 'addCart',
+    value: function addCart(e) {
+      // const { dispatch } = this.props;
+      // const index = menuItem.map(item => item.id).indexOf(e.target.id);
+      // dispatch(addShoppingCart(menuItem[index]));
+    }
+  }, {
     key: 'render',
     value: function render() {
       //pull in props here
@@ -26021,7 +26031,7 @@ var RestaurantDetails = function (_React$Component) {
               { className: 'py-2 ml-auto' },
               _react2.default.createElement(
                 'button',
-                { className: 'btn btn-primary btn-sm' },
+                { className: 'btn btn-primary btn-sm', onClick: this.addCart },
                 'Add to Cart'
               )
             )
@@ -26048,7 +26058,7 @@ var RestaurantDetails = function (_React$Component) {
               { className: 'py-2 ml-auto' },
               _react2.default.createElement(
                 'button',
-                { className: 'btn btn-primary btn-sm' },
+                { className: 'btn btn-primary btn-sm', onClick: this.addCart },
                 'Add to Cart'
               )
             )
@@ -26089,7 +26099,7 @@ var RestaurantDetails = function (_React$Component) {
               { className: 'py-2 ml-auto' },
               _react2.default.createElement(
                 'button',
-                { className: 'btn btn-primary btn-sm' },
+                { className: 'btn btn-primary btn-sm', onClick: this.addCart },
                 'Add to Cart'
               )
             )
@@ -26116,7 +26126,7 @@ var RestaurantDetails = function (_React$Component) {
               { className: 'py-2 ml-auto' },
               _react2.default.createElement(
                 'button',
-                { className: 'btn btn-primary btn-sm' },
+                { className: 'btn btn-primary btn-sm', onClick: this.addCart },
                 'Add to Cart'
               )
             )
@@ -26184,7 +26194,7 @@ var RestaurantDetails = function (_React$Component) {
               { className: 'py-2 ml-auto' },
               _react2.default.createElement(
                 'button',
-                { className: 'btn btn-primary btn-sm' },
+                { className: 'btn btn-primary btn-sm', onClick: this.addCart },
                 'Add to Cart'
               )
             )
@@ -26225,7 +26235,7 @@ var RestaurantDetails = function (_React$Component) {
               { className: 'py-2 ml-auto' },
               _react2.default.createElement(
                 'button',
-                { className: 'btn btn-primary btn-sm' },
+                { className: 'btn btn-primary btn-sm', onClick: this.addCart },
                 'Add to Cart'
               )
             )
@@ -26252,7 +26262,7 @@ var RestaurantDetails = function (_React$Component) {
               { className: 'py-2 ml-auto' },
               _react2.default.createElement(
                 'button',
-                { className: 'btn btn-primary btn-sm' },
+                { className: 'btn btn-primary btn-sm', onClick: this.addCart },
                 'Add to Cart'
               )
             )
@@ -26293,7 +26303,7 @@ var RestaurantDetails = function (_React$Component) {
               { className: 'py-2 ml-auto' },
               _react2.default.createElement(
                 'button',
-                { className: 'btn btn-primary btn-sm' },
+                { className: 'btn btn-primary btn-sm', onClick: this.addCart },
                 'Add to Cart'
               )
             )
@@ -26320,7 +26330,7 @@ var RestaurantDetails = function (_React$Component) {
               { className: 'py-2 ml-auto' },
               _react2.default.createElement(
                 'button',
-                { className: 'btn btn-primary btn-sm' },
+                { className: 'btn btn-primary btn-sm', onClick: this.addCart },
                 'Add to Cart'
               )
             )
