@@ -5,9 +5,7 @@ import RestaurantDetails from './index/restaurantDetailsIndex';
 import UserLogin from './components/userlogin';
 import OwnerLogin from './components/ownerlogin';
 import SignUp from './components/signup';
-import About from './components/about'
-
-
+import About from './components/about';
 import SearchResults from './components/searchResults';
 
 export default class App extends Component {

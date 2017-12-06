@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 
+
+
 export default class About extends Component {
     render() {
         return (
-            <div className='homepage' style={background}>
+            <div className='about'>
             <nav className="navbar fixed-top navbar-expand-lg navbar-light bg-light mb-5">
                 <a className="order-1 font-weight-bold nav-link text-dark" href='#/userlogin'>User Login</a>
                 <a className="order-2 font-weight-bold nav-link text-dark" href='#/ownerlogin'>Owner Login</a>
