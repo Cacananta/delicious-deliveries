@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Searchbar from "./Searchbar.jsx"
 
 export default class Landing extends Component {
     render() {
@@ -38,12 +39,11 @@ export default class Landing extends Component {
                     </div>
                     <div className="row">
                         <div className="col-lg-2"></div>
-                        <div className="col-lg-8">
+                        <div className="col-lg-6 offset-1">
                             <div className="input-group">
-                                <input type="text" className="form-control"/>
-                                <span className="input-group-btn">
-                                    <button className="btn btn-primary" type='button'>Go!</button>
-                                </span>
+                            <Searchbar/>
+                                {/* <input type="text" className="form-control"/>
+                                */}
                             </div>
                         </div>
                         <div className="col-lg-2"></div>
