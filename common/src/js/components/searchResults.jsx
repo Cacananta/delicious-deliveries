@@ -10,20 +10,13 @@ export default class SearchResults extends React.Component {
     this.selectOnClick = this.selectOnClick.bind(this);
   }
 
-
-
   selectOnClick() {
-    const { dispatch, restaurantDetails } = this.props;
-    console.log("hello")
-    Axios.get('http://localhost:3000/api/Restaurants')
-      .then((res) => {
-        console.log(res.data);
-      })
+
   }
 
 
   render() {
-    //pull in props here
+    const { dispatch, restaurants, location } = this.props;
     return (
       <div>
         {/* TOP NAV BAR */}
@@ -41,43 +34,42 @@ export default class SearchResults extends React.Component {
           </div>
         </section>
         <section>
+
           <div className="container">
             <div className="jumbotron text-center">
               <h1>Search Results</h1>
             </div>
-
-            {/* CARD START */}
-            <span className="border">
-
-              <div key='#' className="card my-2 col-12 ">
-                <div className="card-body">
-                  <div className="row align-items-center">
-                    {/* IMAGE */}
-                    <div className="col-lg-3 float-left">
-                      <img className="text-center img-fluid rounded mx-auto p-3" src="http://gobluetours.com/wp-content/uploads/2012/10/la-parrilla-cancun-restaurant-2.jpg" alt="Mexican Joint" />
-                    </div>
-                    {/* RESTAURANT INFORMATION */}
-                    <div className="col-lg-9 float-right">
-                      <div className="align-self-center">
-                        <h2 className="pb-4 mb-0">Esmeralda's Taqueria</h2>
+            {restaurants && restaurants.map((restaurant) => {
+              <span key={restaurant.id} className="border">
+                <div key='#' className="card my-2 col-12 ">
+                  <div className="card-body">
+                    <div className="row align-items-center">
+                      {/* IMAGE */}
+                      <div className="col-lg-3 float-left">
+                        <img className="text-center img-fluid rounded mx-auto p-3" src="http://gobluetours.com/wp-content/uploads/2012/10/la-parrilla-cancun-restaurant-2.jpg" alt="Mexican Joint" />
                       </div>
-                      <div>
-                        <h6 className="pb-4 mb-0">Established in 1994, Esmeralda's is famous for their bottomless Margaritas and Tijuana style street tacos.
-                        They can be found in the heart of San Diego's Gaslamp district.</h6>
-                      </div>
-                      <div>
-                        <h6 className="pb-4 mb-0">123 Broadway San Diego, CA 92101</h6>
-                      </div>
-                      <div className="align-items-center">
-                        <button className="btn btn-primary" type="button" onClick={this.selectOnClick}>See Menu</button>
-                        {/* <Link to={"/movie/" + movie.imdbID}><button id={movie.imdbID} name={movie.imbdID} onClick={this.handleDetailClick} className="btn btn-primary" type="button">More information</button></Link> */}
+                      {/* RESTAURANT INFORMATION */}
+                      <div className="col-lg-9 float-right">
+                        <div className="align-self-center">
+                          <h2 className="pb-4 mb-0">{restaurant.name}</h2>
+                        </div>
+                        <div>
+                          {/* <h6 className="pb-4 mb-0">Established in 1994, Esmeralda's is famous for their bottomless Margaritas and Tijuana style street tacos.
+                        They can be found in the heart of San Diego's Gaslamp district.</h6> */}
+                        </div>
+                        <div>
+                          <h6 className="pb-4 mb-0">{restaurant.address1} {restaurant.city}, {restaurant.state} {restaurant.zip}</h6>
+                        </div>
+                        <div className="align-items-center">
+                          <button id={restaurant.id} className="btn btn-primary" type="button" onClick={this.selectOnClick}>See Menu</button>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </span>
-
+              </span>
+            })
+            }
           </div>
         </section>
         {/* FOOTER:  */}

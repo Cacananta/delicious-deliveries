@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Searchbar from "./Searchbar.jsx"
+import Searchbar from '../index/searchBarIndex';
 const background = {
     backgroundImage: 'url(DD-landing.jpg)',
     height: '100%',
