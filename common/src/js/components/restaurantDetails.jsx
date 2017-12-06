@@ -19,7 +19,7 @@ this.addCart = this.addCart.bind(this);
 
   addCart(e){
     console.log(e.target.id);
-    // const { dispatch } = this.props;
+    const { dispatch } = this.props;
     const index = menuList.map(item => item.id).indexOf(e.target.id);
     const cartItem = {
       quantity: 1,
@@ -27,7 +27,7 @@ this.addCart = this.addCart.bind(this);
       price: menuList[index].price
     };
     console.log(cartItem);
-    // dispatch(addShoppingCart(cartItem));
+    dispatch(addShoppingCart(cartItem));
   }
 
   render() {
