@@ -4,3 +4,10 @@ export function addShoppingCart(food) {
     payload: food
   }
 }
+
+export function updateShoppingCart(quantity) {
+  return {
+    type: 'UPDATE_SHOPPING_CART',
+    payload: quantity
+  }
+}
