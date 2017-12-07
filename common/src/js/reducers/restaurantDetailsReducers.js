@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 const defaultState = {
   shoppingCart: []
 };
@@ -8,7 +10,9 @@ export default function restaurantDetailsReducers(state = defaultState, action) 
   switch(type) {
     case 'ADD_SHOPPING_CART': {
       return {
-        shoppingCart: [payload, ...state.shoppingCart]
+        ...state,
+        shoppingCart: 
+        _.uniqBy([payload, ...state.shoppingCart], 'menuItem')
       };
     }
     //next case here
