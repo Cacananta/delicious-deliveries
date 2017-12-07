@@ -23247,6 +23247,10 @@ var _about = __webpack_require__(146);
 
 var _about2 = _interopRequireDefault(_about);
 
+var _contact = __webpack_require__(156);
+
+var _contact2 = _interopRequireDefault(_contact);
+
 var _searchResults = __webpack_require__(147);
 
 var _searchResults2 = _interopRequireDefault(_searchResults);
@@ -23283,7 +23287,8 @@ var App = function (_Component) {
                     _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/restaurant/:restaurant', component: _restaurantDetails2.default }),
                     _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/signup', component: _signup2.default }),
                     _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/searchresults', component: _searchResults2.default }),
-                    _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/about', component: _about2.default })
+                    _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/about', component: _about2.default }),
+                    _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/contact', component: _contact2.default })
                 )
             );
         }
@@ -26296,7 +26301,7 @@ var Landing = function (_Component) {
         value: function render() {
             return _react2.default.createElement(
                 'div',
-                { className: 'homepage' },
+                { className: 'landing' },
                 _react2.default.createElement(
                     'nav',
                     { className: 'navbar fixed-top navbar-expand-lg navbar-light bg-light mb-5' },
@@ -26376,7 +26381,7 @@ var Landing = function (_Component) {
                         { className: 'nav-item' },
                         _react2.default.createElement(
                             'a',
-                            { className: 'nav-link font-weight-bold text-dark bg-light', href: '#' },
+                            { className: 'nav-link font-weight-bold text-dark bg-light', href: '#/contact' },
                             'Contact Us'
                         )
                     )
@@ -28110,44 +28115,38 @@ var About = function (_Component) {
                         )
                     )
                 ),
+                _react2.default.createElement('div', { className: 'row', style: { paddingTop: '300px' } }),
                 _react2.default.createElement(
                     'div',
-                    { className: 'container', style: { paddingTop: '300px' } },
+                    { className: 'row' },
                     _react2.default.createElement(
                         'div',
-                        { className: 'row' },
-                        _react2.default.createElement('div', { className: 'col-lg-2' }),
+                        { className: 'col-md-4 offset-4 align-self-center' },
                         _react2.default.createElement(
                             'div',
-                            { className: 'col-lg-8 h1 text-center font-italic' },
-                            'Delicious Deliveries'
-                        ),
-                        _react2.default.createElement('div', { className: 'col-lg-2' })
-                    ),
-                    _react2.default.createElement(
-                        'div',
-                        { className: 'row' },
-                        _react2.default.createElement('div', { className: 'col-lg-2' }),
-                        _react2.default.createElement(
-                            'div',
-                            { className: 'col-lg-6 offset-1' },
-                            _react2.default.createElement('div', { className: 'input-group' })
-                        ),
-                        _react2.default.createElement('div', { className: 'col-lg-2' })
-                    )
-                ),
-                _react2.default.createElement(
-                    'ul',
-                    { className: 'nav justify-content-center fixed-bottom' },
-                    _react2.default.createElement(
-                        'li',
-                        { className: 'nav-item' },
-                        _react2.default.createElement(
-                            'a',
-                            { className: 'nav-link font-weight-bold text-dark bg-light', href: '#' },
-                            'Contact Us'
+                            { className: 'card text-center' },
+                            _react2.default.createElement(
+                                'div',
+                                { className: 'card-body' },
+                                _react2.default.createElement(
+                                    'p',
+                                    { className: 'card-text' },
+                                    'Delicious Deliveries was created magically by banging on a keyboard! If you have any questions, comments, or concerns feel free to drop us a message.'
+                                ),
+                                _react2.default.createElement(
+                                    'a',
+                                    { href: '#/contact', className: 'btn btn-secondary' },
+                                    'Contact Us'
+                                ),
+                                _react2.default.createElement(
+                                    'a',
+                                    { href: '/', className: 'btn btn-secondary' },
+                                    'Back to Home'
+                                )
+                            )
                         )
-                    )
+                    ),
+                    _react2.default.createElement('ul', { className: 'nav justify-content-center fixed-bottom' })
                 )
             );
         }
@@ -28795,6 +28794,120 @@ function isPromise(value) {
 
   return false;
 }
+
+/***/ }),
+/* 156 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Contact = function (_Component) {
+    _inherits(Contact, _Component);
+
+    function Contact() {
+        _classCallCheck(this, Contact);
+
+        return _possibleConstructorReturn(this, (Contact.__proto__ || Object.getPrototypeOf(Contact)).apply(this, arguments));
+    }
+
+    _createClass(Contact, [{
+        key: 'render',
+        value: function render() {
+            return _react2.default.createElement(
+                'div',
+                { className: 'contact' },
+                _react2.default.createElement(
+                    'nav',
+                    { className: 'navbar fixed-top navbar-expand-lg navbar-light bg-light mb-5' },
+                    _react2.default.createElement(
+                        'a',
+                        { className: 'order-1 font-weight-bold nav-link text-dark', href: '#/userlogin' },
+                        'User Login'
+                    ),
+                    _react2.default.createElement(
+                        'a',
+                        { className: 'order-2 font-weight-bold nav-link text-dark', href: '#/ownerlogin' },
+                        'Owner Login'
+                    ),
+                    _react2.default.createElement(
+                        'a',
+                        { className: 'order-3 font-weight-bold nav-link text-dark', href: '#/signup' },
+                        'Sign Up'
+                    ),
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'collapse navbar-collapse', id: 'navbarNavAltMarkup' },
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'navbar-nav' },
+                            _react2.default.createElement(
+                                'a',
+                                { className: 'nav-item nav-link font-weight-bold', href: '/' },
+                                'Delicious Deliveries'
+                            )
+                        )
+                    )
+                ),
+                _react2.default.createElement('div', { className: 'row', style: { paddingTop: '300px' } }),
+                _react2.default.createElement(
+                    'div',
+                    { className: 'row' },
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'col-md-4 offset-4 align-self-center' },
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'card text-center' },
+                            _react2.default.createElement(
+                                'div',
+                                { className: 'card-body' },
+                                _react2.default.createElement(
+                                    'p',
+                                    { className: 'card-text' },
+                                    ' If you have any questions, comments, or concerns feel free to drop us a message.'
+                                ),
+                                _react2.default.createElement(
+                                    'p',
+                                    null,
+                                    'DeliciousDeliveriesSD@gmail.com'
+                                ),
+                                _react2.default.createElement(
+                                    'a',
+                                    { href: '/', className: 'btn btn-secondary' },
+                                    'Back to Home'
+                                )
+                            )
+                        )
+                    )
+                ),
+                _react2.default.createElement('ul', { className: 'nav justify-content-center fixed-bottom' })
+            );
+        }
+    }]);
+
+    return Contact;
+}(_react.Component);
+
+exports.default = Contact;
 
 /***/ })
 /******/ ]);

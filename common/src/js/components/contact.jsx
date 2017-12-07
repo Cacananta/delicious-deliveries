@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 
 
 
-export default class About extends Component {
+export default class Contact extends Component {
     render() {
         return (
-            <div className='about'>
+            <div className='contact'>
                 <nav className="navbar fixed-top navbar-expand-lg navbar-light bg-light mb-5">
                     <a className="order-1 font-weight-bold nav-link text-dark" href='#/userlogin'>User Login</a>
                     <a className="order-2 font-weight-bold nav-link text-dark" href='#/ownerlogin'>Owner Login</a>
@@ -22,12 +22,13 @@ export default class About extends Component {
                 <div className="card text-center">
                     <div className="card-body">
                        
-                        <p className="card-text">Delicious Deliveries was created magically by banging on a keyboard! If you have any questions, comments, or concerns feel free to drop us a message.</p>
-                        <a href="#/contact" className="btn btn-secondary">Contact Us</a>
+                        <p className="card-text"> If you have any questions, comments, or concerns feel free to drop us a message.</p>
+                        <p>DeliciousDeliveriesSD@gmail.com</p>
+                        {/* <a href="#/contact" className="btn btn-secondary">Contact Us</a> */}
                         <a href="/" className="btn btn-secondary">Back to Home</a>
                     </div>
                 </div>
-                
+                </div>
                 </div>
                 {/* <div className="container" style={{paddingTop: '300px'}}>
             <div  id='wrapper'>
@@ -51,7 +52,7 @@ export default class About extends Component {
                     </li> */}
                 </ul>
                
-                    </div>
+
             </div>
         );
     }

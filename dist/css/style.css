@@ -4,12 +4,16 @@ body,
 #root > div {
   height: 100%;
 }
-.homepage,
-.about {
+.landing,
+.about,
+.contact {
   background-image: url('DD-landing.jpg');
   height: 100%;
   width: 100%;
-  background-position: 'center';
-  background-repeat: 'no-repeat';
-  background-size: 'auto';
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.card {
+  background-color: rgba(138, 138, 138, 0.5);
 }
