@@ -3,8 +3,7 @@ import ShoppingCart from '../components/shoppingCart';
 
 function mapStoreToProps(store) {
   return {
-    //add store here:
-    //key: value
+    shoppingCart: store.restaurantDetails.shoppingCart
   };
 }
 

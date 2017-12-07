@@ -7,6 +7,7 @@ import OwnerLogin from './components/ownerlogin';
 import SignUp from './components/signup';
 import About from './components/about'
 import SearchResults from './components/searchResults';
+import ShoppingCart from './index/shoppingCartIndex';
 
 export default class App extends Component {
     render() {
@@ -20,6 +21,7 @@ export default class App extends Component {
                     <Route exact path='/signup' component={SignUp} />
                     <Route exact path='/about' component={About} />
                     <Route exact path='/searchresults' component={SearchResults} />
+                    <Route exact path='/shoppingcart' component={ShoppingCart} />
 
                 </div>
             </Router>
