@@ -15,6 +15,13 @@ export default function restaurantDetailsReducers(state = defaultState, action) 
         _.uniqBy([payload, ...state.shoppingCart], 'menuItem')
       };
     }
+
+    case 'UPDATE_SHOPPING_CART': {
+      return {
+        ...state,
+        shoppingCart: payload
+      };
+    }
     //next case here
   default: {
     return state
