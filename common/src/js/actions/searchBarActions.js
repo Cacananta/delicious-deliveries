@@ -21,3 +21,10 @@ export const updateSearchLocation = input => {
         })
     }
 }
+
+export const captureLocation = input => {
+    return {
+        type: 'CAPTURE_LOCATION',
+        payload: input
+    }
+}

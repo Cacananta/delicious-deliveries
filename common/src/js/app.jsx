@@ -21,7 +21,6 @@ export default class App extends Component {
                     <Route exact path='/about' component={About} />
                     <Route exact path='/searchresults' component={SearchResults} />
                     <Route exact path='/shoppingcart' component={ShoppingCart} />
-
                     <Route exact path='/about' component={About} />
                     <Route exact path='/contact' component={Contact} />
                 </div>

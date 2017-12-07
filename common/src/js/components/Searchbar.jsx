@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { updateSearchLocation } from "../actions/searchBarActions";
+import { updateSearchLocation, captureLocation } from "../actions/searchBarActions";
+// import SearchBarIndex from '../index/searchBarIndex';
 import { Link } from 'react-router-dom';
 
 export default class Searchbar extends Component {
@@ -20,7 +20,7 @@ export default class Searchbar extends Component {
         const { dispatch } = this.props;
         var input = document.getElementById('searchBarInput').value;
         dispatch(updateSearchLocation());
-        dispatch(updateLocation(input));
+        dispatch(captureLocation(input));
       }
 
     render() {
