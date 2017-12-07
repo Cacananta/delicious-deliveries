@@ -19,7 +19,8 @@ export default class Searchbar extends Component {
     handleClick() {
         const { dispatch } = this.props;
         var input = document.getElementById('searchBarInput').value;
-        dispatch(updateSearchLocation(input));
+        dispatch(updateSearchLocation());
+        dispatch(updateLocation(input));
       }
 
     render() {

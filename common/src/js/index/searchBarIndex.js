@@ -3,6 +3,7 @@ import Searchbar from '../components/Searchbar';
 
 function mapStoreToProps(store) {
   return {
+    restaurants: store.initialSearch.restaurants,
     location: store.initialSearch.location
   };
 }
