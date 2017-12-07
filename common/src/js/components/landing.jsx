@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import Searchbar from "./Searchbar.jsx"
-
+import Searchbar from '../index/searchBarIndex';
 
 export default class Landing extends Component {
     constructor(props) {
