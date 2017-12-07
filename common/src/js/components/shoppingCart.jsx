@@ -32,7 +32,7 @@ export default class ShoppingCart extends React.Component {
     let cart = shoppingCart.slice();
     const index = cart.map(item => item.id).indexOf(e.target.id);
     cart[index].quantity++;
-    if (cart[index].quantity > 5 ) cart[index].quantity = 5;
+    if (cart[index].quantity > 10 ) cart[index].quantity = 10;
     dispatch(updateShoppingCart(cart));
   }
 
@@ -78,11 +78,16 @@ export default class ShoppingCart extends React.Component {
         </div>
         )}
         <hr/>
-        <div className='w-75 d-flex'>
-          <span className='ml-auto'>Final Total: $<strong>{ total.toFixed(2) }</strong></span>
-        </div>
-        <div className='w-75 d-flex'>
-          <button type='button' className='btn btn-primary ml-auto'>Checkout</button>
+        <div className='w-75 row mx-auto'>
+          <div className='col-4'>
+          <a className='btn btn-primary' href='#/restaurant/a' role='button'>Back to Menu</a>
+          </div>
+          <div className='col-4'>
+          <a className='btn btn-primary' href='#' role='button'>Checkout</a>
+          </div>
+          <div>
+            <span className='col-4'>Final Total: $<strong>{ total.toFixed(2) }</strong></span>
+          </div>
         </div>
       </div>
     )

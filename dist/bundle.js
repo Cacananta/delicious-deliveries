@@ -27522,19 +27522,74 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var menuList = [{
-  category: "Dinner",
-  price: 14.95,
-  description: "A delicious Cantonese dish of stir-fried veggies and chicken",
-  name: "Moo Goo Gai Pan",
-  id: "5a2852a55d45520014574d72",
-  menuId: "5a2730b89f1b16003e75eac4"
-}, {
   category: "Lunch",
   price: 9.95,
   description: "A delicious Cantonese dish of stir-fried veggies and chicken",
   name: "Asian Burrito",
   id: "7fk48dke9eok9ekdfh0r",
-  menuId: "5a2730b89f1b16003e75eac4"
+  MenuId: "5a2730b89f1b16003e75eac4"
+}, {
+  category: "dinner",
+  price: 9.99,
+  name: "Chicken",
+  id: "5a2613199a78bd0d5630828c",
+  MenuId: "5a2612c29a78bd0d5630828b"
+}, {
+  category: "Lunch",
+  price: 14.95,
+  description: "Delicious fajita veggies served with rice and beans",
+  name: "Veggie Fajitas",
+  id: "5a26dab7e546bf252a0633ee",
+  MenuId: "5a26da43e546bf252a0633ed"
+}, {
+  category: "Dinner",
+  price: 14.95,
+  description: "A delicious Cantonese dish of stir-fried veggies and chicken",
+  name: "Moo Goo Gai Pan",
+  id: "5a284b3141884da62a5c27de",
+  MenuId: "5a28482c700bf4a41b626eb4"
+}, {
+  category: "Breakfast",
+  price: 14.95,
+  description: "A combination of two American classics",
+  name: "BBQ scrambled eggs",
+  id: "5a284b4141884da62a5c27df",
+  MenuId: "5a28482c700bf4a41b626eb4"
+}, {
+  category: "Snack",
+  price: 14.95,
+  description: "French fries with truffle oil",
+  name: "Truffle Oil French Fries",
+  id: "5a284b5541884da62a5c27e0",
+  MenuId: "5a28482c700bf4a41b626eb4"
+}, {
+  category: "Snack",
+  price: 14.95,
+  description: "Salted cooked soybeans",
+  name: "Edamame",
+  id: "5a284b6741884da62a5c27e1",
+  MenuId: "5a28482c700bf4a41b626eb4"
+}, {
+  category: "Lunch",
+  price: 14.95,
+  description: "Classic noodles and meatballs",
+  name: "Spaghetti and Meatballs",
+  id: "5a284b8141884da62a5c27e2",
+  MenuId: "5a28482c700bf4a41b626eb4"
+}, {
+  category: "Dinner",
+  price: 14.95,
+  description: "Amazing chicken BBQ served in a pineapple",
+  name: "Pineapple BBQ Chicken",
+  id: "5a284bbe41884da62a5c27e3",
+  MenuId: "5a28482c700bf4a41b626eb4"
+}, {
+  category: "Drink",
+  price: 9.95,
+  description: "Craft dark beer at its finest",
+  name: "Dark Stout",
+  id: "5a284bca41884da62a5c27e4",
+  MenuId: "5a28482c700bf4a41b626eb4"
 }];
 
 var RestaurantDetails = function (_React$Component) {
@@ -27553,20 +27608,30 @@ var RestaurantDetails = function (_React$Component) {
   _createClass(RestaurantDetails, [{
     key: 'addCart',
     value: function addCart(e) {
-      console.log(e.target.id);
-      var dispatch = this.props.dispatch;
+      var _props = this.props,
+          dispatch = _props.dispatch,
+          shoppingCart = _props.shoppingCart;
 
-      var index = menuList.map(function (item) {
+      var cart = shoppingCart.slice();
+      var cartIndex = cart.map(function (item) {
         return item.id;
       }).indexOf(e.target.id);
-      var cartItem = {
-        quantity: 1,
-        menuItem: menuList[index].name,
-        price: menuList[index].price,
-        id: e.target.id
-      };
-      console.log(cartItem);
-      dispatch((0, _restaurantDetailsActions.addShoppingCart)(cartItem));
+      if (cartIndex === -1) {
+        var index = menuList.map(function (item) {
+          return item.id;
+        }).indexOf(e.target.id);
+        var cartItem = {
+          quantity: 1,
+          menuItem: menuList[index].name,
+          price: menuList[index].price,
+          id: e.target.id
+        };
+        dispatch((0, _restaurantDetailsActions.addShoppingCart)(cartItem));
+      } else {
+        cart[cartIndex].quantity++;
+        if (cart[cartIndex].quantity > 10) cart[cartIndex].quantity = 10;
+        dispatch((0, _restaurantDetailsActions.updateShoppingCart)(cart));
+      }
     }
   }, {
     key: 'render',
@@ -27589,11 +27654,6 @@ var RestaurantDetails = function (_React$Component) {
       var drinkList = menuList.filter(function (item) {
         return item.category === 'Drink';
       });
-      console.log(1, breakfastList);
-      console.log(2, lunchList);
-      console.log(3, dinnerList);
-      console.log(4, snackList);
-      console.log(5, drinkList);
       return _react2.default.createElement(
         'div',
         { className: 'container' },
@@ -27632,6 +27692,11 @@ var RestaurantDetails = function (_React$Component) {
               'p',
               null,
               'Asian'
+            ),
+            _react2.default.createElement(
+              'a',
+              { className: 'btn btn-primary', href: '#/shoppingcart', role: 'button' },
+              'Shopping Cart'
             )
           )
         ),
@@ -27651,10 +27716,10 @@ var RestaurantDetails = function (_React$Component) {
           _react2.default.createElement(
             'div',
             { className: 'row' },
-            breakfastList.map(function (item) {
+            breakfastList.map(function (item, index) {
               return _react2.default.createElement(
                 'div',
-                { className: 'col-6 px-2 d-flex' },
+                { className: 'col-6 px-2 d-flex', key: index },
                 _react2.default.createElement(
                   'span',
                   { className: 'mr-auto pt-2' },
@@ -27665,14 +27730,18 @@ var RestaurantDetails = function (_React$Component) {
                       'strong',
                       null,
                       item.name
-                    ),
-                    '   $',
-                    item.price
+                    )
                   )
                 ),
                 _react2.default.createElement(
                   'div',
                   { className: 'py-2 ml-auto' },
+                  _react2.default.createElement(
+                    'span',
+                    { className: 'pr-5' },
+                    '$',
+                    item.price
+                  ),
                   _react2.default.createElement(
                     'button',
                     { id: item.id, className: 'btn btn-primary btn-sm', onClick: _this2.addCart },
@@ -27803,60 +27872,40 @@ var RestaurantDetails = function (_React$Component) {
           _react2.default.createElement(
             'div',
             { className: 'row' },
-            _react2.default.createElement(
-              'div',
-              { className: 'col-6 px-2 d-flex' },
-              _react2.default.createElement(
-                'span',
-                { className: 'mr-auto pt-2' },
-                _react2.default.createElement(
-                  'p',
-                  null,
-                  _react2.default.createElement(
-                    'strong',
-                    null,
-                    'Carne Asada Burrito'
-                  ),
-                  '   $7.99'
-                )
-              ),
-              _react2.default.createElement(
+            snackList.map(function (item, index) {
+              return _react2.default.createElement(
                 'div',
-                { className: 'py-2 ml-auto' },
+                { className: 'col-6 px-2 d-flex', key: index },
                 _react2.default.createElement(
-                  'button',
-                  { className: 'btn btn-primary btn-sm', onClick: this.addCart },
-                  'Add to Cart'
-                )
-              )
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'col-6 px-2 d-flex' },
-              _react2.default.createElement(
-                'span',
-                { className: 'mr-auto pt-2' },
-                _react2.default.createElement(
-                  'p',
-                  null,
+                  'span',
+                  { className: 'mr-auto pt-2' },
                   _react2.default.createElement(
-                    'strong',
+                    'p',
                     null,
-                    'Carne Asada Burrito'
-                  ),
-                  '   $7.99'
-                )
-              ),
-              _react2.default.createElement(
-                'div',
-                { className: 'py-2 ml-auto' },
+                    _react2.default.createElement(
+                      'strong',
+                      null,
+                      item.name
+                    )
+                  )
+                ),
                 _react2.default.createElement(
-                  'button',
-                  { className: 'btn btn-primary btn-sm', onClick: this.addCart },
-                  'Add to Cart'
+                  'div',
+                  { className: 'py-2 ml-auto' },
+                  _react2.default.createElement(
+                    'span',
+                    { className: 'pr-5' },
+                    '$',
+                    item.price
+                  ),
+                  _react2.default.createElement(
+                    'button',
+                    { id: item.id, className: 'btn btn-primary btn-sm', onClick: _this2.addCart },
+                    'Add to Cart'
+                  )
                 )
-              )
-            )
+              );
+            })
           )
         ) : _react2.default.createElement('div', null),
         drinkList.length > 0 ? _react2.default.createElement(
@@ -27875,60 +27924,40 @@ var RestaurantDetails = function (_React$Component) {
           _react2.default.createElement(
             'div',
             { className: 'row' },
-            _react2.default.createElement(
-              'div',
-              { className: 'col-6 px-2 d-flex' },
-              _react2.default.createElement(
-                'span',
-                { className: 'mr-auto pt-2' },
-                _react2.default.createElement(
-                  'p',
-                  null,
-                  _react2.default.createElement(
-                    'strong',
-                    null,
-                    'Carne Asada Burrito'
-                  ),
-                  '   $7.99'
-                )
-              ),
-              _react2.default.createElement(
+            drinkList.map(function (item, index) {
+              return _react2.default.createElement(
                 'div',
-                { className: 'py-2 ml-auto' },
+                { className: 'col-6 px-2 d-flex', key: index },
                 _react2.default.createElement(
-                  'button',
-                  { className: 'btn btn-primary btn-sm', onClick: this.addCart },
-                  'Add to Cart'
-                )
-              )
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'col-6 px-2 d-flex' },
-              _react2.default.createElement(
-                'span',
-                { className: 'mr-auto pt-2' },
-                _react2.default.createElement(
-                  'p',
-                  null,
+                  'span',
+                  { className: 'mr-auto pt-2' },
                   _react2.default.createElement(
-                    'strong',
+                    'p',
                     null,
-                    'Carne Asada Burrito'
-                  ),
-                  '   $7.99'
-                )
-              ),
-              _react2.default.createElement(
-                'div',
-                { className: 'py-2 ml-auto' },
+                    _react2.default.createElement(
+                      'strong',
+                      null,
+                      item.name
+                    )
+                  )
+                ),
                 _react2.default.createElement(
-                  'button',
-                  { className: 'btn btn-primary btn-sm', onClick: this.addCart },
-                  'Add to Cart'
+                  'div',
+                  { className: 'py-2 ml-auto' },
+                  _react2.default.createElement(
+                    'span',
+                    { className: 'pr-5' },
+                    '$',
+                    item.price
+                  ),
+                  _react2.default.createElement(
+                    'button',
+                    { id: item.id, className: 'btn btn-primary btn-sm', onClick: _this2.addCart },
+                    'Add to Cart'
+                  )
                 )
-              )
-            )
+              );
+            })
           )
         ) : _react2.default.createElement('div', null)
       );
@@ -28832,7 +28861,7 @@ var ShoppingCart = function (_React$Component) {
         return item.id;
       }).indexOf(e.target.id);
       cart[index].quantity++;
-      if (cart[index].quantity > 5) cart[index].quantity = 5;
+      if (cart[index].quantity > 10) cart[index].quantity = 10;
       dispatch((0, _restaurantDetailsActions.updateShoppingCart)(cart));
     }
   }, {
@@ -28932,25 +28961,38 @@ var ShoppingCart = function (_React$Component) {
         _react2.default.createElement('hr', null),
         _react2.default.createElement(
           'div',
-          { className: 'w-75 d-flex' },
+          { className: 'w-75 row mx-auto' },
           _react2.default.createElement(
-            'span',
-            { className: 'ml-auto' },
-            'Final Total: $',
+            'div',
+            { className: 'col-4' },
             _react2.default.createElement(
-              'strong',
-              null,
-              total.toFixed(2)
+              'a',
+              { className: 'btn btn-primary', href: '#/restaurant/a', role: 'button' },
+              'Back to Menu'
             )
-          )
-        ),
-        _react2.default.createElement(
-          'div',
-          { className: 'w-75 d-flex' },
+          ),
           _react2.default.createElement(
-            'button',
-            { type: 'button', className: 'btn btn-primary ml-auto' },
-            'Checkout'
+            'div',
+            { className: 'col-4' },
+            _react2.default.createElement(
+              'a',
+              { className: 'btn btn-primary', href: '#', role: 'button' },
+              'Checkout'
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            null,
+            _react2.default.createElement(
+              'span',
+              { className: 'col-4' },
+              'Final Total: $',
+              _react2.default.createElement(
+                'strong',
+                null,
+                total.toFixed(2)
+              )
+            )
           )
         )
       );
