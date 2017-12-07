@@ -10,7 +10,7 @@ const menuList = [
     MenuId: "5a2730b89f1b16003e75eac4"
   },
   {
-    category: "dinner",
+    category: "Dinner",
     price: 9.99,
     name: "Chicken",
     id: "5a2613199a78bd0d5630828c",
