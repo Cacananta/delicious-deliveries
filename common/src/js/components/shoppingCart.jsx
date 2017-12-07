@@ -7,22 +7,33 @@ export default class ShoppingCart extends React.Component {
   //bind functions here
   this.subtractQuantity = this.subtractQuantity.bind(this);
   this.addQuantity = this.addQuantity.bind(this);
+  this.removeItem = this.removeItem.bind(this);
+  }
+
+  removeItem(e) {
+    const { shoppingCart, dispatch } = this.props;
+    let cart = shoppingCart.slice();
+    const index = cart.map(item => item.id).indexOf(e.target.id);
+    cart.splice(index,1);
+    dispatch(updateShoppingCart(cart));
   }
 
   subtractQuantity(e) {
     const { shoppingCart, dispatch } = this.props;
-    const index = shoppingCart.map(item => item.id).indexOf(e.target.id);
-    shoppingCart[index].quantity--;
-    if (shoppingCart[index].quantity < 1 ) shoppingCart[index].quantity = 1;
-    dispatch(updateShoppingCart(shoppingCart));
+    let cart = shoppingCart.slice();
+    const index = cart.map(item => item.id).indexOf(e.target.id);
+    cart[index].quantity--;
+    if (cart[index].quantity < 1 ) cart[index].quantity = 1;
+    dispatch(updateShoppingCart(cart));
   }
 
   addQuantity(e) {
     const { shoppingCart, dispatch } = this.props;
-    const index = shoppingCart.map(item => item.id).indexOf(e.target.id);
-    shoppingCart[index].quantity++;
-    if (shoppingCart[index].quantity > 5 ) shoppingCart[index].quantity = 5;
-    dispatch(updateShoppingCart(shoppingCart));
+    let cart = shoppingCart.slice();
+    const index = cart.map(item => item.id).indexOf(e.target.id);
+    cart[index].quantity++;
+    if (cart[index].quantity > 5 ) cart[index].quantity = 5;
+    dispatch(updateShoppingCart(cart));
   }
 
   render() {
@@ -57,8 +68,9 @@ export default class ShoppingCart extends React.Component {
           </div>
           <div className='col-4 text-center d-flex'>
             <span id={ cartItem.id } className='mr-auto badge badge-pill badge-danger' onClick={ this.subtractQuantity }>-</span>
+            <span id={ cartItem.id } className='mr-auto badge badge-pill badge-success' onClick={ this.addQuantity }>+</span>
             { cartItem.quantity }
-            <span id={ cartItem.id } className='ml-auto badge badge-pill badge-success' onClick={ this.addQuantity }>+</span>
+            <button id={ cartItem.id } className='btn btn-sm btn-danger ml-auto' onClick={ this.removeItem }>Remove</button>
           </div>
           <div className='col-4 text-center'>
             ${ (cartItem.price * cartItem.quantity).toFixed(2) }

@@ -28787,36 +28787,53 @@ var ShoppingCart = function (_React$Component) {
 
     _this.subtractQuantity = _this.subtractQuantity.bind(_this);
     _this.addQuantity = _this.addQuantity.bind(_this);
+    _this.removeItem = _this.removeItem.bind(_this);
     return _this;
   }
 
   _createClass(ShoppingCart, [{
-    key: 'subtractQuantity',
-    value: function subtractQuantity(e) {
+    key: 'removeItem',
+    value: function removeItem(e) {
       var _props = this.props,
           shoppingCart = _props.shoppingCart,
           dispatch = _props.dispatch;
 
-      var index = shoppingCart.map(function (item) {
+      var cart = shoppingCart.slice();
+      var index = cart.map(function (item) {
         return item.id;
       }).indexOf(e.target.id);
-      shoppingCart[index].quantity--;
-      if (shoppingCart[index].quantity < 1) shoppingCart[index].quantity = 1;
-      dispatch((0, _restaurantDetailsActions.updateShoppingCart)(shoppingCart));
+      cart.splice(index, 1);
+      dispatch((0, _restaurantDetailsActions.updateShoppingCart)(cart));
     }
   }, {
-    key: 'addQuantity',
-    value: function addQuantity(e) {
+    key: 'subtractQuantity',
+    value: function subtractQuantity(e) {
       var _props2 = this.props,
           shoppingCart = _props2.shoppingCart,
           dispatch = _props2.dispatch;
 
-      var index = shoppingCart.map(function (item) {
+      var cart = shoppingCart.slice();
+      var index = cart.map(function (item) {
         return item.id;
       }).indexOf(e.target.id);
-      shoppingCart[index].quantity++;
-      if (shoppingCart[index].quantity > 5) shoppingCart[index].quantity = 5;
-      dispatch((0, _restaurantDetailsActions.updateShoppingCart)(shoppingCart));
+      cart[index].quantity--;
+      if (cart[index].quantity < 1) cart[index].quantity = 1;
+      dispatch((0, _restaurantDetailsActions.updateShoppingCart)(cart));
+    }
+  }, {
+    key: 'addQuantity',
+    value: function addQuantity(e) {
+      var _props3 = this.props,
+          shoppingCart = _props3.shoppingCart,
+          dispatch = _props3.dispatch;
+
+      var cart = shoppingCart.slice();
+      var index = cart.map(function (item) {
+        return item.id;
+      }).indexOf(e.target.id);
+      cart[index].quantity++;
+      if (cart[index].quantity > 5) cart[index].quantity = 5;
+      dispatch((0, _restaurantDetailsActions.updateShoppingCart)(cart));
     }
   }, {
     key: 'render',
@@ -28892,11 +28909,16 @@ var ShoppingCart = function (_React$Component) {
                 { id: cartItem.id, className: 'mr-auto badge badge-pill badge-danger', onClick: _this2.subtractQuantity },
                 '-'
               ),
-              cartItem.quantity,
               _react2.default.createElement(
                 'span',
-                { id: cartItem.id, className: 'ml-auto badge badge-pill badge-success', onClick: _this2.addQuantity },
+                { id: cartItem.id, className: 'mr-auto badge badge-pill badge-success', onClick: _this2.addQuantity },
                 '+'
+              ),
+              cartItem.quantity,
+              _react2.default.createElement(
+                'button',
+                { id: cartItem.id, className: 'btn btn-sm btn-danger ml-auto', onClick: _this2.removeItem },
+                'Remove'
               )
             ),
             _react2.default.createElement(
@@ -29153,7 +29175,7 @@ function restaurantDetailsReducers() {
     case 'ADD_SHOPPING_CART':
       {
         return _extends({}, state, {
-          shoppingCart: _lodash2.default.uniqBy([payload].concat(_toConsumableArray(state.shoppingCart)), 'menuItem')
+          shoppingCart: _lodash2.default.uniqBy([].concat(_toConsumableArray(state.shoppingCart), [payload]), 'menuItem')
         });
       }
 
