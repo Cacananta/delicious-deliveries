@@ -19,15 +19,15 @@ export function addNewClient(owner, name, email, password, phone_number) {
         password,
         phone_number
     });
-    return function(dispatch) {
-        if (owner == true) {
+    return (dispatch) => {
+        if (owner == "true") {
             dispatch({
                 type: types.ADD_OWNER,
                 payload: axios.post('http://localhost:3000/api/Owners', {name, email, password, phone_number})
                 .then(results => {return results.data})
                 .catch(err => console.log(err))
             })
-        } else if (owner == !true) {
+        } else {
             dispatch({
                 type: types.ADD_CUSTOMER,
                 payload: axios.post('http://localhost:3000/api/Customers', {name, email, password, phone_number})
