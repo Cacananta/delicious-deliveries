@@ -13,7 +13,7 @@ export default class Landing extends Component {
 
     render() {
         return (
-            <div className='homepage'>
+            <div className='landing'>
                 <nav className="navbar fixed-top navbar-expand-lg navbar-light bg-light mb-5">
                     <a className="order-1 font-weight-bold nav-link text-dark" href='#/userlogin'>User Login</a>
                     <a className="order-2 font-weight-bold nav-link text-dark" href='#/ownerlogin'>Owner Login</a>
@@ -46,7 +46,7 @@ export default class Landing extends Component {
                             <a className="nav-link font-weight-bold text-dark bg-light" href="#/about">About Us</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link font-weight-bold text-dark bg-light" href="#">Contact Us</a>
+                            <a className="nav-link font-weight-bold text-dark bg-light" href="#/contact">Contact Us</a>
                         </li>
                     </ul>
                 {/* </nav> */}            
