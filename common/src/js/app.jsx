@@ -20,6 +20,7 @@ export default class App extends Component {
                     <Route exact path='/ownerlogin' component={OwnerLogin} />
                     <Route exact path='/restaurant/:restaurant' component={RestaurantDetails} />
                     <Route exact path='/signup' component={SignUp} />
+                    <Route exact path='/about' component={About} />
                     <Route exact path='/searchresults' component={SearchResults} />
                     <Route exact path='/about' component={About} />
                     <Route exact path='/contact' component={Contact} />
