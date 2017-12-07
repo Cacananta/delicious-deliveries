@@ -5,7 +5,7 @@ const INITIAL_STATE = {
     email: '',
     password: '',
     phone_number: '',
-    owner: false
+    owner: ''
 };
 
 export default function SignUpReducer (state = INITIAL_STATE, action) {
@@ -20,28 +20,19 @@ export default function SignUpReducer (state = INITIAL_STATE, action) {
                     email: payload.email,
                     password: payload.password,
                     phone_number: payload.phone_number,
-                    owner: true,
-                    pending: false
+                    owner: payload.owner
                 };
             } else {
                 return {
-                    ...state,
-                    owner: false
+                    ...state
                 };
+                break;
             }
-            break;
+            
 
         }
 
-        case (types.ADD_OWNER + '_PENDING'): {
-            return {
-                ...state,
-                pending: true
-            };
-            break;
-        }
-
-        case (types.ADD_USER + 'FULLFILLED'): {
+        case (types.ADD_CUSTOMER + '_FULFILLED'): {
             if (payload) {
                 return {
                     ...state,
@@ -49,24 +40,60 @@ export default function SignUpReducer (state = INITIAL_STATE, action) {
                     email: payload.email,
                     password: payload.password,
                     phone_number: payload.phone_number,
-                    owner: false,
-                    pending: false
+                    owner: payload.owner
                 };
             } else {
                 return {
-                    ...state,
-                    owner: true
+                    ...state
                 };
+                break;
             }
+        }
+
+        case (types.OWNER_TOGGLE): {
+            return {
+                ...state,
+                owner: payload
+            };
             break;
         }
 
-        case (types.ADD_USER + '_PENDING'): {
+        case (types.UPDATE_NAME): {
             return {
                 ...state,
-                pending: true
-            }
+                name: payload
+            };
+            break;
+        }
+        
+
+        case (types.UPDATE_PASSWORD): {
+            return {
+                ...state,
+                password: payload
+            };
+            break;
+        }
+
+        case (types.UPDATE_PHONENUMBER): {
+            return {
+                ...state,
+                phone_number: payload
+            };
+            break;
+        }
+
+        case (types.UPDATE_USERNAME): {
+            return {
+                ...state,
+                email: payload
+            };
+            break;
+        }
+        default: {
+            return state;
         }
 
     }
+
 };

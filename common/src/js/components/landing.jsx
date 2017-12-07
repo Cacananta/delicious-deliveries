@@ -15,9 +15,8 @@ export default class Landing extends Component {
         return (
             <div className='landing'>
                 <nav className="navbar fixed-top navbar-expand-lg navbar-light bg-light mb-5">
-                    <a className="order-1 font-weight-bold nav-link text-dark" href='#/userlogin'>User Login</a>
-                    <a className="order-2 font-weight-bold nav-link text-dark" href='#/ownerlogin'>Owner Login</a>
-                    <a className="order-3 font-weight-bold nav-link text-dark" href='#/signup'>Sign Up</a>
+                    <a className="order-1 font-weight-bold nav-link text-dark" href='#/login'>Login</a>
+                    <a className="order-2 font-weight-bold nav-link text-dark" href='#/signup'>Sign Up</a>
                     <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                         <div className="navbar-nav">
                             <a className="nav-item nav-link font-weight-bold" href="/">Delicious Deliveries</a>
