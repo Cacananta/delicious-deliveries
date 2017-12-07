@@ -8,6 +8,14 @@ const menuList = [
     name: "Moo Goo Gai Pan",
     id: "5a2852a55d45520014574d72",
     menuId: "5a2730b89f1b16003e75eac4"
+  },
+  {
+    category: "Lunch",
+    price: 9.95,
+    description: "A delicious Cantonese dish of stir-fried veggies and chicken",
+    name: "Asian Burrito",
+    id: "7fk48dke9eok9ekdfh0r",
+    menuId: "5a2730b89f1b16003e75eac4"
   }
 ];
 export default class RestaurantDetails extends React.Component {
@@ -24,7 +32,8 @@ this.addCart = this.addCart.bind(this);
     const cartItem = {
       quantity: 1,
       menuItem: menuList[index].name,
-      price: menuList[index].price
+      price: menuList[index].price,
+      id: e.target.id
     };
     console.log(cartItem);
     dispatch(addShoppingCart(cartItem));
@@ -81,10 +90,11 @@ this.addCart = this.addCart.bind(this);
             <hr/>
           </div>
           <div className='row'>
-          { lunchList.map(item => 
-            <div className='col-6 px-2 d-flex'>
-              <span className='mr-auto pt-2'><p><strong>{ item.name }</strong>   ${item.price}</p></span>
+          { lunchList.map((item, index) => 
+            <div className='col-6 px-2 d-flex' key={ index }>
+              <span className='mr-auto pt-2'><p><strong>{ item.name }</strong></p></span>
               <div className='py-2 ml-auto'>
+                <span className='pr-5'>${item.price}</span>
                 <button id={ item.id } className='btn btn-primary btn-sm' onClick={ this.addCart }>Add to Cart</button>
               </div>
             </div>
@@ -99,10 +109,11 @@ this.addCart = this.addCart.bind(this);
               <hr/>
             </div>
             <div className='row'>
-            { dinnerList.map(item => 
-              <div className='col-6 px-2 d-flex'>
-                <span className='mr-auto pt-2'><p><strong>{ item.name }</strong>   ${item.price}</p></span>
+            { dinnerList.map((item, index) => 
+              <div className='col-6 px-2 d-flex' key={ index }>
+                <span className='mr-auto pt-2'><p><strong>{ item.name }</strong></p></span>
                 <div className='py-2 ml-auto'>
+                  <span className='pr-5'>${item.price}</span>
                   <button id={ item.id } className='btn btn-primary btn-sm' onClick={ this.addCart }>Add to Cart</button>
                 </div>
               </div>
