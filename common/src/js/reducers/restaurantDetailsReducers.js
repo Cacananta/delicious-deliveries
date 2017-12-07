@@ -12,7 +12,7 @@ export default function restaurantDetailsReducers(state = defaultState, action) 
       return {
         ...state,
         shoppingCart: 
-        _.uniqBy([payload, ...state.shoppingCart], 'menuItem')
+        _.uniqBy([...state.shoppingCart, payload], 'menuItem')
       };
     }
 
