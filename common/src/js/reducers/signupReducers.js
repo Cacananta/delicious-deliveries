@@ -12,8 +12,9 @@ export default function SignUpReducer (state = INITIAL_STATE, action) {
     const { type, payload } = action;
 
     switch (type) {
-        case (types.ADD_OWNER + '_FULFILLED'): {
+        case types.ADD_OWNER: {
             if (payload) {
+                window.location.href= 'http://localhost:3000/#/login';
                 return {
                     ...state,
                     name: payload.name,
@@ -32,8 +33,9 @@ export default function SignUpReducer (state = INITIAL_STATE, action) {
 
         }
 
-        case (types.ADD_CUSTOMER + '_FULFILLED'): {
+        case types.ADD_CUSTOMER: {
             if (payload) {
+                window.location.href= 'http://localhost:3000/#/login';
                 return {
                     ...state,
                     name: payload.name,

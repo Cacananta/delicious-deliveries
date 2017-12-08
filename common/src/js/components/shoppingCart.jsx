@@ -43,8 +43,8 @@ export default class ShoppingCart extends React.Component {
       let itemTotal = (item.price * item.quantity);
       total += itemTotal;
     });
-    console.log(total.toFixed(2));
-    console.log(9, shoppingCart);
+      let checkoutHref = '#/login';
+      if(activeCustomer==true) checkoutHref= '#/checkout';
     return(
       <div className='container'>
         <div className='mb-3'>
@@ -83,7 +83,7 @@ export default class ShoppingCart extends React.Component {
           <a className='btn btn-primary' href='#/restaurant/a' role='button'>Back to Menu</a>
           </div>
           <div className='col-4'>
-          <a className='btn btn-primary' href='#' role='button'>Checkout</a>
+            <a className='btn btn-primary' href={ checkoutHref } role='button'>Checkout</a>
           </div>
           <div>
             <span className='col-4'>Final Total: $<strong>{ total.toFixed(2) }</strong></span>

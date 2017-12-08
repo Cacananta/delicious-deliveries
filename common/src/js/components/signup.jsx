@@ -75,12 +75,12 @@ export default class SignUp extends Component {
                         <div className="card-body form-group">
                             <select name="" id="owner" value={owner} onChange={this.handleToggle}>
                                 <option defaultValue hidden>Select Account Type</option>
-                                <option value="false">User</option>
+                                <option value="false">Customer</option>
                                 <option value="true">Owner</option>
                             </select>
                             <br />
                             <br />
-                            <label htmlFor="username">Username:</label>
+                            <label htmlFor="username">Email:</label>
                             <input type="email" name='username' id='email' placeholder='Please enter your email..(required)' value={email} className="form-group" onChange={this.handleUsernameInput}/>
                             <br/>
                             <label htmlFor="passowrd">Password:</label>
