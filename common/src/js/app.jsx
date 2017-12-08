@@ -11,6 +11,7 @@ import ShoppingCart from './index/shoppingCartIndex';
 import AddRestaurant from './index/addRestaurantIndex';
 import AddMenuItem from './components/addMenuItem';
 import Checkout from './components/checkout';
+import OwnerAdmin from './components/ownerAdmin';
 
 export default class App extends Component {
     render() {
@@ -29,6 +30,7 @@ export default class App extends Component {
                     <Route exact path='/addrestaurant' component={AddRestaurant} />
                     <Route exact path='/addMenuItem' component={AddMenuItem} />
                     <Route exact path='/checkout' component={Checkout} />
+                    <Route exact path='/owneradmin' component={OwnerAdmin} />
                 </div>
             </Router>
             
