@@ -10,7 +10,7 @@ import SearchResults from './index/searchResultsIndex';
 import ShoppingCart from './index/shoppingCartIndex';
 import AddRestaurant from './index/addRestaurantIndex';
 import AddMenuItem from './index/addMenuItemIndex';
-import Checkout from './components/checkout';
+import Checkout from './index/checkoutIndex';
 import OwnerAdmin from './index/ownerAdminIndex';
 
 export default class App extends Component {
