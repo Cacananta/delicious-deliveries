@@ -85,18 +85,8 @@ export default class AddRestaurant extends Component {
 
     handleClick(event) {
         event.preventDefault();
-        const { dispatch, food_type, name, address1, address2, city, state, zip, image, phone_number } = this.props;
-        const { formData } = { food_type,
-                               name,
-                               address1,
-                               address2,
-                               city,
-                               state,
-                               zip,
-                               image,
-                               phone_number
-                             }
-        dispatch(addNewRestaurant(formData));
+        const { dispatch, food_type, name, address1, address2, city, state, zip, image, phone_number, currentOwnerId } = this.props;
+        dispatch(addNewRestaurant(food_type, name, address1, address2, city, state, zip, image, phone_number, currentOwnerId));
     }
 
     render() {
@@ -126,7 +116,7 @@ export default class AddRestaurant extends Component {
                             </div>
                             <form onSubmit={this.handleClick}>
                                 <div className="card-body form-group">
-                                    <select id="food-type" value={food_type} onChange={this.handleToggle} >
+                                    <select id="food_type" value={food_type} onChange={this.handleToggle} >
                                         <option defaultValue hidden>Select Restaurant Type</option>
                                         <option value="Mexican">Mexican</option>
                                         <option value="Asian">Asian</option>

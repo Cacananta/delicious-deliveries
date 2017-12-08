@@ -11,7 +11,8 @@ function mapStoreToProps(store) {
         zip: store.addRestaurant.zip,
         image: store.addRestaurant.image,
         food_type: store.addRestaurant.food_type,
-        phone_number: store.addRestaurant.phone_number
+        phone_number: store.addRestaurant.phone_number,
+        currentOwnerId: store.login.currentOwnerId
 
     };
 }

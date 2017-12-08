@@ -6,7 +6,7 @@ const INITIAL_STATE = {
     owner: 'false',
     activeOwner: false,
     activeCustomer: false,
-    currentOwnerId: '',
+    currentOwnerId: '5a2962fddbe71f1da847d79e',
     currentCustomerId: ''
 };
 
