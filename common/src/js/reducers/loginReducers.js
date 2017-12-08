@@ -15,7 +15,7 @@ export default function LoginReducer(state = INITIAL_STATE, action) {
     switch (type) {
         case types.LOGIN_OWNER: {
             if (payload) {
-                window.location.href= 'http://localhost:3000/#/';
+                window.location.href= `http://localhost:3000/#/owner/${payload.userId}`;
                 return {
                     ...state,
                     currentOwnerId: payload.userId,
