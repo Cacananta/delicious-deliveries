@@ -14,7 +14,7 @@ export default class Landing extends Component {
         const { activeOwner, activeCustomer } = this.props;
         return (
             <div className='landing'>
-                <nav className="navbar fixed-top navbar-expand-lg navbar-light bg-light mb-5">
+                <nav className="navbar fixed-top navbar-expand-lg opacity mb-5">
                     <a className="order-1 font-weight-bold nav-link text-dark" href='#/login'>Login</a>
                     <a className="order-2 font-weight-bold nav-link text-dark" href='#/signup'>Sign Up</a>
                     <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
@@ -39,7 +39,7 @@ export default class Landing extends Component {
                         <div className="col-lg-2"></div>
                     </div>                                       
                 </div>
-                <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-bottom justify-content-center">
+                <nav className="navbar navbar-expand-lg opacity fixed-bottom justify-content-center">
                     <ul className="navbar-nav">
                         <li className="nav-item active">
                             <a className="nav-link font-weight-bold text-dark" href="#/about">About Us</a>
