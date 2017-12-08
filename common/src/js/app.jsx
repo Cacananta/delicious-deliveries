@@ -11,7 +11,7 @@ import ShoppingCart from './index/shoppingCartIndex';
 import AddRestaurant from './index/addRestaurantIndex';
 import AddMenuItem from './index/addMenuItemIndex';
 import Checkout from './components/checkout';
-import OwnerAdmin from './components/ownerAdmin';
+import OwnerAdmin from './index/ownerAdminIndex';
 
 export default class App extends Component {
     render() {
