@@ -73,12 +73,6 @@ export function updatePhonenumber(phonenumber) {
     };
 }
 
-
-
-
-
-
-
 // export function addNewClient(owner, name, email, password, phone_number) {
 //     console.log('http://localhost:3000/api/Owners', {
 //         owner,

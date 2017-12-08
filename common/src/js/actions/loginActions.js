@@ -39,17 +39,19 @@ export function loginAuth(email, password, owner) {
         if (owner == "true") {
             axios.post('http://localhost:3000/api/Owners/login', { email, password })
                 .then(results => {
+                    document.cookie = 'ACCESS_TOKEN=' + results.data.id;
                     console.log(results.data);
                     dispatch({
                         type: types.LOGIN_OWNER,
                         payload: results.data
                     })
                 })
-                .catch(err => { console.log(err); alert('Invalid Sign In') });  
+                .catch(err => { console.log(err); alert('Invalid Sign In') });
         } else {
             axios.post('http://localhost:3000/api/Customers/login', { email, password })
                 .then(results => {
-                    console.log(results.data);
+                    document.cookie = 'ACCESS_TOKEN=' + results.data.id;
+                    console.log(document.cookie);
                     dispatch({
                         type: types.LOGIN_CUSTOMER,
                         payload: results.data
