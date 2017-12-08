@@ -6,7 +6,7 @@ import Login from './index/loginIndex';
 import SignUp from './index/signupIndex';
 import About from './components/about';
 import Contact from './components/contact';
-import SearchResults from './components/searchResults';
+import SearchResults from './index/searchResultsIndex';
 import ShoppingCart from './index/shoppingCartIndex';
 
 export default class App extends Component {

@@ -7,10 +7,9 @@ export const updateSearchLocation = input => {
         });
         Axios.get('http://localhost:3000/api/Restaurants')
         .then(res => {
-            console.log(res.data);
             dispatch({
                 type: 'UPDATE_SEARCH_LOCATION_SUCCESS',
-                payload: [res.data, input]
+                payload: res.data
             })
         })
         .catch(err => {
