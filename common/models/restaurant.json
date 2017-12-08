@@ -32,7 +32,7 @@
     "image": {
       "type": "string"
     },
-    "food-type": {
+    "food_type": {
       "type": "string",
       "required": true
     },
