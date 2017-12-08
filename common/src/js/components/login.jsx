@@ -51,12 +51,12 @@ export default class Login extends Component {
                         <div className="card-body">
                             <select name="" id="owner" value={owner} onChange={this.handleToggle}>
                                 <option defaultValue hidden>Select Account Type</option>
-                                <option value="false">User</option>
+                                <option value="false">Customer</option>
                                 <option value="true">Owner</option>
                             </select>
                             <br/>
                             <br/>                  
-                            <label htmlFor="username">Username:</label>
+                            <label htmlFor="username">Email:</label>
                             <input type="email" name='username' placeholder='Enter your email..' value={email} className="input-group" onChange={this.handleUsernameInput}/>
                             <br/>
                             <label htmlFor="password">Password:</label>
@@ -66,6 +66,9 @@ export default class Login extends Component {
                             <a href='/'><button className="btn btn-primary">Sign In</button></a>
                         </div>
                     </form>
+                    <div>
+                        Need an account? <a href="#/signup">Sign up</a>
+                    </div>
                 </div>
             </div>
         );
