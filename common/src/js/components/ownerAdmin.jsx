@@ -1,9 +1,24 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 export default class OwnerAdmin extends Component {
     constructor(props) {
         super(props);
+
+        this.tokenClick = this.tokenClick.bind(this);
     }
+
+// tokenClick() {
+//     let userId = '5a2706cfb99b853548b33085';
+//     axios.get('http://localhost:3000/api/Owners/' + userId + '/restaurants')
+//     .then(res => {
+//         console.log(res.data);
+//     })
+//     .catch(err => {
+//         console.log(err);
+//     })
+// }
+
     render() {
         const { activeOwner } = this.props;
 
@@ -23,6 +38,7 @@ export default class OwnerAdmin extends Component {
                         <h1 className="display-3">Owner Admin</h1>
                     </div>
                 </div>
+<<<<<<< HEAD
                 <div className="row justify-content-center">
                     <div className="col-6">
                         <div className="card text-center">
@@ -36,6 +52,9 @@ export default class OwnerAdmin extends Component {
                             </div>
                         </div>
                     </div>
+=======
+                <div className="row">
+>>>>>>> access token as cookies and test get in owner admin
                 </div>
                 <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-bottom justify-content-center mt-5">
                     <ul className="navbar-nav">

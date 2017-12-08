@@ -40,7 +40,6 @@ export function loginAuth(email, password, owner) {
             axios.post('http://localhost:3000/api/Owners/login', { email, password })
                 .then(results => {
                     document.cookie = 'ACCESS_TOKEN=' + results.data.id;
-                    console.log(results.data);
                     dispatch({
                         type: types.LOGIN_OWNER,
                         payload: results.data
@@ -51,7 +50,6 @@ export function loginAuth(email, password, owner) {
             axios.post('http://localhost:3000/api/Customers/login', { email, password })
                 .then(results => {
                     document.cookie = 'ACCESS_TOKEN=' + results.data.id;
-                    console.log(document.cookie);
                     dispatch({
                         type: types.LOGIN_CUSTOMER,
                         payload: results.data
