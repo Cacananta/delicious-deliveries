@@ -8,7 +8,7 @@
   "scripts": {
     "build": "npm run less && webpack",
     "lint": "eslint .",
-    "start": "node .",
+    "start": "node.",
     "less": "lessc common/src/css/style.less dist/css/style.css",
     "test": "mocha test/*.spec.js",
     "posttest": "npm run lint && nsp check",

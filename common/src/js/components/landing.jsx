@@ -38,19 +38,41 @@ export default class Landing extends Component {
                         <div className="col-lg-2"></div>
                     </div>                                       
                 </div>
-                {/* <nav className="navbar navbar-expand-lg justify-content-center fixed-bottom navbar-light bg-light"> */}
-                    <ul className="nav justify-content-center fixed-bottom">
-                        <li className="nav-item">
-                            <a className="nav-link font-weight-bold text-dark bg-light" href="#/about">About Us</a>
+                <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-bottom justify-content-center">
+                    <ul className="navbar-nav">
+                        <li className="nav-item active">
+                            <a className="nav-link font-weight-bold text-dark" href="#/about">About Us</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link font-weight-bold text-dark bg-light" href="#/contact">Contact Us</a>
+                            <a className="nav-link font-weight-bold text-dark" href="#/contact">Contact Us</a>
                         </li>
                     </ul>
-                {/* </nav> */}            
-
+                </nav>          
             </div>
             
         );
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+{/* <nav className="navbar navbar-expand-lg justify-content-center fixed-bottom navbar-light bg-light">
+<ul className="nav justify-content-center fixed-bottom">
+    <li className="nav-item">
+        <a className="nav-link font-weight-bold text-dark" href="#/about">About Us</a>
+    </li>
+    <li className="nav-item">
+        <a className="nav-link font-weight-bold text-dark" href="#/contact">Contact Us</a>
+    </li>
+</ul>
+</nav>  */}
