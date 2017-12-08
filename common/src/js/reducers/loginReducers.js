@@ -15,6 +15,7 @@ export default function LoginReducer(state = INITIAL_STATE, action) {
     switch (type) {
         case types.LOGIN_OWNER: {
             if (payload) {
+                window.history.go(-1);
                 return {
                     ...state,
                     currentOwnerId: payload.userId,
@@ -30,6 +31,7 @@ export default function LoginReducer(state = INITIAL_STATE, action) {
         }
         case types.LOGIN_CUSTOMER: {
             if (payload) {
+                window.history.go(-1);
                 return {
                     ...state,
                     currentCustomerId: payload.userId,
