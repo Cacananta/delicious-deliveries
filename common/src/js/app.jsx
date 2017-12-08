@@ -9,6 +9,7 @@ import Contact from './components/contact';
 import SearchResults from './index/searchResultsIndex';
 import ShoppingCart from './index/shoppingCartIndex';
 import AddRestaurant from './components/addRestaurant';
+import AddMenuItem from './components/addMenuItem';
 
 export default class App extends Component {
     render() {
@@ -25,6 +26,7 @@ export default class App extends Component {
                     <Route exact path='/about' component={About} />
                     <Route exact path='/contact' component={Contact} />
                     <Route exact path='/addrestaurant' component={AddRestaurant} />
+                    <Route exact path='/addMenuItem' component={AddMenuItem} />
                 </div>
             </Router>
             
