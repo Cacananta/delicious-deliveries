@@ -15,7 +15,7 @@ const INITIAL_STATE = {
 export default function AddRestaurantReducer (state = INITIAL_STATE, action) {
     const { type, payload } = action;
     switch (type) {
-        case (types.ADD_NEW_RESTAURANT + '_FULFILLED'): {
+        case types.ADD_NEW_RESTAURANT: {
             if (payload) {
                 return {
                     ...state,
