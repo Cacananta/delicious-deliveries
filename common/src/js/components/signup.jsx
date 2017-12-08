@@ -64,8 +64,8 @@ export default class SignUp extends Component {
         // console.log(document.getElementById('phone').value);
         return (
             <div className="container">
-            <div className="row">
-            <div className="col-3"></div>
+            <div className="row justify-content-center">
+            {/* <div className="col-3"></div> */}
             <div className="col-6">
                 <div className="card text-center">
                     <div className="card-header">
@@ -80,16 +80,16 @@ export default class SignUp extends Component {
                             </select>
                             <br />
                             <br />
-                            <label htmlFor="username">Email:</label>
-                            <input type="email" name='username' id='email' placeholder='Please enter your email..(required)' value={email} className="form-group" onChange={this.handleUsernameInput}/>
+                            <label htmlFor="username">Email:</label><br/>
+                            <input type="email" name='username' id='email' placeholder='(required)' value={email} className="form-group" onChange={this.handleUsernameInput}/>
                             <br/>
-                            <label htmlFor="passowrd">Password:</label>
-                            <input type="password" name='password' id='password' placeholder='Please enter your password...(required)' value={password} className="form-group" onChange={this.handlePasswordInput}/>
+                            <label htmlFor="passowrd">Password:</label><br/>
+                            <input type="password" name='password' id='password' placeholder='(required)' value={password} className="form-group" onChange={this.handlePasswordInput}/>
                             <br/>
-                            <label htmlFor="name">Name:</label>
-                            <input type="text" name='name' id='name' placeholder='Please enter your full name...(required)' value={name} className='form-group' onChange={this.handleNameInput}/>
+                            <label htmlFor="name">Name:</label><br/>
+                            <input type="text" name='name' id='name' placeholder='(required)' value={name} className='form-group' onChange={this.handleNameInput}/>
                             <br/>
-                            <label htmlFor="phonenumber">Phone Number:</label>
+                            <label htmlFor="phonenumber">Phone Number:</label><br/>
                             <input type="text" name='phonenumber' id='phone_number' placeholder='Please enter your phone number' value={phone_number} className='form-group' onChange={this.handlePhoneNumberInput}/>
                         </div>
                         <div className="card-footer text-muted">
@@ -97,7 +97,7 @@ export default class SignUp extends Component {
                         </div>
                     </form>
                 </div>
-                <div className="col-3"></div>
+                {/* <div className="col-3"></div> */}
                 </div>
                 </div>                
             </div>
