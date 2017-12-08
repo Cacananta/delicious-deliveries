@@ -3,7 +3,9 @@ import axios from 'axios';
 export const types = {
     OWNER_TOGGLE_LOGIN: 'OWNER_TOGGLE_LOGIN',
     UPDATE_USERNAME_LOGIN: 'UPDATE_USERNAME_LOGIN',
-    UPDATE_PASSWORD_LOGIN: 'UPDATE_PASSWORD_LOGIN',    
+    UPDATE_PASSWORD_LOGIN: 'UPDATE_PASSWORD_LOGIN',
+    LOGIN_OWNER: 'LOGIN_OWNER',
+    LOGIN_CUSTOMER: 'LOGIN_CUSTOMER'
 }
 
 export function ownerLoginToggle(value) {
@@ -27,6 +29,36 @@ export function updateLoginPassword(password) {
     };
 }
 
+export function loginAuth(email, password, owner) {
+    console.log('http://localhost:3000/api/Owners', {
+        owner,
+        email,
+        password
+    });
+    return (dispatch) => {
+        if (owner == "true") {
+            axios.post('http://localhost:3000/api/Owners/login', { email, password })
+                .then(results => {
+                    console.log(results.data);
+                    dispatch({
+                        type: types.LOGIN_OWNER,
+                        payload: results.data
+                    })
+                })
+                .catch(err => { console.log(err); alert('Invalid Sign In') });  
+        } else {
+            axios.post('http://localhost:3000/api/Customers/login', { email, password })
+                .then(results => {
+                    console.log(results.data);
+                    dispatch({
+                        type: types.LOGIN_CUSTOMER,
+                        payload: results.data
+                    })
+                })
+                .catch(err => { console.log(err); alert('Invalid Sign In') });
+        }
+    }
+}
 
 // export function loginAuth(palceholder) {
 //     return {

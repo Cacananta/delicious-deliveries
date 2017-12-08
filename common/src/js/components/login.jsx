@@ -3,7 +3,7 @@ import {
     ownerLoginToggle,
     updateLoginUsername,
     updateLoginPassword,
-    // loginAuth,
+    loginAuth,
 } from '../actions/loginActions';
 
 export default class Login extends Component {
@@ -36,8 +36,8 @@ export default class Login extends Component {
 
     handleClick(event) {
         event.preventDefault();
-        const { dispatch, owner, email, passowrd } = this.props;
-        // dispatch(loginAuth(owner, email, password));
+        const { dispatch, owner, email, password } = this.props;
+        dispatch(loginAuth(email, password, owner));
     }
     render() {
         const {owner, email, password} = this.props;
@@ -59,7 +59,7 @@ export default class Login extends Component {
                             <label htmlFor="username">Username:</label>
                             <input type="email" name='username' placeholder='Enter your email..' value={email} className="input-group" onChange={this.handleUsernameInput}/>
                             <br/>
-                            <label htmlFor="passowrd">Password:</label>
+                            <label htmlFor="password">Password:</label>
                             <input type="password" name='password' placeholder='Enter your password...' value={password} className="input-group" onChange={this.handlePasswordInput}/>
                         </div>
                         <div className="card-footer text-muted">
