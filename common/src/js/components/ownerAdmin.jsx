@@ -20,8 +20,20 @@ export default class OwnerAdmin extends Component {
                         <h1 className="display-3">Owner Admin</h1>
                     </div>
                 </div>
-                <div className="row">
-                
+                <div className="row d-flex jusify-content-center">
+                    <div className="col-6">
+                        <div className="card text-center">
+                            <div className="card-header">
+                                What would you like to do?
+                            </div>
+                            <div className="card-body">
+                                <a href="#/addrestaurant"><p className="font-weight-bold nav-link">Update Owner Info</p></a>
+                                <a href="#/addrestaurant"><p className="font-weight-bold nav-link">View Restaurants</p></a>
+                                <a href="#/addrestaurant"><p className="font-weight-bold nav-link">Add A Restaurant</p></a>
+                                <a href="#/addrestaurant"><p className="font-weight-bold nav-link">Update A Restaurant </p></a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-bottom justify-content-center mt-5">
                     <ul className="navbar-nav">

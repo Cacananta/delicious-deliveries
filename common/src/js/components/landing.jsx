@@ -23,7 +23,7 @@ export default class Landing extends Component {
                         </div>
                     </div>
                 </nav>
-                <div className="container" style={{paddingTop: '300px'}}>
+                <div className="container" id='centerStage'>
                     <div className="row">
                         <div className="col-lg-2"></div>
                         <div className="col-lg-8 h1 text-center font-italic">Delicious Deliveries</div>
