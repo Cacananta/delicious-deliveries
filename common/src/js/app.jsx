@@ -8,7 +8,7 @@ import About from './components/about';
 import Contact from './components/contact';
 import SearchResults from './index/searchResultsIndex';
 import ShoppingCart from './index/shoppingCartIndex';
-import AddRestaurant from './components/addRestaurant';
+import AddRestaurant from './index/addRestaurantIndex';
 import AddMenuItem from './components/addMenuItem';
 
 export default class App extends Component {
