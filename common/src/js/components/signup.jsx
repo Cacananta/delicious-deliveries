@@ -64,12 +64,15 @@ export default class SignUp extends Component {
         // console.log(document.getElementById('phone').value);
         return (
             <div className="container">
+            <div className="row">
+            <div className="col-3"></div>
+            <div className="col-6">
                 <div className="card text-center">
                     <div className="card-header">
                         Sign Up
                     </div>
                     <form id='signup-form' onSubmit={this.handleClick}>
-                        <div className="card-body">
+                        <div className="card-body form-group">
                             <select name="" id="owner" value={owner} onChange={this.handleToggle}>
                                 <option defaultValue hidden>Select Account Type</option>
                                 <option value="false">User</option>
@@ -78,22 +81,25 @@ export default class SignUp extends Component {
                             <br />
                             <br />
                             <label htmlFor="username">Username:</label>
-                            <input type="email" name='username' id='email' placeholder='Please enter your email..(required)' value={email} className="input-group" onChange={this.handleUsernameInput}/>
+                            <input type="email" name='username' id='email' placeholder='Please enter your email..(required)' value={email} className="form-group" onChange={this.handleUsernameInput}/>
                             <br/>
                             <label htmlFor="passowrd">Password:</label>
-                            <input type="password" name='password' id='password' placeholder='Please enter your password...(required)' value={password} className="input-group" onChange={this.handlePasswordInput}/>
+                            <input type="password" name='password' id='password' placeholder='Please enter your password...(required)' value={password} className="form-group" onChange={this.handlePasswordInput}/>
                             <br/>
                             <label htmlFor="name">Name:</label>
-                            <input type="text" name='name' id='name' placeholder='Please enter your full name...(required)' value={name} className='input-group' onChange={this.handleNameInput}/>
+                            <input type="text" name='name' id='name' placeholder='Please enter your full name...(required)' value={name} className='form-group' onChange={this.handleNameInput}/>
                             <br/>
                             <label htmlFor="phonenumber">Phone Number:</label>
-                            <input type="text" name='phonenumber' id='phone_number' placeholder='Please enter your phone number' value={phone_number} className='input-group' onChange={this.handlePhoneNumberInput}/>
+                            <input type="text" name='phonenumber' id='phone_number' placeholder='Please enter your phone number' value={phone_number} className='form-group' onChange={this.handlePhoneNumberInput}/>
                         </div>
                         <div className="card-footer text-muted">
                             <a href='/'><button className="btn btn-primary" type='submit'>Sign Up</button></a>
                         </div>
                     </form>
                 </div>
+                <div className="col-3"></div>
+                </div>
+                </div>                
             </div>
         );
     }
