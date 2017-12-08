@@ -3,8 +3,8 @@ import SearchResults from '../components/searchResults';
 
 function mapStoreToProps(store) {
   return {
-    //add store here:
-    //key: value
+    restaurants: store.initialSearch.restaurants,
+    location: store.initialSearch.location
   };
 }
 

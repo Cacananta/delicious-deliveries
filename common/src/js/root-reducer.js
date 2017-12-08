@@ -7,7 +7,6 @@ import SignUpReducer from './reducers/signupReducers';
 import LoginReducer from './reducers/loginReducers';
 
 const rootReducer = combineReducers({
-  searchBar: searchBarReducer,
   restaurantDetails: restaurantDetailsReducers,
   initialSearch : searchBarReducer,
   signup: SignUpReducer,

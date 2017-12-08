@@ -1,15 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Axios from 'axios';
 
 export default class SearchResults extends React.Component {
   constructor(props) {
     super(props);
+    console.log('got here')
   }
 
 
   render() {
-    const { dispatch, restaurants } = this.props;
+    const { restaurants } = this.props;
+    console.log(restaurants);
     return (
       <div>
         {/* TOP NAV BAR */}

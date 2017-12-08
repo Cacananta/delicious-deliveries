@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { updateSearchLocation, captureLocation } from "../actions/searchBarActions";
-// import SearchBarIndex from '../index/searchBarIndex';
 import { Link } from 'react-router-dom';
 
 export default class Searchbar extends Component {
