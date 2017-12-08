@@ -38,7 +38,6 @@ export default class OwnerAdmin extends Component {
                         <h1 className="display-3">Owner Admin</h1>
                     </div>
                 </div>
-<<<<<<< HEAD
                 <div className="row justify-content-center">
                     <div className="col-6">
                         <div className="card text-center">
@@ -52,9 +51,6 @@ export default class OwnerAdmin extends Component {
                             </div>
                         </div>
                     </div>
-=======
-                <div className="row">
->>>>>>> access token as cookies and test get in owner admin
                 </div>
                 <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-bottom justify-content-center mt-5">
                     <ul className="navbar-nav">
