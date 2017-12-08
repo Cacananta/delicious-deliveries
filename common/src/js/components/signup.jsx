@@ -60,7 +60,7 @@ export default class SignUp extends Component {
 
 
     render() {
-        const {owner, name, email, password, phone_number} = this.props;
+        const {owner, name, email, password, phone_number,  activeOwner, activeCustomer} = this.props;
         // console.log(document.getElementById('phone').value);
         return (
             <div className="container">

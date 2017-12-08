@@ -7,7 +7,9 @@ function mapStoreToProps(store) {
     email: store.signup.email,
     password: store.signup.password,
     phone_number: store.signup.phone_number,
-    owner: store.signup.owner
+    owner: store.signup.owner,
+    activeOwner: store.login.activeOwner,
+    activeCustomer: store.login.activeCustomer
   };
 }
 

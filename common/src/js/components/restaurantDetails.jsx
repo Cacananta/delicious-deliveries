@@ -109,12 +109,12 @@ this.addCart = this.addCart.bind(this);
   }
 
   render() {
-  //pull in props here
-  const breakfastList = menuList.filter(item => item.category === 'Breakfast');
-  const lunchList = menuList.filter(item => item.category === 'Lunch');
-  const dinnerList = menuList.filter(item => item.category === 'Dinner');
-  const snackList = menuList.filter(item => item.category === 'Snack');
-  const drinkList = menuList.filter(item => item.category === 'Drink');
+    const { activeOwner, activeCustomer } = this.props;
+    const breakfastList = menuList.filter(item => item.category === 'Breakfast');
+    const lunchList = menuList.filter(item => item.category === 'Lunch');
+    const dinnerList = menuList.filter(item => item.category === 'Dinner');
+    const snackList = menuList.filter(item => item.category === 'Snack');
+    const drinkList = menuList.filter(item => item.category === 'Drink');
     return(
       <div className='container'>
         <h1 className='text-center'>Esmeralda's Tortilleria</h1>

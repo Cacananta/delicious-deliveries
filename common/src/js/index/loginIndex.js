@@ -5,7 +5,9 @@ function mapStoreToProps(store) {
   return {
     password: store.login.password,
     email: store.login.email,
-    owner: store.login.owner
+    owner: store.login.owner,
+    activeOwner: store.login.activeOwner,
+    activeCustomer: store.login.activeCustomer
   };
 }
 

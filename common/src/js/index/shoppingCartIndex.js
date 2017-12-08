@@ -3,7 +3,9 @@ import ShoppingCart from '../components/shoppingCart';
 
 function mapStoreToProps(store) {
   return {
-    shoppingCart: store.restaurantDetails.shoppingCart
+    shoppingCart: store.restaurantDetails.shoppingCart,
+    activeOwner: store.login.activeOwner,
+    activeCustomer: store.login.activeCustomer
   };
 }
 

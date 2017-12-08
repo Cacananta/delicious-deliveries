@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 
 export default class Contact extends Component {
     render() {
+        const { activeOwner, activeCustomer } = this.props;
         return (
             <div className='contact'>
                 <nav className="navbar fixed-top navbar-expand-lg navbar-light bg-light mb-5">

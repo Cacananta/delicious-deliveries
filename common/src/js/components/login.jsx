@@ -40,7 +40,7 @@ export default class Login extends Component {
         dispatch(loginAuth(email, password, owner));
     }
     render() {
-        const {owner, email, password} = this.props;
+        const {owner, email, password, activeOwner, activeCustomer} = this.props;
         return (
             <div className="container">
                 <div className="card text-center">

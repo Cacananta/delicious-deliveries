@@ -9,7 +9,7 @@ export default class SearchResults extends React.Component {
 
 
   render() {
-    const { restaurants } = this.props;
+    const { restaurants, activeOwner, activeCustomer } = this.props;
     console.log(restaurants);
     return (
       <div>
