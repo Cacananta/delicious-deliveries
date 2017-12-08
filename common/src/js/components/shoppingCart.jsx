@@ -37,7 +37,7 @@ export default class ShoppingCart extends React.Component {
   }
 
   render() {
-    const { shoppingCart } = this.props;
+    const { shoppingCart, activeOwner, activeCustomer } = this.props;
     let total = 0;
     shoppingCart.forEach(item => {
       let itemTotal = (item.price * item.quantity);

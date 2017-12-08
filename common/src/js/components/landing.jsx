@@ -11,6 +11,7 @@ export default class Landing extends Component {
     
 
     render() {
+        const { activeOwner, activeCustomer } = this.props;
         return (
             <div className='landing'>
                 <nav className="navbar fixed-top navbar-expand-lg navbar-light bg-light mb-5">
