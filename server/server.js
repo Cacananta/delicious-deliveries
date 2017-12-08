@@ -27,3 +27,7 @@ boot(app, __dirname, function(err) {
   if (require.main === module)
     app.start();
 });
+
+app.use(loopback.token({
+    model: app.models.accessToken
+}));
