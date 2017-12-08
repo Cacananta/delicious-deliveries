@@ -9,7 +9,7 @@ import Contact from './components/contact';
 import SearchResults from './index/searchResultsIndex';
 import ShoppingCart from './index/shoppingCartIndex';
 import AddRestaurant from './index/addRestaurantIndex';
-import AddMenuItem from './components/addMenuItem';
+import AddMenuItem from './index/addMenuItemIndex';
 import Checkout from './components/checkout';
 import OwnerAdmin from './components/ownerAdmin';
 
