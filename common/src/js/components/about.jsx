@@ -20,7 +20,7 @@ export default class About extends Component {
                             <div className="card text-center">
                                 <p className="card-text">Delicious Deliveries was created magically by banging on a keyboard! If you have any questions, comments, or concerns feel free to drop us a message.</p>
                                 <a href="#/contact" className='btn btn-secondary'>Contact Us</a>
-                                <a href="/" className="btn btn-secondary">Back to Home</a>
+                                <a href="#/" className="btn btn-secondary">Back to Home</a>
                             </div>
                         </div>
                     </div>                                       

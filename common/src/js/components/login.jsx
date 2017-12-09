@@ -65,7 +65,7 @@ export default class Login extends Component {
                                     <input type="password" name='password' placeholder='Enter your password...' value={password} className="form-control" onChange={this.handlePasswordInput}/>
                                 </div>
                                 <div className="card-footer text-muted">
-                                    <a href='/'><button className="btn btn-primary">Sign In</button></a>
+                                    <a href='#/'><button className="btn btn-primary">Sign In</button></a>
                                 </div>
                             </form>
                             <div>

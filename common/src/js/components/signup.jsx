@@ -93,7 +93,7 @@ export default class SignUp extends Component {
                             <input type="text" name='phonenumber' id='phone_number' placeholder='Please enter your phone number' value={phone_number} className='form-group' onChange={this.handlePhoneNumberInput}/>
                         </div>
                         <div className="card-footer text-muted">
-                            <a href='/'><button className="btn btn-primary" type='submit'>Sign Up</button></a>
+                            <a href='#/'><button className="btn btn-primary" type='submit'>Sign Up</button></a>
                         </div>
                     </form>
                 </div>

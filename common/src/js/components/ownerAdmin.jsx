@@ -37,7 +37,7 @@ export default class OwnerAdmin extends Component {
                     <p className="order-1 font-weight-bold text-dark">Welcome</p>
                     <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                         <div className="navbar-nav">
-                            <a className="nav-item nav-link font-weight-bold text-muted" href="/">Delicious Deliveries</a>
+                            <a className="nav-item nav-link font-weight-bold text-muted" href="#/">Delicious Deliveries</a>
                         </div>
                     </div>
                 </nav>
