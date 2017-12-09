@@ -80,7 +80,7 @@ export default class UpdateOwnerInfo extends Component {
                             <input type="text" name='phonenumber' id='phone_number' placeholder='Please enter your phone number' value={phone_number} className='form-control' onChange={this.handlePhoneNumberInput}/>
                         </div>
                         <div className="card-footer text-muted">
-                            <a href='/'><button className="btn btn-primary form-control" type='submit'>Sign Up</button></a>
+                            <a href='#/'><button className="btn btn-primary form-control" type='submit'>Sign Up</button></a>
                         </div>
                     </form>
                 </div>

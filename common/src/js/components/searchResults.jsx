@@ -21,7 +21,7 @@ export default class SearchResults extends React.Component {
             <a className="order-3 font-weight-bold nav-link text-dark" href='#/signup'>Sign Up</a>
             <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
               <div className="navbar-nav">
-                <a className="nav-item nav-link font-weight-bold text-muted" href="/">Delicious Deliveries</a>
+                <a className="nav-item nav-link font-weight-bold text-muted" href="#/">Delicious Deliveries</a>
               </div>
             </div>
           </nav>
@@ -66,7 +66,7 @@ export default class SearchResults extends React.Component {
               <a className="nav-link font-weight-bold text-dark bg-light" href="#/about">About Us</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link font-weight-bold text-dark bg-light" href="#">Contact Us</a>
+              <a className="nav-link font-weight-bold text-dark bg-light" href="#/contact">Contact Us</a>
             </li>
           </ul>
         </section>
