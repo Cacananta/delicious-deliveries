@@ -79,20 +79,8 @@ export default class AddMenuItem extends Component {
                                 </div>
                                 <form onSubmit={this.handleSubmit}>
                                     <div className="card-body form-group">
-                                        <label htmlFor="itemName"><strong>Menu Item Name:</strong></label>
-                                        <input  onChange={this.handleItemName} type="text" name='name' placeholder='Enter item name...' className='form-control' value={name} />
-                                        <br />
-                                        <label htmlFor="price"><strong>Price:</strong></label>
-                                        <div className="input-group">
-                                        <span className="input-group-addon">$</span>
-                                        <input onChange={this.handleItemPrice} type="number" step='.01' name='price' placeholder='Enter price...' className="form-control currency"  value={price}/>
-                                        </div>
-                                        <br />
-                                        <label htmlFor="description"><strong>Description:</strong></label>
-                                        <input onChange={this.handleItemDescription} type="text" name='description' placeholder='Description...' className="form-control" value={description} />
-                                        <br />
-                                        <label htmlFor="description"><strong>Item Type:</strong></label>
-                                        <select value={category} onChange={this.handleItemCategory} className="form-control" name="itemType" id="item-type" >
+                                        <label htmlFor="description"><strong>Item Type:</strong></label><br/>
+                                        <select value={category} onChange={this.handleItemCategory} name="itemType" id="item-type" >
                                             <option defaultValue hidden>Select Item Type</option>
                                             <option value="Breakfast">Breakfast</option>
                                             <option value="Lunch">Lunch</option>
@@ -101,18 +89,22 @@ export default class AddMenuItem extends Component {
                                             <option value="Drinks">Drinks</option>
                                         </select>
                                         <br />
-                                        <label htmlFor="itemName"><strong>Menu Item Name:</strong></label>
+                                        <br />
+                                        <label htmlFor="itemName"><strong>Menu Item Name:</strong></label><br/>
                                         <input  onChange={this.handleItemName} type="text" name='name' placeholder='Enter item name...' className='form-control' value={name} />
                                         <br />
-                                        <label htmlFor="price"><strong>Price:</strong></label>
+                                        <label htmlFor="price"><strong>Price:</strong></label><br/>
                                         <div className="input-group">
                                             <span className="input-group-addon">$</span>
-                                            <input onChange={this.handleItemPrice} type="number" step='.01' name='price' placeholder='Enter price...' className="form-control currency"  value={price}/>
+                                            <input onChange={this.handleItemPrice} type="number" step='.01' name='price' placeholder='Enter price...' className="input-group currency"  value={price}/>
                                         </div>
-                                        <div className="card-footer text-muted">
-                                            <a href="/"><button type="submit" className="btn btn-primary form-control">Enter</button></a>
-                                        </div>                                        
+                                        <br/>
+                                        <label htmlFor="description"><strong>Description:</strong></label><br/>
+                                        <input onChange={this.handleItemDescription} type="text" name='description' placeholder='Description...' className="form-control" value={description} />
                                     </div>
+                                    <div className="card-footer text-muted">
+                                        <a href="/"><button type="submit" className="btn btn-primary">Enter</button></a>
+                                    </div>                                    
                                 </form>
                             </div>
                         </div>
