@@ -14,6 +14,10 @@ import Checkout from './index/checkoutIndex';
 import OwnerAdmin from './index/ownerAdminIndex';
 import OwnerViewUpdateIndex from './index/ownerViewUpdateIndex';
 import UpdateRestaurant from './index/updateRestaurantDetailsIndex';
+import UpdateOwnerInfo from './components/updateOwnerInfo';
+import UpdateUserInfo from './components/updateUserInfo';
+
+
 
 export default class App extends Component {
     render() {
@@ -34,6 +38,8 @@ export default class App extends Component {
                     <Route exact path='/owner/:id/viewupdaterestaurants' component={OwnerViewUpdateIndex} />
                     <Route exact path='/owner/:id' component={OwnerAdmin} />
                     <Route exact path='/update' component={UpdateRestaurant} />
+                    <Route exact path='/updateOwnerInfo' component={UpdateOwnerInfo} />
+                    <Route exact path='/updateUserInfo' component={UpdateUserInfo} />
                 </div>
             </Router>
             
