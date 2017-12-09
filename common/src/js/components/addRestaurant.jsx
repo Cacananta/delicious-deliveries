@@ -93,12 +93,12 @@ export default class AddRestaurant extends Component {
         const { food_type, name, address1, address2, city, state, zip, image, phone_number } = this.props;
         return (
             <div>
-                <nav className="navbar fixed-top navbar-expand-lg navbar-light bg-light mb-5">
+                <nav className="navbar fixed-top navbar-expand-lg opacity mb-5">
                     <a className="order-1 font-weight-bold nav-link text-dark" href='#/login'>Login</a>
                     <a className="order-2 font-weight-bold nav-link text-dark" href='#/signup'>Sign Up</a>
                     <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                         <div className="navbar-nav">
-                            <a className="nav-item nav-link font-weight-bold" href="/">Delicious Deliveries</a>
+                            <a className="nav-item nav-link font-weight-bold text-muted" href="/">Delicious Deliveries</a>
                         </div>
                     </div>
                 </nav>
@@ -127,28 +127,28 @@ export default class AddRestaurant extends Component {
                                     <br/>
                                     <br/>
                                     <label htmlFor="name">Restaurant Name</label><br/>
-                                    <input type="text" name='name' placeholder='Enter restaurnat name...(required)' value={name} onChange={this.handleRestaurantInput} className='form-group'/>
+                                    <input type="text" name='name' placeholder='(required)' value={name} onChange={this.handleRestaurantInput} className='form-group'/>
                                     <br/>
                                     <label htmlFor="address-1">Address 1</label><br/>
-                                    <input type="text" name='address-1' placeholder='Street address...(required)' value={address1} onChange={this.handleAddress1} className="form-group"/>
+                                    <input type="text" name='address-1' placeholder='(required)' value={address1} onChange={this.handleAddress1} className="form-group"/>
                                     <br/>
                                     <label htmlFor="address-2">Address 2</label><br/>
                                     <input type="text" name='address-2' placeholder='Unit, Spc, Suite...' value={address2} onChange={this.handleAddress2} className="form-group"/>
                                     <br/>
                                     <label htmlFor="city">City</label><br/>
-                                    <input type="text" name='city' placeholder='City...(required)' value={city} onChange={this.handleCityInput} className="form-group"/>
+                                    <input type="text" name='city' placeholder='(required)' value={city} onChange={this.handleCityInput} className="form-group"/>
                                     <br/>
                                     <label htmlFor="state">State</label><br/>
-                                    <input type="text" name='state' placeholder='State...(required)' value={state} onChange={this.handleStateInput} className="form-group"/>
+                                    <input type="text" name='state' placeholder='(required)' value={state} onChange={this.handleStateInput} className="form-group"/>
                                     <br/>
                                     <label htmlFor="zip-code">Postal Code</label><br/>
-                                    <input type="text" name='zip-code' placeholder='Postal code...(required)' value={zip} onChange={this.handleZipCodeInput} className="form-group"/>
+                                    <input type="text" name='zip-code' placeholder='(required)' value={zip} onChange={this.handleZipCodeInput} className="form-group"/>
                                     <br/>
                                     <label htmlFor="image">Image</label><br/>
                                     <input type="text" name='image' placeholder='Image url...' value={image} onChange={this.handleImageInput} className="form-group"/>
                                     <br/>
                                     <label htmlFor="phone-number">Phone Number</label><br/>
-                                    <input type="text" name='phone-number' placeholder='Phone number...(required)' value={phone_number} onChange={this.handlePhoneNumberInput} className="form-group"/>
+                                    <input type="text" name='phone-number' placeholder='(required)' value={phone_number} onChange={this.handlePhoneNumberInput} className="form-group"/>
                                 </div>
                                 <div className="card-footer text-muted">
                                     <a href="/"><button className="btn btn-primary" type='submit'>Enter</button></a>
@@ -158,7 +158,7 @@ export default class AddRestaurant extends Component {
                     </div>
                     <div className="col-3"></div>
                 </div>
-                <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-bottom justify-content-center mt-5">
+                <nav className="navbar navbar-expand-lg opacity fixed-bottom justify-content-center mt-5">
                     <ul className="navbar-nav">
                         <li className="nav-item active">
                             <a className="nav-link font-weight-bold text-dark" href="#/about">About Us</a>

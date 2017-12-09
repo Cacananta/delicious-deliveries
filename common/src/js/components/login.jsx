@@ -43,31 +43,35 @@ export default class Login extends Component {
         const {owner, email, password, activeOwner, activeCustomer} = this.props;
         return (
             <div className="container">
-                <div className="card text-center">
-                    <div className="card-header">
-                        Login
-                    </div>
-                    <form id='login-form' onSubmit={this.handleClick}>
-                        <div className="card-body">
-                            <select name="" id="owner" value={owner} onChange={this.handleToggle}>
-                                <option defaultValue hidden>Select Account Type</option>
-                                <option value="false">Customer</option>
-                                <option value="true">Owner</option>
-                            </select>
-                            <br/>
-                            <br/>                  
-                            <label htmlFor="username">Email:</label>
-                            <input type="email" name='username' placeholder='Enter your email..' value={email} className="input-group" onChange={this.handleUsernameInput}/>
-                            <br/>
-                            <label htmlFor="password">Password:</label>
-                            <input type="password" name='password' placeholder='Enter your password...' value={password} className="input-group" onChange={this.handlePasswordInput}/>
+                <div className="row justify-content-center">
+                    <div className="col-6">
+                        <div className="card text-center">
+                            <div className="card-header">
+                                Login
+                            </div>
+                            <form id='login-form' onSubmit={this.handleClick}>
+                                <div className="card-body form-group">
+                                    <select name="" id="owner" value={owner} onChange={this.handleToggle}>
+                                        <option defaultValue hidden>Select Account Type</option>
+                                        <option value="false">Customer</option>
+                                        <option value="true">Owner</option>
+                                    </select>
+                                    <br/>
+                                    <br/>                  
+                                    <label htmlFor="username">Email:</label><br/>
+                                    <input type="email" name='username' placeholder='Enter your email..' value={email} className="form-group" onChange={this.handleUsernameInput}/>
+                                    <br/>
+                                    <label htmlFor="password">Password:</label><br/>
+                                    <input type="password" name='password' placeholder='Enter your password...' value={password} className="form-group" onChange={this.handlePasswordInput}/>
+                                </div>
+                                <div className="card-footer text-muted">
+                                    <a href='/'><button className="btn btn-primary">Sign In</button></a>
+                                </div>
+                            </form>
+                            <div>
+                                Need an account? <a href="#/signup">Sign up</a>
+                            </div>
                         </div>
-                        <div className="card-footer text-muted">
-                            <a href='/'><button className="btn btn-primary">Sign In</button></a>
-                        </div>
-                    </form>
-                    <div>
-                        Need an account? <a href="#/signup">Sign up</a>
                     </div>
                 </div>
             </div>

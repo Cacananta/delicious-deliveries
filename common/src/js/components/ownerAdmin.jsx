@@ -10,11 +10,11 @@ export default class OwnerAdmin extends Component {
         if (activeOwner == true) {
         return (
             <div>
-                <nav className="navbar fixed-top navbar-expand-lg navbar-light bg-light mb-5">
+                <nav className="navbar fixed-top navbar-expand-lg opacity mb-5">
                     <p className="order-1 font-weight-bold text-dark">Welcome</p>
                     <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                         <div className="navbar-nav">
-                            <a className="nav-item nav-link font-weight-bold" href="/">Delicious Deliveries</a>
+                            <a className="nav-item nav-link font-weight-bold text-muted" href="/">Delicious Deliveries</a>
                         </div>
                     </div>
                 </nav>
@@ -37,7 +37,7 @@ export default class OwnerAdmin extends Component {
                         </div>
                     </div>
                 </div>
-                <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-bottom justify-content-center mt-5">
+                <nav className="navbar navbar-expand-lg opacity fixed-bottom justify-content-center mt-5">
                     <ul className="navbar-nav">
                         <li className="nav-item active">
                             <a className="nav-link font-weight-bold text-dark" href="#/about">About Us</a>
