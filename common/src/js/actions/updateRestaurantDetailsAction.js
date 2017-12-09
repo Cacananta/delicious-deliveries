@@ -77,11 +77,20 @@ export function updatePhoneNumber(phone_number) {
     };
 }
 
+export function pickRestaurant(index) {
+    return {
+      type: 'PICK_RESTAURANT',
+      payload: index
+    };
+}
+
 export function updateRestaurant(food_type, name, address1, address2, city, state, zip, image, phone_number, ownerId, restaurantId) {
     console.log({food_type, name, address1, address2, city, state, zip, image, phone_number, ownerId, restaurantId});
+    window.location.href= `http://localhost:3000/#/owner/${ownerId}`;
     return (dispatch) => {
         axios.put(`http://localhost:3000/api/Owners/${ownerId}/restaurants/${restaurantId}`, {food_type, name, address1, address2, city, state, zip, image, phone_number})
             .then(results => {
+                alert('Update Successful')
                 console.log(results.data);
                 dispatch({
                     type: types.UPDATE_RESTAURANT,
@@ -97,7 +106,7 @@ export const getOwnerRestaurants = ownerId => {
         dispatch({
             type: 'GET_OWNER_RESTAURANTS',
         });
-        axios.get('http://localhost:3000/api/Owners/' + ownerId + '/restaurants')
+        axios.get(`http://localhost:3000/api/Owners/${ownerId}/restaurants`)
         .then(res => {
             console.log(res.data);
             dispatch({

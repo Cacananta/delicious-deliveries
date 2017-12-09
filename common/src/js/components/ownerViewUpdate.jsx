@@ -1,13 +1,20 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 
-import { getOwnerRestaurants } from '../actions/updateRestaurantDetailsAction';
+import { pickRestaurant } from '../actions/updateRestaurantDetailsAction';
 
 export default class ownerViewUpdate extends Component {
   constructor(props) {
     super(props);
     //bind functions here
+    this.selectRestaurant = this.selectRestaurant.bind(this);
+  }
 
+  selectRestaurant(e) {
+    const { dispatch, ownerRestaurants } = this.props;
+    const index = ownerRestaurants.map(restaurant => restaurant.id).indexOf(e.target.id);
+    dispatch(pickRestaurant(ownerRestaurants[index]));
   }
 
 
@@ -51,7 +58,11 @@ export default class ownerViewUpdate extends Component {
                           <h6 className="pb-4 mb-0">{restaurant.address1} {restaurant.city}, {restaurant.state} {restaurant.zip}</h6>
                         </div>
                         <div className="align-items-center">
-                          <button id={restaurant.id} className="btn btn-primary" type="button">Update Details</button>
+                        <Link to={ `/owner/${restaurant.ownerId}/updaterestaurant/${restaurant.id}` }>
+                          <button id={restaurant.id} className="btn btn-primary" type="button" onClick={ this.selectRestaurant }>
+                            Update Details
+                          </button>
+                        </Link>
                           <button id={restaurant.id} className="btn btn-primary" type="button">Add Menu Item</button>
                         </div>
                       </div>
