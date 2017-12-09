@@ -47,7 +47,7 @@ export default class Login extends Component {
                     <div className="col-6">
                         <div className="card text-center">
                             <div className="card-header">
-                                Login
+                                <h1><strong>Login</strong></h1>
                             </div>
                             <form id='login-form' onSubmit={this.handleClick}>
                                 <div className="card-body form-group">
@@ -59,10 +59,10 @@ export default class Login extends Component {
                                     <br/>
                                     <br/>                  
                                     <label htmlFor="username">Email:</label><br/>
-                                    <input type="email" name='username' placeholder='Enter your email..' value={email} className="form-group" onChange={this.handleUsernameInput}/>
+                                    <input type="email" name='username' placeholder='Enter your email..' value={email} className="form-control" onChange={this.handleUsernameInput}/>
                                     <br/>
                                     <label htmlFor="password">Password:</label><br/>
-                                    <input type="password" name='password' placeholder='Enter your password...' value={password} className="form-group" onChange={this.handlePasswordInput}/>
+                                    <input type="password" name='password' placeholder='Enter your password...' value={password} className="form-control" onChange={this.handlePasswordInput}/>
                                 </div>
                                 <div className="card-footer text-muted">
                                     <a href='/'><button className="btn btn-primary">Sign In</button></a>

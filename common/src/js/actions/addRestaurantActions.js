@@ -79,10 +79,26 @@ export function updatePhoneNumber(phone_number) {
 
 export function addNewRestaurant(food_type, name, address1, address2, city, state, zip, image, phone_number, currentOwnerId) {
     console.log({food_type, name, address1, address2, city, state, zip, image, phone_number, currentOwnerId});
-    return {
-        type: types.ADD_NEW_RESTAURANT,
-        payload: axios.post('http://localhost:3000/api/Owners/' + currentOwnerId + '/restaurants', {food_type, name, address1, address2, city, state, zip, image, phone_number})
-                    .then(results => results.data)
-                    .catch(err => console.log(err))
-    };              
+    return (dispatch) => {
+        axios.post('http://localhost:3000/api/Owners/' + currentOwnerId + '/restaurants', {food_type, name, address1, address2, city, state, zip, image, phone_number})
+                .then(results => {
+                    dispatch({
+                        type: types.ADD_NEW_RESTAURANT,
+                        payload: results.data
+                    })
+                })
+                .catch(err => { console.log(err); alert('Add Unsuccessful') });
+    }
 }
+
+
+
+// export function addNewRestaurant(food_type, name, address1, address2, city, state, zip, image, phone_number, currentOwnerId) {
+//     console.log({food_type, name, address1, address2, city, state, zip, image, phone_number, currentOwnerId});
+//     return {
+//         type: types.ADD_NEW_RESTAURANT,
+//         payload: axios.post('http://localhost:3000/api/Owners/' + currentOwnerId + '/restaurants', {food_type, name, address1, address2, city, state, zip, image, phone_number})
+//                     .then(results => results.data)
+//                     .catch(err => console.log(err))
+//     };              
+// }
