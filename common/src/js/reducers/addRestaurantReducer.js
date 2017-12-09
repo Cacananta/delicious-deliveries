@@ -16,18 +16,19 @@ export default function AddRestaurantReducer (state = INITIAL_STATE, action) {
     const { type, payload } = action;
     switch (type) {
         case types.ADD_NEW_RESTAURANT: {
+            console.log(1,payload)
             if (payload) {
                 return {
                     ...state,
-                    name: payload.name,
-                    address1: payload.address1,
-                    address2: payload.address2,
-                    city: payload.city,
-                    state: payload.state,
-                    zip: payload.zip,
-                    image: payload.zip,
-                    food_type: payload.food_type,
-                    phone_number: payload.phone_number
+                    name: '',
+                    address1: '',
+                    address2: '',
+                    city: '',
+                    state: '',
+                    zip: '',
+                    image: '',
+                    food_type: '',
+                    phone_number: ''
                 };
             } else {
                 return {
