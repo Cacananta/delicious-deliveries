@@ -11,7 +11,9 @@ const INITIAL_STATE = {
     food_type: 'Mexican',
     phone_number: 4567890345,
     restaurantId: '5a26d960e546bf252a0633ec',
-    ownerId: '5a26d8afe546bf252a0633eb'
+    ownerId: '5a26d8afe546bf252a0633eb',
+    ownerRestaurants: [],
+    selectedRestaunt: {}
 };
 
 export default function UpdateRestaurantReducer (state = INITIAL_STATE, action) {
@@ -37,6 +39,20 @@ export default function UpdateRestaurantReducer (state = INITIAL_STATE, action) 
                     ...state
                 };
             }
+        }
+
+        case 'GET_OWNER_RESTAURANTS_SUCCESS': {
+            return {
+              ...state,
+              ownerRestaurants: payload
+            };
+        }
+          
+        case 'GET_OWNER_RESTAURANTS_REJECTED': {
+            return {
+              ...state,
+              err: payload
+            };
         }
 
         case (types.FOOD_TOGGLE): {
