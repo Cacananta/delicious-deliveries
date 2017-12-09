@@ -76,7 +76,7 @@ export default class AddMenuItem extends Component {
                             <div className="card text-center mt-5">
                                 <div className="card-header">
                                     <strong> What's On Your Menu</strong>
-                                </div>                            
+                                </div>
                                 <form onSubmit={this.handleSubmit}>
                                     <div className="card-body form-group">
                                         <label htmlFor="itemName"><strong>Menu Item Name:</strong></label>
@@ -84,7 +84,7 @@ export default class AddMenuItem extends Component {
                                         <br />
                                         <label htmlFor="price"><strong>Price:</strong></label>
                                         <div className="input-group">
-                                        <span class="input-group-addon">$</span>
+                                        <span className="input-group-addon">$</span>
                                         <input onChange={this.handleItemPrice} type="number" step='.01' name='price' placeholder='Enter price...' className="form-control currency"  value={price}/>
                                         </div>
                                         <br />
@@ -100,17 +100,18 @@ export default class AddMenuItem extends Component {
                                             <option value="Snack">Snack</option>
                                             <option value="Drinks">Drinks</option>
                                         </select>
-                                    </div>
-                                    <br />
-                                    <label htmlFor="itemName"><strong>Menu Item Name   </strong></label>
-                                    <input  onChange={this.handleItemName} type="text" name='name' placeholder='Enter item name...' className='form-control' value={name} />
-                                    <br />
-                                    <label htmlFor="price"><strong>Price   </strong></label>
-                                    <div className="input-group">
-                                    <span className="input-group-addon">$</span>
-                                    <input onChange={this.handleItemPrice} type="number" step='.01' name='price' placeholder='Enter price...' className="form-control currency"  value={price}/>
-                                    <div className="card-footer text-muted">
-                                        <a href="/"><button type="submit" className="btn btn-primary form-control">Enter</button></a>
+                                        <br />
+                                        <label htmlFor="itemName"><strong>Menu Item Name:</strong></label>
+                                        <input  onChange={this.handleItemName} type="text" name='name' placeholder='Enter item name...' className='form-control' value={name} />
+                                        <br />
+                                        <label htmlFor="price"><strong>Price:</strong></label>
+                                        <div className="input-group">
+                                            <span className="input-group-addon">$</span>
+                                            <input onChange={this.handleItemPrice} type="number" step='.01' name='price' placeholder='Enter price...' className="form-control currency"  value={price}/>
+                                        </div>
+                                        <div className="card-footer text-muted">
+                                            <a href="/"><button type="submit" className="btn btn-primary form-control">Enter</button></a>
+                                        </div>                                        
                                     </div>
                                 </form>
                             </div>
