@@ -127,28 +127,28 @@ export default class AddRestaurant extends Component {
                                         <br/>
                                         <br/>
                                         <label htmlFor="name"><strong>Restaurant Name:</strong></label><br/>
-                                        <input type="text" name='name' placeholder='(required)' value={name} onChange={this.handleRestaurantInput} className='form-group'/>
+                                        <input type="text" name='name' placeholder='(required)' value={name} onChange={this.handleRestaurantInput} className='form-control'/>
                                         <br/>
                                         <label htmlFor="address-1"><strong>Address 1:</strong></label><br/>
-                                        <input type="text" name='address-1' placeholder='(required)' value={address1} onChange={this.handleAddress1} className="form-group"/>
+                                        <input type="text" name='address-1' placeholder='(required)' value={address1} onChange={this.handleAddress1} className="form-control"/>
                                         <br/>
                                         <label htmlFor="address-2"><strong>Address 2:</strong></label><br/>
-                                        <input type="text" name='address-2' placeholder='Unit, Spc, Suite...' value={address2} onChange={this.handleAddress2} className="form-group"/>
+                                        <input type="text" name='address-2' placeholder='Unit, Spc, Suite...' value={address2} onChange={this.handleAddress2} className="form-control"/>
                                         <br/>
                                         <label htmlFor="city"><strong>City:</strong></label><br/>
-                                        <input type="text" name='city' placeholder='(required)' value={city} onChange={this.handleCityInput} className="form-group"/>
+                                        <input type="text" name='city' placeholder='(required)' value={city} onChange={this.handleCityInput} className="form-control"/>
                                         <br/>
                                         <label htmlFor="state"><strong>State:</strong></label><br/>
-                                        <input type="text" name='state' placeholder='(required)' value={state} onChange={this.handleStateInput} className="form-group"/>
+                                        <input type="text" name='state' placeholder='(required)' value={state} onChange={this.handleStateInput} className="form-control"/>
                                         <br/>
                                         <label htmlFor="zip-code"><strong>Postal Code:</strong></label><br/>
-                                        <input type="text" name='zip-code' placeholder='(required)' value={zip} onChange={this.handleZipCodeInput} className="form-group"/>
+                                        <input type="text" name='zip-code' placeholder='(required)' value={zip} onChange={this.handleZipCodeInput} className="form-control"/>
                                         <br/>
                                         <label htmlFor="image"><strong>Image:</strong></label><br/>
-                                        <input type="text" name='image' placeholder='Image url...' value={image} onChange={this.handleImageInput} className="form-group"/>
+                                        <input type="text" name='image' placeholder='Image url...' value={image} onChange={this.handleImageInput} className="form-control"/>
                                         <br/>
                                         <label htmlFor="phone-number"><strong>Phone Number:</strong></label><br/>
-                                        <input type="text" name='phone-number' placeholder='(required)' value={phone_number} onChange={this.handlePhoneNumberInput} className="form-group"/>
+                                        <input type="number" name='phone-number' placeholder='(required)' value={phone_number} onChange={this.handlePhoneNumberInput} className="form-control"/>
                                     </div>
                                     <div className="card-footer text-muted">
                                         <a href="/"><button className="btn btn-primary" type='submit'>Enter</button></a>
