@@ -3,7 +3,9 @@ import OwnerAdmin from '../components/ownerAdmin';
 
 function mapStoreToProps(store) {
   return {
-    activeOwner: store.login.activeOwner
+    activeOwner: store.login.activeOwner,
+    currentOwnerId: store.login.currentOwnerId,
+    ownerRestaurants: store.ownerRestaurants
   };
 }
 

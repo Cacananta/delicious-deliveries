@@ -1,11 +1,19 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { getOwnerRestaurants } from '../actions/ownerAdminActions';
 
 export default class OwnerAdmin extends Component {
     constructor(props) {
         super(props);
 
-        this.tokenClick = this.tokenClick.bind(this);
+        this.ownerRestaurants = this.ownerRestaurants.bind(this);
+    }
+
+    ownerRestaurants() {
+        const { dispatch } = this.props;
+        console.log(this.props.match.params.id)
+        let ownerId = this.props.match.params.id;
+        dispatch(getOwnerRestaurants(ownerId));
     }
 
 // tokenClick() {
@@ -20,9 +28,9 @@ export default class OwnerAdmin extends Component {
 // }
 
     render() {
-        const { activeOwner } = this.props;
-
-        if (activeOwner == true) {
+        const { activeOwner, currentOwnerId } = this.props;
+        console.log(this.props);
+        if (activeOwner == true && !!this.props.match.params.id) {
         return (
             <div>
                 <nav className="navbar fixed-top navbar-expand-lg navbar-light bg-light mb-5">
@@ -46,7 +54,7 @@ export default class OwnerAdmin extends Component {
                             </div>
                             <div className="card-body">
                                 <a href="#/addrestaurant"><p className="font-weight-bold nav-link">Update Owner Info</p></a>
-                                <a href="#/addrestaurant"><p className="font-weight-bold nav-link">View/Update Restaurants</p></a>
+                                <a onClick={this.ownerRestaurants} href={"#/owner/" + this.props.match.params.id + "/viewupdaterestaurants"}><p className="font-weight-bold nav-link">View/Update Restaurants</p></a>
                                 <a href="#/addrestaurant"><p className="font-weight-bold nav-link">Add A Restaurant</p></a>
                             </div>
                         </div>

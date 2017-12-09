@@ -1,9 +1,9 @@
 import { types } from '../actions/loginActions';
 
 const INITIAL_STATE = {
-    email: 'bob@bob.com',
-    password: 'bob0',
-    owner: 'false',
+    email: 'mike@mike.com',
+    password: 'mike0',
+    owner: 'true',
     activeOwner: false,
     activeCustomer: false,
     currentOwnerId: '5a2962fddbe71f1da847d79e',
