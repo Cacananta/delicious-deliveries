@@ -1,13 +1,14 @@
 import { types } from '../actions/loginActions';
 
 const INITIAL_STATE = {
-    email: 'bob@bob.com',
-    password: 'bob0',
-    owner: 'false',
+    email: 'mike@mike.com',
+    password: 'mike0',
+    owner: 'true',
     activeOwner: false,
     activeCustomer: false,
     currentOwnerId: '5a2962fddbe71f1da847d79e',
-    currentCustomerId: ''
+    currentCustomerId: '',
+    authToken: ''
 };
 
 export default function LoginReducer(state = INITIAL_STATE, action) {
@@ -19,7 +20,8 @@ export default function LoginReducer(state = INITIAL_STATE, action) {
                 return {
                     ...state,
                     currentOwnerId: payload.userId,
-                    activeOwner: true
+                    activeOwner: true,
+                    authToken: payload.id
                 };
             } else {
                 return {
@@ -35,7 +37,8 @@ export default function LoginReducer(state = INITIAL_STATE, action) {
                 return {
                     ...state,
                     currentCustomerId: payload.userId,
-                    activeCustomer: true
+                    activeCustomer: true,
+                    authToken: payload.id
                 }
             } else {
                 return {
