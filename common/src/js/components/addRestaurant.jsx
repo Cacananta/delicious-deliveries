@@ -145,10 +145,10 @@ export default class AddRestaurant extends Component {
                                     <input type="text" name='zip-code' placeholder='(required)' value={zip} onChange={this.handleZipCodeInput} className="form-group"/>
                                     <br/>
                                     <label htmlFor="image">Image</label><br/>
-                                    <input type="text" name='image' placeholder='Image url...' value={image} onChange={this.handleImageInput} className="form-group"/>
+                                    <input type="url" name='image' placeholder='Image url...' value={image} onChange={this.handleImageInput} className="form-group"/>
                                     <br/>
                                     <label htmlFor="phone-number">Phone Number</label><br/>
-                                    <input type="text" name='phone-number' placeholder='(required)' value={phone_number} onChange={this.handlePhoneNumberInput} className="form-group"/>
+                                    <input type="number" name='phone-number' placeholder='(required)' value={phone_number} onChange={this.handlePhoneNumberInput} className="form-group"/>
                                 </div>
                                 <div className="card-footer text-muted">
                                     <a href="/"><button className="btn btn-primary" type='submit'>Enter</button></a>

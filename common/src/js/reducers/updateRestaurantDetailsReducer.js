@@ -21,6 +21,7 @@ export default function UpdateRestaurantReducer (state = INITIAL_STATE, action) 
     switch (type) {
         case types.UPDATE_RESTAURANT: {
             console.log(12, payload);
+            window.location.href= `http://localhost:3000/#/owner/${payload.ownerId}`;
             if (payload) {
                 return {
                     ...state,
@@ -30,7 +31,7 @@ export default function UpdateRestaurantReducer (state = INITIAL_STATE, action) 
                     city: payload.city,
                     state: payload.state,
                     zip: payload.zip,
-                    image: payload.zip,
+                    image: payload.image,
                     food_type: payload.food_type,
                     phone_number: payload.phone_number
                 };
@@ -64,7 +65,7 @@ export default function UpdateRestaurantReducer (state = INITIAL_STATE, action) 
               city: payload.city,
               state: payload.state,
               zip: payload.zip,
-              image: payload.img,
+              image: payload.image,
               food_type: payload.food_type,
               phone_number: payload.phone_number,
               restaurantId: payload.id,
@@ -73,63 +74,63 @@ export default function UpdateRestaurantReducer (state = INITIAL_STATE, action) 
             };
         }
 
-        case (types.FOOD_TOGGLE): {
+        case (types.FOOD_TYPE): {
             return {
                 ...state,
                 food_type: payload,
             };
         }
 
-        case (types.ADD_RESTAURANT_NAME): {
+        case (types.UPDATE_RESTAURANT_NAME): {
             return {
                 ...state,
                 name: payload,
             };
         }
 
-        case (types.ADD_ADDRESS1): {
+        case (types.UPDATE_ADDRESS1): {
             return {
                 ...state,
                 address1: payload,
             };
         }
 
-        case (types.ADD_ADDRESS2): {
+        case (types.UPDATE_ADDRESS2): {
             return {
                 ...state,
                 address2: payload
             };
         }
 
-        case (types.ADD_CITY): {
+        case (types.UPDATE_CITY): {
             return {
                 ...state,
                 city: payload
             };
         }
 
-        case (types.ADD_STATE): {
+        case (types.UPDATE_STATE): {
             return {
                 ...state,
                 state: payload
             };
         }
 
-        case (types.ADD_ZIP): {
+        case (types.UPDATE_ZIP): {
             return {
                 ...state,
                 zip: payload
             };
         }
 
-        case (types.ADD_IMAGE): {
+        case (types.UPDATE_IMAGE): {
             return {
                 ...state,
                 image: payload
             };
         }
 
-        case (types.ADD_PHONE_NUMBER): {
+        case (types.UPDATE_PHONE_NUMBER): {
             return {
                 ...state,
                 phone_number: payload

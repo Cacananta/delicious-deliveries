@@ -1,10 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { chooseRestaurant, getMenuItems } from '../actions/restaurantDetailsActions';
 
 export default class SearchResults extends React.Component {
   constructor(props) {
     super(props);
-    console.log('got here')
+    this.selectRestaurant = this.selectRestaurant.bind(this);
+  }
+
+  selectRestaurant(e){
+    const { dispatch, restaurants } = this.props;
+    const index = restaurants.map(restaurant => restaurant.id).indexOf(e.target.id);
+    console.log(restaurants[index].id);
+    dispatch(chooseRestaurant(restaurants[index]));
+    dispatch(getMenuItems(restaurants[index].id))
   }
 
 
@@ -49,7 +58,11 @@ export default class SearchResults extends React.Component {
                         <h6 className="pb-4 mb-0">{restaurant.address1} {restaurant.city}, {restaurant.state} {restaurant.zip}</h6>
                       </div>
                       <div className="align-items-center">
-                        <Link to={'/restaurant/' + restaurant.id}><button id={restaurant.id} className="btn btn-primary" type="button">See Menu</button></Link>
+                        <Link to={'/restaurant/' + restaurant.id}>
+                          <button id={restaurant.id} className="btn btn-primary" type="button" onClick={ this.selectRestaurant }>
+                            See Menu
+                          </button>
+                        </Link>
                       </div>
                     </div>
                   </div>
