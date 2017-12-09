@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { getOwnerRestaurants } from '../actions/ownerAdminActions';
+import { getOwnerRestaurants } from '../actions/updateRestaurantDetailsAction';
 
 export default class OwnerAdmin extends Component {
     constructor(props) {

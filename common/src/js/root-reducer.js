@@ -17,7 +17,7 @@ const rootReducer = combineReducers({
   login: LoginReducer,
   addRestaurant: AddRestaurantReducer,
   AddMenuItem: addMenuItemReducer,
-  ownerRestaurants: ownerAdminReducer,
+  // ownerRestaurants: ownerAdminReducer,
   updateRestaurant: UpdateRestaurantReducer
 })
 

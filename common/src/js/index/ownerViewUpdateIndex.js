@@ -6,7 +6,7 @@ function mapStoreToProps(store) {
     activeOwner: store.login.activeOwner,
     restaurants: store.initialSearch.restaurants,
     login: store.login,
-    ownerRestaurants: store.ownerRestaurants.ownerRestaurants
+    ownerRestaurants: store.updateRestaurant.ownerRestaurants
   };
 }
 

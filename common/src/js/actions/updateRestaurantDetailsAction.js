@@ -91,3 +91,25 @@ export function updateRestaurant(food_type, name, address1, address2, city, stat
             .catch(err => console.log(err));
     };              
 }
+
+export const getOwnerRestaurants = ownerId => {
+    return (dispatch) => {
+        dispatch({
+            type: 'GET_OWNER_RESTAURANTS',
+        });
+        axios.get('http://localhost:3000/api/Owners/' + ownerId + '/restaurants')
+        .then(res => {
+            console.log(res.data);
+            dispatch({
+                type: 'GET_OWNER_RESTAURANTS_SUCCESS',
+                payload: res.data
+            })
+        })
+        .catch(err => {
+            dispatch({
+                type: 'GET_OWNER_RESTAURANTS_REJECTED',
+                payload: err
+            })
+        })
+    }
+}

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
+import { getOwnerRestaurants } from '../actions/updateRestaurantDetailsAction';
+
 export default class ownerViewUpdate extends Component {
   constructor(props) {
     super(props);
