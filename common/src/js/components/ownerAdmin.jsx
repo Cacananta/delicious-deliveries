@@ -55,7 +55,7 @@ export default class OwnerAdmin extends Component {
                             <div className="card-body">
                                 <a href="#/addrestaurant"><p className="font-weight-bold nav-link">Update Owner Info</p></a>
                                 <a onClick={this.ownerRestaurants} href={"#/owner/" + this.props.match.params.id + "/viewupdaterestaurants"}><p className="font-weight-bold nav-link">View/Update Restaurants</p></a>
-                                <a href="#/addrestaurant"><p className="font-weight-bold nav-link">Add A Restaurant</p></a>
+                                <a href={`#/owner/${this.props.match.params.id}/addrestaurant`}><p className="font-weight-bold nav-link">Add A Restaurant</p></a>
                             </div>
                         </div>
                     </div>

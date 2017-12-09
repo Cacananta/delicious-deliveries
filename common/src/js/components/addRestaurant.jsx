@@ -148,7 +148,7 @@ export default class AddRestaurant extends Component {
                                         <input type="text" name='image' placeholder='Image url...' value={image} onChange={this.handleImageInput} className="form-control"/>
                                         <br/>
                                         <label htmlFor="phone-number"><strong>Phone Number:</strong></label><br/>
-                                        <input type="text" name='phone-number' placeholder='(required)' value={phone_number} onChange={this.handlePhoneNumberInput} className="form-control"/>
+                                        <input type="number" name='phone-number' placeholder='(required)' value={phone_number} onChange={this.handlePhoneNumberInput} className="form-control"/>
                                     </div>
                                     <div className="card-footer text-muted">
                                         <a href="/"><button className="btn btn-primary" type='submit'>Enter</button></a>
