@@ -37,7 +37,7 @@ export default class App extends Component {
                     <Route exact path='/checkout' component={Checkout} />
                     <Route exact path='/owner/:id/viewupdaterestaurants' component={OwnerViewUpdateIndex} />
                     <Route exact path='/owner/:id' component={OwnerAdmin} />
-                    <Route exact path='/update' component={UpdateRestaurant} />
+                    <Route exact path='/owner/:id/updaterestaurant/:restid' component={UpdateRestaurant} />
                     <Route exact path='/updateOwnerInfo' component={UpdateOwnerInfo} />
                     <Route exact path='/updateUserInfo' component={UpdateUserInfo} />
                 </div>

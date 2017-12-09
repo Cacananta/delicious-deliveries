@@ -85,12 +85,13 @@ export default class UpdateRestaurant extends Component {
 
     handleClick(event) {
         event.preventDefault();
-        const { dispatch, food_type, name, address1, address2, city, state, zip, image, phone_number, currentOwnerId, ownerId, restaurantId } = this.props;
-        dispatch(updateRestaurant(food_type, name, address1, address2, city, state, zip, image, phone_number, ownerId, restaurantId));
+        const { dispatch, food_type, name, address1, address2, city, state, zip, image, phone_number, currentOwnerId, selectedRestaurant } = this.props;
+        // const { dispatch, selectedRestaurant } = this.props;
+        dispatch(updateRestaurant(food_type, name, address1, address2, city, state, zip, image, phone_number, selectedRestaurant.ownerId, selectedRestaurant.id));
     }
 
     render() {
-        const { food_type, name, address1, address2, city, state, zip, image, phone_number, activeOwner } = this.props;
+        const { food_type, name, address1, address2, city, state, zip, image, phone_number, activeOwner, selectedRestaurant } = this.props;
         return (
             <div>
                 <nav className="navbar fixed-top navbar-expand-lg navbar-light bg-light mb-5">
@@ -151,7 +152,7 @@ export default class UpdateRestaurant extends Component {
                                     <input type="number" name='phone-number' placeholder='Phone number...(required)' value={phone_number} onChange={this.handlePhoneNumberInput} className="form-group" />
                                 </div>
                                 <div className="card-footer text-muted">
-                                    <a href="/"><button className="btn btn-primary" type='submit'>Enter</button></a>
+                                    <a href="#/"><button className="btn btn-primary" type='submit'>Enter</button></a>
                                 </div>
                             </form>
                         </div>

@@ -1,19 +1,19 @@
 import { types } from '../actions/updateRestaurantDetailsAction';
 
 const INITIAL_STATE = {
-    name: `Esmeralda's Tortilleria`,
-    address1: '123 Broadway',
+    name: '',
+    address1: '',
     address2: '',
-    city: 'San Diego',
-    state: 'CA',
-    zip: '92101',
-    image: 'http://cdn.partyearth.com/photos/4e9d1dc9a23a99187f9e39230082010e/tortilla-republic_s345x230.jpg?1375196583',
-    food_type: 'Mexican',
-    phone_number: 4567890345,
-    restaurantId: '5a26d960e546bf252a0633ec',
-    ownerId: '5a26d8afe546bf252a0633eb',
+    city: '',
+    state: '',
+    zip: '',
+    image: '',
+    food_type: '',
+    phone_number: 0,
+    restaurantId: '',
+    ownerId: '',
     ownerRestaurants: [],
-    selectedRestaunt: {}
+    selectedRestaurant: {}
 };
 
 export default function UpdateRestaurantReducer (state = INITIAL_STATE, action) {
@@ -52,6 +52,24 @@ export default function UpdateRestaurantReducer (state = INITIAL_STATE, action) 
             return {
               ...state,
               err: payload
+            };
+        }
+
+        case 'PICK_RESTAURANT': {
+            return {
+              ...state,
+              name: payload.name,
+              address1: payload.address1,
+              address2: payload.address2,
+              city: payload.city,
+              state: payload.state,
+              zip: payload.zip,
+              image: payload.img,
+              food_type: payload.food_type,
+              phone_number: payload.phone_number,
+              restaurantId: payload.id,
+              ownerId: payload.ownerId,
+              selectedRestaurant: payload
             };
         }
 
