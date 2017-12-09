@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-
+import { setActiveRestaurant } from '../actions/ownerViewUpdateActions';
 import { pickRestaurant } from '../actions/updateRestaurantDetailsAction';
 
 export default class ownerViewUpdate extends Component {
@@ -9,6 +9,7 @@ export default class ownerViewUpdate extends Component {
     super(props);
     //bind functions here
     this.selectRestaurant = this.selectRestaurant.bind(this);
+    this.addMenuItem = this.addMenuItem.bind(this);
   }
 
   selectRestaurant(e) {
@@ -17,6 +18,11 @@ export default class ownerViewUpdate extends Component {
     dispatch(pickRestaurant(ownerRestaurants[index]));
   }
 
+  addMenuItem(e) {
+    const { dispatch } = this.props;
+    let restaurantId = e.target.id
+    dispatch(setActiveRestaurant(restaurantId))
+  }
 
   render() {
     const { ownerRestaurants, activeOwner, activeCustomer } = this.props;
@@ -59,11 +65,13 @@ export default class ownerViewUpdate extends Component {
                         </div>
                         <div className="align-items-center">
                         <Link to={ `/owner/${restaurant.ownerId}/updaterestaurant/${restaurant.id}` }>
-                          <button id={restaurant.id} className="btn btn-primary" type="button" onClick={ this.selectRestaurant }>
+                          <button id={restaurant.id} className="btn btn-primary mx-2" type="button" onClick={ this.selectRestaurant }>
                             Update Details
                           </button>
                         </Link>
-                          <button id={restaurant.id} className="btn btn-primary" type="button">Add Menu Item</button>
+                        <Link to={`/owner/${restaurant.ownerId}/restaurant/${restaurant.id}/addMenuItem`}>
+                          <button id={restaurant.id} className="btn btn-primary mx-2" type="button" onClick={this.addMenuItem}>Add Menu Item</button>
+                          </Link>
                         </div>
                       </div>
                     </div>

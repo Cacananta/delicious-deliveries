@@ -45,8 +45,8 @@ export default class AddMenuItem extends Component {
 
     handleSubmit(event) {
     event.preventDefault();
-    const { dispatch, name, price, description, category } = this.props;
-    const { data } = { name, price, description, category }
+    const { dispatch, name, price, description, category, activeRestaurant } = this.props;
+    const { data } = { name, price, description, category, activeRestaurant }
     dispatch(addNewMenuItem(data));
     }
 
@@ -79,7 +79,7 @@ export default class AddMenuItem extends Component {
                                     <br />
                                     <label htmlFor="price"><strong>Price   </strong></label>
                                     <div className="input-group">
-                                    <span class="input-group-addon">$</span>
+                                    <span className="input-group-addon">$</span>
                                     <input onChange={this.handleItemPrice} type="number" step='.01' name='price' placeholder='Enter price...' className="form-control currency"  value={price}/>
                                     </div>
                                     <br />

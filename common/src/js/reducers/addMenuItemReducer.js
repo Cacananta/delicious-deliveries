@@ -4,7 +4,8 @@ const defaultState = {
     name: '',
     price: '',
     description: '',
-    category: '',
+    category: ''
+    // restaurant: ''
 }
 
 export default function addMenuItemReducer(state = defaultState, action) {
@@ -18,6 +19,7 @@ export default function addMenuItemReducer(state = defaultState, action) {
                     price: payload.price,
                     description: payload.description,
                     category: payload.category
+                    // restaurant: payload.activeRestaurant
                 };
             } else {
                 return {

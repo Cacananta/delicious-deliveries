@@ -32,14 +32,14 @@ export default class App extends Component {
                     <Route exact path='/searchresults' component={SearchResults} />
                     <Route exact path='/shoppingcart' component={ShoppingCart} />
                     <Route exact path='/contact' component={Contact} />
-                    <Route exact path='/addrestaurant' component={AddRestaurant} />
-                    <Route exact path='/addMenuItem' component={AddMenuItem} />
+                    <Route exact path='/owner/:id/addrestaurant' component={AddRestaurant} />
+                    <Route exact path='/owner/:id/restaurant/:restid/addMenuItem' component={AddMenuItem} />
                     <Route exact path='/checkout' component={Checkout} />
                     <Route exact path='/owner/:id/viewupdaterestaurants' component={OwnerViewUpdateIndex} />
                     <Route exact path='/owner/:id' component={OwnerAdmin} />
                     <Route exact path='/owner/:id/updaterestaurant/:restid' component={UpdateRestaurant} />
-                    <Route exact path='/updateOwnerInfo' component={UpdateOwnerInfo} />
-                    <Route exact path='/updateUserInfo' component={UpdateUserInfo} />
+                    <Route exact path='/owner/:id/updateOwnerInfo' component={UpdateOwnerInfo} />
+                    <Route exact path='/customer/:id/updateUserInfo' component={UpdateUserInfo} />
                 </div>
             </Router>
             

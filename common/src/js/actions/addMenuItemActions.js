@@ -41,7 +41,7 @@ export function addNewMenuItem(name, price, description, category) {
     console.log(name, price, description, category);
     return {
         type: types.ADD_NEW_MENU_ITEM,
-        payload: axios.post('http://localhost:3000/api/', {name, price, description, category})
+        payload: axios.get(`http://localhost:3000/api/`, {name, price, description, category})
                     .then(results => results.data)
                     .catch(err => console.log(err))
     };              
