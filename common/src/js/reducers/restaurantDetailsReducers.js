@@ -1,7 +1,9 @@
 import _ from 'lodash';
 
 const defaultState = {
-  shoppingCart: []
+  shoppingCart: [],
+  chosenRestaurant: {},
+  menuItems: []
 };
 
 export default function restaurantDetailsReducers(state = defaultState, action) {
@@ -21,6 +23,29 @@ export default function restaurantDetailsReducers(state = defaultState, action) 
         ...state,
         shoppingCart: payload
       };
+    }
+
+    case 'CHOOSE_RESTAURANT': {
+      return {
+        ...state,
+        chosenRestaurant: payload
+      }
+    }
+
+    case 'GET_MEUN_ITEMS': {
+      console.log(23, payload);
+      return {
+        ...state,
+        menuItems: payload
+      }
+    }
+
+    case 'GET_MEUN_ITEMS_REJECTED': {
+      console.log(32, payload);
+      return {
+        ...state,
+        menuItems: []
+      }
     }
     //next case here
   default: {

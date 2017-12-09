@@ -1,0 +1,64 @@
+// const menuList = 
+[
+    {
+      "category": "Lunch",
+      "price": 9.95,
+      "description": "A delicious Cantonese dish of stir-fried veggies and chicken",
+      "name": "Asian Burrito"
+    },
+    {
+      "category": "Dinner",
+      "price": 9.99,
+      "description": "A delicious Cantonese dish of stir-fried veggies and chicken",
+      "name": "Chicken"
+
+    },
+    {
+      "category": "Lunch",
+      "price": 14.95,
+      "description": "Delicious fajita veggies served with rice and beans",
+      "name": "Veggie Fajitas"
+    },
+    {
+      "category": "Dinner",
+      "price": 14.95,
+      "description": "A delicious Cantonese dish of stir-fried veggies and chicken",
+      "name": "Moo Goo Gai Pan"
+    },
+    {
+      "category": "Breakfast",
+      "price": 14.95,
+      "description": "A combination of two American classics",
+      "name": "BBQ scrambled eggs"
+    },
+    {
+      "category": "Snack",
+      "price": 14.95,
+      "description": "French fries with truffle oil",
+      "name": "Truffle Oil French Fries"
+    },
+    {
+      "category": "Snack",
+      "price": 14.95,
+      "description": "Salted cooked soybeans",
+      "name": "Edamame"
+    },
+    {
+      "category": "Lunch",
+      "price": 14.95,
+      "description": "Classic noodles and meatballs",
+      "name": "Spaghetti and Meatballs"
+    },
+    {
+      "category": "Dinner",
+      "price": 14.95,
+      "description": "Amazing chicken BBQ served in a pineapple",
+      "name": "Pineapple BBQ Chicken"
+    },
+    {
+      "category": "Drink",
+      "price": 9.95,
+      "description": "Craft dark beer at its finest",
+      "name": "Dark Stout"
+    }
+]

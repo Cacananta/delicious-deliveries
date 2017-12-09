@@ -105,7 +105,7 @@ export default class UpdateRestaurant extends Component {
                 </nav>
                 <div className="jumbotron jumbotron-fluid addRest">
                     <div className="container text-center">
-                        <h1 className="display-3">Add A Restaurant</h1>
+                        <h1 className="display-3">Update {selectedRestaurant.name}</h1>
                     </div>
                 </div>
                 <div className="row mb-5">
@@ -146,7 +146,7 @@ export default class UpdateRestaurant extends Component {
                                     <input type="text" name='zip-code' placeholder='Postal code...(required)' value={zip} onChange={this.handleZipCodeInput} className="form-group" />
                                     <br />
                                     <label htmlFor="image">Image</label><br />
-                                    <input type="text" name='image' placeholder='Image url...' value={image} onChange={this.handleImageInput} className="form-group" />
+                                    <input type="url" name='image' placeholder='Image url...' value={image} onChange={this.handleImageInput} className="form-group" />
                                     <br />
                                     <label htmlFor="phone-number">Phone Number</label><br />
                                     <input type="number" name='phone-number' placeholder='Phone number...(required)' value={phone_number} onChange={this.handlePhoneNumberInput} className="form-group" />
