@@ -42,38 +42,64 @@ export default class Login extends Component {
     render() {
         const {owner, email, password, activeOwner, activeCustomer} = this.props;
         return (
-            <div className="container">
-                <div className="row justify-content-center">
-                    <div className="col-6">
-                        <div className="card text-center">
-                            <div className="card-header">
-                                <h1><strong>Login</strong></h1>
-                            </div>
-                            <form id='login-form' onSubmit={this.handleClick}>
-                                <div className="card-body form-group">
-                                    <select name="" id="owner" value={owner} onChange={this.handleToggle}>
-                                        <option defaultValue hidden>Select Account Type</option>
-                                        <option value="false">Customer</option>
-                                        <option value="true">Owner</option>
-                                    </select>
-                                    <br/>
-                                    <br/>                  
-                                    <label htmlFor="username">Email:</label><br/>
-                                    <input type="email" name='username' placeholder='Enter your email..' value={email} className="form-control" onChange={this.handleUsernameInput}/>
-                                    <br/>
-                                    <label htmlFor="password">Password:</label><br/>
-                                    <input type="password" name='password' placeholder='Enter your password...' value={password} className="form-control" onChange={this.handlePasswordInput}/>
+            <div>
+                <nav className="navbar fixed-top navbar-expand-lg opacity mb-5">
+                    <a className="order-1 font-weight-bold nav-link text-dark" href='#/login'>Login</a>
+                    <a className="order-2 font-weight-bold nav-link text-dark" href='#/signup'>Sign Up</a>
+                    <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+                        <div className="navbar-nav">
+                            <a className="nav-item nav-link font-weight-bold text-muted" href="#/">Delicious Deliveries</a>
+                        </div>
+                    </div>
+                </nav>
+                <div className="jumbotron jumbotron-fluid mb-0">
+                    <div className="container text-center">
+                        <h1 className="display-3">Login</h1>
+                    </div>
+                </div>                       
+                <div className="container-fluid shortbg">    
+                    <div className="row mb-5 justify-content-center">
+                        <div className="col-4 mb-5">
+                            <div className="card text-center mt-5">
+                                <div className="card-header">
+                                    <strong>Login</strong>
                                 </div>
-                                <div className="card-footer text-muted">
-                                    <a href='#/'><button className="btn btn-primary">Sign In</button></a>
+                                <form id='login-form' onSubmit={this.handleClick}>
+                                    <div className="card-body form-group">
+                                        <select name="" id="owner" value={owner} onChange={this.handleToggle}>
+                                            <option defaultValue hidden>Select Account Type</option>
+                                            <option value="false">Customer</option>
+                                            <option value="true">Owner</option>
+                                        </select>
+                                        <br/>
+                                        <br/>                  
+                                        <label htmlFor="username"><strong>Email:</strong></label><br/>
+                                        <input type="email" name='username' placeholder='Enter your email..' value={email} className="form-group" onChange={this.handleUsernameInput}/>
+                                        <br/>
+                                        <label htmlFor="password"><strong>Password:</strong></label><br/>
+                                        <input type="password" name='password' placeholder='Enter your password...' value={password} className="form-group" onChange={this.handlePasswordInput}/>
+                                    </div>
+                                    <div className="card-footer text-muted">
+                                        <a href='#/'><button className="btn btn-primary">Sign In</button></a>
+                                    </div>
+                                </form>
+                                <div>
+                                    Need an account? <a href="#/signup">Sign up</a>
                                 </div>
-                            </form>
-                            <div>
-                                Need an account? <a href="#/signup">Sign up</a>
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> 
+                <nav className="navbar navbar-expand-lg opacity fixed-bottom justify-content-center">
+                    <ul className="navbar-nav">
+                        <li className="nav-item active">
+                            <a className="nav-link font-weight-bold text-dark" href="#/about">About Us</a>
+                        </li>
+                        <li className="nav-item">
+                            <a className="nav-link font-weight-bold text-dark" href="#/contact">Contact Us</a>
+                        </li>
+                    </ul>
+                </nav>                
             </div>
         );
     }

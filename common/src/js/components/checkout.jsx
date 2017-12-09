@@ -13,7 +13,16 @@ export default class Checkout extends Component {
             let delivery = 2.99;
 
             return (
-                <div className='container'>
+                <div className='container short-bg'>
+                    <nav className="navbar fixed-top navbar-expand-lg opacity mb-5">
+                        <a className="order-1 font-weight-bold nav-link text-dark" href='#/login'>Login</a>
+                        <a className="order-2 font-weight-bold nav-link text-dark" href='#/signup'>Sign Up</a>
+                        <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+                            <div className="navbar-nav">
+                                <a className="nav-item nav-link font-weight-bold text-muted" href="#/">Delicious Deliveries</a>
+                            </div>
+                        </div>
+                    </nav>                
                     <div className='mb-3'>
                         <h1 className='text-center'>Checkout</h1>
                     </div>
@@ -58,20 +67,30 @@ export default class Checkout extends Component {
                             </div>
                         </div>
                     </div>
+                    <nav className="navbar navbar-expand-lg opacity fixed-bottom justify-content-center">
+                        <ul className="navbar-nav">
+                            <li className="nav-item active">
+                                <a className="nav-link font-weight-bold text-dark" href="#/about">About Us</a>
+                            </li>
+                            <li className="nav-item">
+                                <a className="nav-link font-weight-bold text-dark" href="#/contact">Contact Us</a>
+                            </li>
+                        </ul>
+                    </nav>                    
                 </div>
             );
         } else {
             return (
-                <div className='container bg-light mt-5 pt-2'>
-                    <nav className="navbar fixed-top navbar-expand-lg opacity mb-5">
-                        <a className="order-1 font-weight-bold nav-link text-dark" href='#/login'>Login</a>
-                        <a className="order-2 font-weight-bold nav-link text-dark" href='#/signup'>Sign Up</a>
-                        <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-                            <div className="navbar-nav">
-                                <a className="nav-item nav-link font-weight-bold" href="#/">Delicious Deliveries</a>
-                            </div>
+                <div className='container-fluid shortbg mt-5 pt-2'>
+                <nav className="navbar fixed-top navbar-expand-lg opacity mb-5">
+                    <a className="order-1 font-weight-bold nav-link text-dark" href='#/login'>Login</a>
+                    <a className="order-2 font-weight-bold nav-link text-dark" href='#/signup'>Sign Up</a>
+                    <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+                        <div className="navbar-nav">
+                            <a className="nav-item nav-link font-weight-bold text-muted" href="#/">Delicious Deliveries</a>
                         </div>
-                    </nav>
+                    </div>
+                </nav>
                     <h1 className='text-center pt-5'>Please Sign in as a Customer</h1>
                     <h1 className='text-center'>To Check Out</h1>
                     <div className='text-center'>

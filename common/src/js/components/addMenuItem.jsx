@@ -55,7 +55,7 @@ export default class AddMenuItem extends Component {
     render() {
         const { name, price, description, category } = this.props;
         return (
-            <div className=" addMenuItem">
+            <div>
                 <nav className="navbar fixed-top navbar-expand-lg mb-5 opacity">
                     <a className="order-1 font-weight-bold nav-link text-dark" href='#/login'>Login</a>
                     <a className="order-2 font-weight-bold nav-link text-dark" href='#/signup'>Sign Up</a>
@@ -65,44 +65,58 @@ export default class AddMenuItem extends Component {
                         </div>
                     </div>
                 </nav>
-                <div className="row">
-                    <div className="col-4 offset-4">
-                        <div className="card " style={{ marginTop: '80px' }}>
-                            <form onSubmit={this.handleSubmit}>
-                                <div className="card-body form-group">
-                                    <div className="card-header text-center">
-                                        <h1> <strong> Add Menu Item </strong> </h1>
-                                    </div>
-                                    <br />
-                                    <label htmlFor="itemName"><strong>Menu Item Name   </strong></label>
-                                    <input  onChange={this.handleItemName} type="text" name='name' placeholder='Enter item name...' className='form-control' value={name} />
-                                    <br />
-                                    <label htmlFor="price"><strong>Price   </strong></label>
-                                    <div className="input-group">
-                                    <span className="input-group-addon">$</span>
-                                    <input onChange={this.handleItemPrice} type="number" step='.01' name='price' placeholder='Enter price...' className="form-control currency"  value={price}/>
-                                    </div>
-                                    <br />
-                                    <label htmlFor="description"><strong>Description   </strong></label>
-                                    <input onChange={this.handleItemDescription} type="text" name='description' placeholder='Description...' className="form-control" value={description} />
-                                    <br />
-                                    <label htmlFor="description"><strong>Item Type   </strong></label>
-                                    <select value={category} onChange={this.handleItemCategory} className="form-control" name="itemType" id="item-type" >
-                                        <option defaultValue hidden>Select Item Type   </option>
-                                        <option value="Breakfast">Breakfast</option>
-                                        <option value="Lunch">Lunch</option>
-                                        <option value="Dinner">Dinner</option>
-                                        <option value="Snack">Snack</option>
-                                        <option value="Drinks">Drinks</option>
-                                    </select>
+                <div className="jumbotron jumbotron-fluid mb-0">
+                    <div className="container text-center">
+                        <h1 className="display-3">Add Menu Item</h1>
+                    </div>
+                </div>
+                <div className="container-fluid shortbg">
+                    <div className="row mb-5 justify-content-center">
+                        <div className="col-4 mb-5">
+                            <div className="card text-center mt-5">
+                                <div className="card-header">
+                                    <strong> What's On Your Menu</strong>
                                 </div>
-                                <div className="card-footer text-muted">
-                                    <a href="/"><button type="submit" className="btn btn-primary form-control">Enter</button></a>
-                                </div>
-                            </form>
+                                <form onSubmit={this.handleSubmit}>
+                                    <div className="card-body form-group">
+                                        <label htmlFor="itemName"><strong>Menu Item Name:</strong></label>
+                                        <input  onChange={this.handleItemName} type="text" name='name' placeholder='Enter item name...' className='form-control' value={name} />
+                                        <br />
+                                        <label htmlFor="price"><strong>Price:</strong></label>
+                                        <div className="input-group">
+                                        <span className="input-group-addon">$</span>
+                                        <input onChange={this.handleItemPrice} type="number" step='.01' name='price' placeholder='Enter price...' className="form-control currency"  value={price}/>
+                                        </div>
+                                        <br />
+                                        <label htmlFor="description"><strong>Description:</strong></label>
+                                        <input onChange={this.handleItemDescription} type="text" name='description' placeholder='Description...' className="form-control" value={description} />
+                                        <br />
+                                        <label htmlFor="description"><strong>Item Type:</strong></label>
+                                        <select value={category} onChange={this.handleItemCategory} className="form-control" name="itemType" id="item-type" >
+                                            <option defaultValue hidden>Select Item Type</option>
+                                            <option value="Breakfast">Breakfast</option>
+                                            <option value="Lunch">Lunch</option>
+                                            <option value="Dinner">Dinner</option>
+                                            <option value="Snack">Snack</option>
+                                            <option value="Drinks">Drinks</option>
+                                        </select>
+                                        <br />
+                                        <label htmlFor="itemName"><strong>Menu Item Name:</strong></label>
+                                        <input  onChange={this.handleItemName} type="text" name='name' placeholder='Enter item name...' className='form-control' value={name} />
+                                        <br />
+                                        <label htmlFor="price"><strong>Price:</strong></label>
+                                        <div className="input-group">
+                                            <span className="input-group-addon">$</span>
+                                            <input onChange={this.handleItemPrice} type="number" step='.01' name='price' placeholder='Enter price...' className="form-control currency"  value={price}/>
+                                        </div>
+                                        <div className="card-footer text-muted">
+                                            <a href="/"><button type="submit" className="btn btn-primary form-control">Enter</button></a>
+                                        </div>                                        
+                                    </div>
+                                </form>
+                            </div>
                         </div>
                     </div>
-                    <div className="col-3"></div>
                 </div>
                 <nav className="navbar navbar-expand-lg fixed-bottom justify-content-center mt-5 opacity">
                     <ul className="navbar-nav">
