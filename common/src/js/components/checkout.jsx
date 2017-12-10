@@ -1,8 +1,23 @@
 import React, { Component } from 'react';
+import { addOrder } from '../actions/restaurantDetailsActions';
 
 export default class Checkout extends Component {
+    constructor(props) {
+        super(props);
+
+        this.submitOrder = this.submitOrder.bind(this);
+    }
+
+    submitOrder() {
+        const { dispatch, location, shoppingCart, currentCustomerId } = this.props;
+        console.log(location);
+        console.log(shoppingCart);
+        console.log(currentCustomerId);
+        dispatch(addOrder(location, shoppingCart, currentCustomerId));
+    }
+
     render() {
-        const { shoppingCart, activeCustomer } = this.props;
+        const { shoppingCart, activeCustomer, location } = this.props;
         if (activeCustomer == true) {
             let total = 0;
             shoppingCart.forEach(item => {
@@ -64,7 +79,10 @@ export default class Checkout extends Component {
                                             <a className='btn btn-primary' href='#/shoppingcart' role='button'>Back Shopping Cart</a>
                                         </div>
                                         <div className='col-4 text-center'>
-                                            <a className='btn btn-primary' href='#' role='button'>Submit</a>
+                                            <button className='btn btn-primary' href='#/checkout' onClick={ this.submitOrder } role='button'>
+                                                Submit
+                                            </button>
+                                            <p><strong>Deliver to: </strong>{ location } </p>
                                         </div>
                                         <div className='col-4 justify-content-center'>
                                             <div className='d-flex flex-column'>

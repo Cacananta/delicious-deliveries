@@ -50,3 +50,22 @@ export const getMenuItems = restaurantId => {
       })
   }
 }
+
+export function addOrder(delivery_address, order, custId) {
+  console.log(4321, { delivery_address, order, custId });
+  return (dispatch) => {
+      Axios.post(`http://localhost:3000/api/Customers/${custId}/orders`, { delivery_address, order })
+          .then(res => {
+              alert('Add Successful');
+              console.log('heya', res.data);
+              dispatch({
+                  type: 'ADD_ORDER',
+                  payload: res.data
+              })
+          })
+          .catch(err => {
+              console.log(err);
+              alert('Order Failed')
+          })
+  }              
+}
