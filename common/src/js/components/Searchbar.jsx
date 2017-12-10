@@ -6,6 +6,7 @@ export default class Searchbar extends Component {
     constructor(props) {
         super(props);
 
+        this.changeSearchlocation = this.changeSearchlocation.bind(this);
         this.handleClick = this.handleClick.bind(this)
     }
 
@@ -15,25 +16,35 @@ export default class Searchbar extends Component {
         new google.maps.places.Autocomplete(input, restrictions);
     }
 
+    changeSearchlocation(event) {
+        const { dispatch } = this.props;
+        const { value } = event.target;
+        dispatch(captureLocation(value));
+    }
+
+
     handleClick() {
         const { dispatch } = this.props;
         var input = document.getElementById('searchBarInput').value;
         dispatch(updateSearchLocation());
-        dispatch(captureLocation(input));
-      }
+    }
 
     render() {
-
+        const {location} = this.props;
+        let button;
+        if (location.length > 0) {
+            button = <Link to={'/searchresults'}><button className="btn btn-primary" onClick={this.handleClick} type='button'>Go!</button></Link>
+        }
         return (
             <div className="input-group">
-            <input 
-            placeholder="Enter an address..."
-            id="searchBarInput"
-            type="text"
-            className="form-control"
-            />
-            <Link to={'/searchresults'}><button className="btn btn-primary" onClick={this.handleClick} type='button'>Go!</button></Link>
-        </div>
+                <input
+                    onChange={this.changeSearchlocation}
+                    placeholder="Enter an address..."
+                    id="searchBarInput"
+                    className="form-control"
+                />
+                { button }
+            </div>
         );
     }
 }
