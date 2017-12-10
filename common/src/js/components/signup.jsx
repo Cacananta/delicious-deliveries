@@ -54,16 +54,14 @@ export default class SignUp extends Component {
     handleClick(event) {
         event.preventDefault();
         const { dispatch, owner, name, email, password, phone_number } = this.props;
-        // const { owner } = document.getElementById('owner').value;
         dispatch(addNewClient(owner, name, email, password, phone_number ));
     }
 
 
     render() {
         const {owner, name, email, password, phone_number,  activeOwner, activeCustomer} = this.props;
-        // console.log(document.getElementById('phone').value);
         return (
-            <div className="container">
+            <div>
                 <nav className="navbar fixed-top navbar-expand-lg opacity mb-5">
                     <a className="order-1 font-weight-bold nav-link text-dark" href='#/login'>Login</a>
                     <a className="order-2 font-weight-bold nav-link text-dark" href='#/signup'>Sign Up</a>
@@ -74,42 +72,57 @@ export default class SignUp extends Component {
                         </div>
                     </div>
                 </nav>
-            <div className="row justify-content-center">
-            {/* <div className="col-3"></div> */}
-            <div className="col-6">
-                <div className="card text-center">
-                    <div className="card-header">
-                        Sign Up
+                <div className="jumbotron jumbotron-fluid mb-0">
+                    <div className="container text-center">
+                        <h1 className="display-3">Sign Up</h1>
                     </div>
-                    <form id='signup-form' onSubmit={this.handleClick}>
-                        <div className="card-body form-group">
-                            <select name="" id="owner" value={owner} onChange={this.handleToggle}>
-                                <option defaultValue hidden>Select Account Type</option>
-                                <option value="false">Customer</option>
-                                <option value="true">Owner</option>
-                            </select>
-                            <br />
-                            <br />
-                            <label htmlFor="username">Email:</label><br/>
-                            <input type="email" name='username' id='email' placeholder='(required)' value={email} className="form-group" onChange={this.handleUsernameInput}/>
-                            <br/>
-                            <label htmlFor="passowrd">Password:</label><br/>
-                            <input type="password" name='password' id='password' placeholder='(required)' value={password} className="form-group" onChange={this.handlePasswordInput}/>
-                            <br/>
-                            <label htmlFor="name">Name:</label><br/>
-                            <input type="text" name='name' id='name' placeholder='(required)' value={name} className='form-group' onChange={this.handleNameInput}/>
-                            <br/>
-                            <label htmlFor="phonenumber">Phone Number:</label><br/>
-                            <input type="text" name='phonenumber' id='phone_number' placeholder='Please enter your phone number' value={phone_number} className='form-group' onChange={this.handlePhoneNumberInput}/>
-                        </div>
-                        <div className="card-footer text-muted">
-                            <a href='#/'><button className="btn btn-primary" type='submit'>Sign Up</button></a>
-                        </div>
-                    </form>
                 </div>
-                {/* <div className="col-3"></div> */}
+                <div className="container-fluid shortbg">
+                    <div className="row mb-5 justify-content-center">
+                        <div className="col-4 mb-5">
+                            <div className="card text-center mt-5">
+                                <div className="card-header">
+                                   <strong>Sign Up</strong>
+                                </div>
+                                <form id='signup-form' onSubmit={this.handleClick}>
+                                    <div className="card-body form-group">
+                                        <select name="" id="owner" value={owner} onChange={this.handleToggle}>
+                                            <option defaultValue hidden>Select Account Type</option>
+                                            <option value="false">Customer</option>
+                                            <option value="true">Owner</option>
+                                        </select>
+                                        <br />
+                                        <br />
+                                        <label htmlFor="username"><strong>Email:</strong></label><br/>
+                                        <input type="email" name='username' id='email' placeholder='(required)' value={email} className="form-control" onChange={this.handleUsernameInput}/>
+                                        <br/>
+                                        <label htmlFor="passowrd"><strong>Password:</strong></label><br/>
+                                        <input type="password" name='password' id='password' placeholder='(required)' value={password} className="form-control" onChange={this.handlePasswordInput}/>
+                                        <br/>
+                                        <label htmlFor="name"><strong>Name:</strong></label><br/>
+                                        <input type="text" name='name' id='name' placeholder='(required)' value={name} className='form-control' onChange={this.handleNameInput}/>
+                                        <br/>
+                                        <label htmlFor="phonenumber"><strong>Phone Number:</strong></label><br/>
+                                        <input type="text" name='phonenumber' id='phone_number' placeholder='Please enter your phone number' value={phone_number} className='form-control' onChange={this.handlePhoneNumberInput}/>
+                                    </div>
+                                    <div className="card-footer text-muted">
+                                        <a href='#/'><button className="btn btn-primary" type='submit'>Sign Up</button></a>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                </div>                
+                <nav className="navbar navbar-expand-lg opacity fixed-bottom justify-content-center">
+                    <ul className="navbar-nav">
+                        <li className="nav-item active">
+                            <a className="nav-link font-weight-bold text-dark" href="#/about">About Us</a>
+                        </li>
+                        <li className="nav-item">
+                            <a className="nav-link font-weight-bold text-dark" href="#/contact">Contact Us</a>
+                        </li>
+                    </ul>
+                </nav>      
             </div>
         );
     }
