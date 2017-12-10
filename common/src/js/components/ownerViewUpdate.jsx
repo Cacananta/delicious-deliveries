@@ -51,7 +51,7 @@ export default class ownerViewUpdate extends Component {
             <div className="container-fluid shortbg">
               <div className="row mb-5 justify-content-center">
                 {!!ownerRestaurants && ownerRestaurants.map(restaurant =>
-                  <div key={restaurant.id} className="card my-2 mx-2 col-5 bg-light">
+                  <div key={restaurant.id} className="card my-2 mx-2 col-5 mt-5">
                     <div className="card-body">
                       <div className="row align-items-center">
                         {/* IMAGE */}
