@@ -1,47 +1,53 @@
-// import axios from 'axios';
+import axios from 'axios';
 
-// export const types = {
-//     UPDATE_USERNAME: 'UPDATE_USERNAME',
-//     UPDATE_PASSWORD: 'UPDATE_PASSWORD',
-//     UPDATE_NAME: 'UPDATE_NAME',
-//     UPDATE_PHONENUMBER: 'UPDATE_PHONENUMBER',
-// };
+export const types = {
+    CHANGE_USERNAME: 'CHANGE_USERNAME',
+    CHANGE_PASSWORD: 'CHANGE_PASSWORD',
+    CHANGE_NAME: 'CHANGE_NAME',
+    CHANGE_PHONENUMBER: 'CHANGE_PHONENUMBER',
+    CHANGE_OWNER_INFO: 'CHANGE_OWNER_INFO',
+};
 
-// export function updateOwnerInfo(owner, name, email, password, phone_number) {
-// return (dispatch) => {
-// dispatch({
-//     type: types.UPDATE_OWNER_INFO,
-//     payload: axios.put('http://localhost:3000/api/Owners', {name, email, password, phone_number})
-//     .then(results => {return results.data})
-//     .catch(err => console.log(err))
-// })
+export function changeOwnerInfo(name, email, password, phone_number, currentOwnerId) {
+    console.log(name, email, password, phone_number, currentOwnerId);
+    
+return (dispatch) => {
+ axios.put(`http://localhost:3000/api/Owners/${currentOwnerId}`, {name, email, password, phone_number})
+    .then(results => {
+        dispatch({
+            type: types.CHANGE_OWNER_INFO,
+            payload: results.data
+        })
+    })
+    .catch(err => console.log(err))
 
-// }
-// }
-// export function updateUsername(username) {
-//     return {
-//         type: types.UPDATE_USERNAME,
-//         payload: username
-//     };
-// }
 
-// export function updatePassword(password) {
-//     return {
-//         type: types.UPDATE_PASSWORD,
-//         payload: password
-//     };
-// }
+}
+}
+export function changeUsername(username) {
+    return {
+        type: types.CHANGE_USERNAME,
+        payload: username
+    };
+}
 
-// export function updateName(name) {
-//     return {
-//         type: types.UPDATE_NAME,
-//         payload: name
-//     };
-// }
+export function changePassword(password) {
+    return {
+        type: types.CHANGE_PASSWORD,
+        payload: password
+    };
+}
 
-// export function updatePhonenumber(phonenumber) {
-//     return {
-//         type: types.UPDATE_PHONENUMBER,
-//         payload: phonenumber
-//     };
-// }
+export function changeName(name) {
+    return {
+        type: types.CHANGE_NAME,
+        payload: name
+    };
+}
+
+export function changePhonenumber(phonenumber) {
+    return {
+        type: types.CHANGE_PHONENUMBER,
+        payload: phonenumber
+    };
+}
