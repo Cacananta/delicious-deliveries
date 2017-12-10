@@ -43,43 +43,45 @@ export default class ownerViewUpdate extends Component {
 
           {/* MAIN AREA */}
           <section>
-            <div className="jumbotron jumbotron-fluid addRest">
+            <div className="jumbotron jumbotron-fluid mb-0">
               <div className="container text-center">
-                <h1 className="display-3">View/Update</h1>
+                <h1 className="display-3">View/Update Restaurants</h1>
               </div>
             </div>
-            <div className="row justify-content-lg-center">
-              {!!ownerRestaurants && ownerRestaurants.map(restaurant =>
-                <div key={restaurant.id} className="card my-2 mx-2 col-5 bg-light">
-                  <div className="card-body">
-                    <div className="row align-items-center">
-                      {/* IMAGE */}
-                      <div className="col-lg-4 float-left">
-                        <img className="text-center img-fluid mx-auto" src={restaurant.image} alt={restaurant.name} />
-                      </div>
-                      {/* RESTAURANT INFORMATION */}
-                      <div className="col-lg-8 float-right px-0">
-                        <div className="align-self-center">
-                          <h5 className="pb-4 mb-0">{restaurant.name}</h5>
+            <div className="container-fluid shortbg">
+              <div className="row mb-5 justify-content-center">
+                {!!ownerRestaurants && ownerRestaurants.map(restaurant =>
+                  <div key={restaurant.id} className="card my-2 mx-2 col-5 bg-light">
+                    <div className="card-body">
+                      <div className="row align-items-center">
+                        {/* IMAGE */}
+                        <div className="col-lg-4 float-left">
+                          <img className="text-center img-fluid mx-auto" src={restaurant.image} alt={restaurant.name} />
                         </div>
-                        <div>
-                          <h6 className="pb-4 mb-0">{restaurant.address1} {restaurant.city}, {restaurant.state} {restaurant.zip}</h6>
-                        </div>
-                        <div className="align-items-center">
-                        <Link to={ `/owner/${restaurant.ownerId}/updaterestaurant/${restaurant.id}` }>
-                          <button id={restaurant.id} className="btn btn-primary mx-2" type="button" onClick={ this.selectRestaurant }>
-                            Update Details
-                          </button>
-                        </Link>
-                        <Link to={`/owner/${restaurant.ownerId}/restaurant/${restaurant.id}/addMenuItem`}>
-                          <button id={restaurant.id} className="btn btn-primary mx-2" type="button" onClick={this.addMenuItem}>Add Menu Item</button>
+                        {/* RESTAURANT INFORMATION */}
+                        <div className="col-lg-8 float-right px-0">
+                          <div className="align-self-center">
+                            <h5 className="pb-4 mb-0">{restaurant.name}</h5>
+                          </div>
+                          <div>
+                            <h6 className="pb-4 mb-0">{restaurant.address1} {restaurant.city}, {restaurant.state} {restaurant.zip}</h6>
+                          </div>
+                          <div className="align-items-center">
+                          <Link to={ `/owner/${restaurant.ownerId}/updaterestaurant/${restaurant.id}` }>
+                            <button id={restaurant.id} className="btn btn-primary mx-2" type="button" onClick={ this.selectRestaurant }>
+                              Update Details
+                            </button>
                           </Link>
+                          <Link to={`/owner/${restaurant.ownerId}/restaurant/${restaurant.id}/addMenuItem`}>
+                            <button id={restaurant.id} className="btn btn-primary mx-2" type="button" onClick={this.addMenuItem}>Add Menu Item</button>
+                            </Link>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              )}
+                )}
+              </div>
             </div>
           </section>
 
