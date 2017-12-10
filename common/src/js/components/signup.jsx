@@ -103,7 +103,7 @@ export default class SignUp extends Component {
                                         <input type="text" name='name' id='name' placeholder='(required)' value={name} className='form-control' onChange={this.handleNameInput}/>
                                         <br/>
                                         <label htmlFor="phonenumber"><strong>Phone Number:</strong></label><br/>
-                                        <input type="text" name='phonenumber' id='phone_number' placeholder='Please enter your phone number' value={phone_number} className='form-control' onChange={this.handlePhoneNumberInput}/>
+                                        <input type="number" name='phonenumber' id='phone_number' placeholder='Please enter your phone number' value={phone_number} className='form-control' onChange={this.handlePhoneNumberInput}/>
                                     </div>
                                     <div className="card-footer text-muted">
                                         <a href='#/'><button className="btn btn-primary" type='submit'>Sign Up</button></a>
