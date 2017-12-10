@@ -82,7 +82,7 @@ export default class SignUp extends Component {
                         <div className="col-4 mb-5">
                             <div className="card text-center mt-5">
                                 <div className="card-header">
-                                   <strong>Sign Up</strong>
+                                   <strong>Create An Account</strong>
                                 </div>
                                 <form id='signup-form' onSubmit={this.handleClick}>
                                     <div className="card-body form-group">
