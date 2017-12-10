@@ -13,7 +13,7 @@ export default class Checkout extends Component {
             let delivery = 2.99;
 
             return (
-                <div className='container short-bg'>
+                <div>
                     <nav className="navbar fixed-top navbar-expand-lg opacity mb-5">
                         <a className="order-1 font-weight-bold nav-link text-dark" href='#/login'>Login</a>
                         <a className="order-2 font-weight-bold nav-link text-dark" href='#/signup'>Sign Up</a>
@@ -22,48 +22,60 @@ export default class Checkout extends Component {
                                 <a className="nav-item nav-link font-weight-bold text-muted" href="#/">Delicious Deliveries</a>
                             </div>
                         </div>
-                    </nav>                
-                    <div className='mb-3'>
-                        <h1 className='text-center'>Checkout</h1>
-                    </div>
-                    <div className='w-75 row mx-auto'>
-                        <div className='col-4 text-center'>
-                            <strong>Items</strong>
-                        </div>
-                        <div className='col-4 text-center'>
-                            <strong>Quantity</strong>
-                        </div>
-                        <div className='col-4 text-center'>
-                            <strong>Totals</strong>
+                    </nav>
+                    <div className="jumbotron jumbotron-fluid mb-0">
+                        <div className="container text-center">
+                            <h1 className="display-3">Checkout</h1>
                         </div>
                     </div>
-                    {shoppingCart.map((cartItem, index) =>
-                        <div key={index} className='w-75 row mx-auto py-1'>
-                            <div className='col-4'>
-                                <p className='text-center'>{cartItem.menuItem}</p>
-                            </div>
-                            <div className='col-4'>
-                                <p className='text-center'>{cartItem.quantity}</p>
-                            </div>
-                            <div className='col-4 d-flex'>
-                                <p className='ml-auto'>${(cartItem.price * cartItem.quantity).toFixed(2)}</p>
-                            </div>
-                        </div>
-                    )}
-                    <hr />
-                    <div className='w-75 row mx-auto'>
-                        <div className='col-4'>
-                            <a className='btn btn-primary' href='#/shoppingcart' role='button'>Back Shopping Cart</a>
-                        </div>
-                        <div className='col-4'>
-                            <a className='btn btn-primary' href='#' role='button'>Submit</a>
-                        </div>
-                        <div className='w-75 col-4 mx-auto'>
-                            <div className='d-flex flex-column'>
-                                <div className='ml-auto'>Sub-Total: ${total.toFixed(2)}</div>
-                                <div className='ml-auto'>Tax: ${(total * taxRate).toFixed(2)}</div>
-                                <div className='ml-auto'>Delivery Charge: ${delivery}</div>
-                                <div className='ml-auto'>Final Total: $<strong>{( total + delivery + (total * taxRate)).toFixed(2)}</strong></div>
+                    <div className="container-fluid shortbg">
+                        <div className="row mb-5">
+                            <div className="col-12 mb-5">
+                                <div className="card mt-5">
+                                    <div className="card-header">
+                                    <div className="row">
+                                        <div className="col-4 text-center">
+                                            <strong>Items:</strong>
+                                        </div>
+                                        <div className="col-4 text-center">
+                                            <strong>Quantity:</strong>
+                                        </div>
+                                        <div className='col-4 text-center'>
+                                            <strong>Totals:</strong>
+                                        </div>
+                                    </div>
+                                    </div>
+                                    {shoppingCart.map((cartItem, index) =>
+                                        <div key={index} className='row'>
+                                            <div className='col-4 text-center'>
+                                                <p className='text-center'>{cartItem.menuItem}</p>
+                                            </div>
+                                            <div className='col-4 text-center'>
+                                                <p className='text-center'>{cartItem.quantity}</p>
+                                            </div>
+                                            <div className='col-4 text-center'>
+                                                <p className='ml-auto'>${(cartItem.price * cartItem.quantity).toFixed(2)}</p>
+                                            </div>
+                                        </div>
+                                    )}
+                                    <hr />
+                                    <div className='row'>
+                                        <div className='col-4 text-center'>
+                                            <a className='btn btn-primary' href='#/shoppingcart' role='button'>Back Shopping Cart</a>
+                                        </div>
+                                        <div className='col-4 text-center'>
+                                            <a className='btn btn-primary' href='#' role='button'>Submit</a>
+                                        </div>
+                                        <div className='col-4 justify-content-center'>
+                                            <div className='d-flex flex-column'>
+                                                <div className='ml-auto'>Sub-Total: ${total.toFixed(2)}</div>
+                                                <div className='ml-auto'>Tax: ${(total * taxRate).toFixed(2)}</div>
+                                                <div className='ml-auto'>Delivery Charge: ${delivery}</div>
+                                                <div className='ml-auto'>Final Total: $<strong>{( total + delivery + (total * taxRate)).toFixed(2)}</strong></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -81,26 +93,33 @@ export default class Checkout extends Component {
             );
         } else {
             return (
-                <div className='container-fluid shortbg mt-5 pt-2'>
-                <nav className="navbar fixed-top navbar-expand-lg opacity mb-5">
-                    <a className="order-1 font-weight-bold nav-link text-dark" href='#/login'>Login</a>
-                    <a className="order-2 font-weight-bold nav-link text-dark" href='#/signup'>Sign Up</a>
-                    <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-                        <div className="navbar-nav">
-                            <a className="nav-item nav-link font-weight-bold text-muted" href="#/">Delicious Deliveries</a>
+                <div>
+                    <nav className="navbar fixed-top navbar-expand-lg opacity mb-5">
+                        <a className="order-1 font-weight-bold nav-link text-dark" href='#/login'>Login</a>
+                        <a className="order-2 font-weight-bold nav-link text-dark" href='#/signup'>Sign Up</a>
+                        <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+                            <div className="navbar-nav">
+                                <a className="nav-item nav-link font-weight-bold text-muted" href="#/">Delicious Deliveries</a>
+                            </div>
+                        </div>
+                    </nav>
+                    <div className="jumbotron jumbotron-fluid mb-0">
+                        <div className="container text-center">
+                            <h1 className="display-3">Checkout</h1>
                         </div>
                     </div>
-                </nav>
-                    <h1 className='text-center pt-5'>Please Sign in as a Customer</h1>
-                    <h1 className='text-center'>To Check Out</h1>
-                    <div className='text-center'>
-                        <a href="#/shoppingcart">Back to Shopping Cart</a>
-                        <br />
-                        <span>
-                            <a href="#/login">Log in</a>
-                            {'     '}
-                            <a href="#/signup">Sign up</a>
-                        </span>
+                    <div className="container-fluid shortbg">
+                        <h1 className='text-center pt-5'>Please Sign in as a Customer</h1>
+                        <h1 className='text-center'>To Check Out</h1>
+                        <div className='text-center'>
+                            <a href="#/shoppingcart">Back to Shopping Cart</a>
+                            <br />
+                            <span>
+                                <a href="#/login">Log in</a>
+                                {'     '}
+                                <a href="#/signup">Sign up</a>
+                            </span>
+                        </div>
                     </div>
                     <nav className="navbar navbar-expand-lg opacity fixed-bottom justify-content-center">
                         <ul className="navbar-nav">
@@ -117,3 +136,7 @@ export default class Checkout extends Component {
         }
     }
 }
+
+
+
+// py-1
