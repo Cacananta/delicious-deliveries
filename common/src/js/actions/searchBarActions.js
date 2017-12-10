@@ -1,5 +1,11 @@
 import Axios from 'axios';
 
+export const types = {
+    UPDATE_SEARCH_LOCATION: 'UPDATE_SEARCH_LOCATION',  
+    UPDATE_SEARCH_LOCATION_SUCCESS: 'UPDATE_SEARCH_LOCATION_SUCCESS',
+    CAPTURE_LOCATION: 'CAPTURE_LOCATION',
+}
+
 export const updateSearchLocation = input => {
     return (dispatch) => {
         dispatch({
@@ -21,9 +27,9 @@ export const updateSearchLocation = input => {
     }
 }
 
-export const captureLocation = input => {
+export function captureLocation(location) {
     return {
-        type: 'CAPTURE_LOCATION',
-        payload: input
-    }
+        type: types.CAPTURE_LOCATION,
+        payload: location
+    };
 }
