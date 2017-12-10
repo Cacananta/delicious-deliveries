@@ -6,8 +6,14 @@
     "validateUpsert": true
   },
   "properties": {
-    "delivery-address": "string",
-    "required": true
+    "delivery_address": {
+      "type": "string",
+      "required": true
+    },
+    "order": {
+      "type": "array",
+      "required": "true"
+    }
   },
   "validations": [],
   "relations": {

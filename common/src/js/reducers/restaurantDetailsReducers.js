@@ -32,6 +32,13 @@ export default function restaurantDetailsReducers(state = defaultState, action) 
       }
     }
 
+    case 'ADD_ORDER': {
+      console.log('you da man', payload);
+      return{
+          ...state
+      }
+    }
+
     case 'GET_MEUN_ITEMS': {
       console.log(23, payload);
       return {
