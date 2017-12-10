@@ -3,7 +3,7 @@ import { types } from '../actions/loginActions';
 const INITIAL_STATE = {
     email: '',
     password: '',
-    owner: 'false',
+    owner: '',
     activeOwner: false,
     activeCustomer: false,
     currentOwnerId: '',
