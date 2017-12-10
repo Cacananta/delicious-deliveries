@@ -104,61 +104,61 @@ export default class UpdateRestaurant extends Component {
                         </div>
                     </div>
                 </nav>
-                <div className="jumbotron jumbotron-fluid addRest">
+                <div className="jumbotron jumbotron-fluid mb-0">
                     <div className="container text-center">
                         <h1 className="display-3">Update {selectedRestaurant.name}</h1>
                     </div>
                 </div>
-                <div className="row mb-5">
-                    <div className="col-3"></div>
-                    <div className="col-6 mb-5">
-                        <div className="card text-center">
-                            <div className="card-header">
-                                Tell Us About Your Restaurant
+                <div className="container-fluid shortbg">
+                    <div className="row mb-5 justify-content-center">
+                        <div className="col-4 mb-5">
+                            <div className="card text-center mt-5">
+                                <div className="card-header">
+                                    <strong>Tell Us About Your Restaurant</strong>
+                                </div>
+                                <form onSubmit={this.handleClick}>
+                                    <div className="card-body form-group">
+                                        <select id="food_type" value={food_type} onChange={this.handleToggle} >
+                                            <option defaultValue hidden>Select Restaurant Type</option>
+                                            <option value="Mexican">Mexican</option>
+                                            <option value="Asian">Asian</option>
+                                            <option value="BBQ">BBQ</option>
+                                            <option value="American">American</option>
+                                            <option value="Italian">Italian</option>
+                                        </select>
+                                        <br />
+                                        <br />
+                                        <label htmlFor="name"><strong>Restaurant Name:</strong></label><br />
+                                        <input type="text" name='name' placeholder='Enter restaurnat name...(required)' value={name} onChange={this.handleRestaurantInput} className='form-control' />
+                                        <br />
+                                        <label htmlFor="address-1"><strong>Address 1:</strong></label><br />
+                                        <input type="text" name='address-1' placeholder='Street address...(required)' value={address1} onChange={this.handleAddress1} className="form-control" />
+                                        <br />
+                                        <label htmlFor="address-2"><strong>Address 2:</strong></label><br />
+                                        <input type="text" name='address-2' placeholder='Unit, Spc, Suite...' value={address2} onChange={this.handleAddress2} className="form-control" />
+                                        <br />
+                                        <label htmlFor="city"><strong>City:</strong></label><br />
+                                        <input type="text" name='city' placeholder='City...(required)' value={city} onChange={this.handleCityInput} className="form-control" />
+                                        <br />
+                                        <label htmlFor="state"><strong>State:</strong></label><br />
+                                        <input type="text" name='state' placeholder='State...(required)' value={state} onChange={this.handleStateInput} className="form-control" />
+                                        <br />
+                                        <label htmlFor="zip-code"><strong>Postal Code:</strong></label><br />
+                                        <input type="text" name='zip-code' placeholder='Postal code...(required)' value={zip} onChange={this.handleZipCodeInput} className="form-control" />
+                                        <br />
+                                        <label htmlFor="image"><strong>Image:</strong></label><br />
+                                        <input type="url" name='image' placeholder='Image url...' value={image} onChange={this.handleImageInput} className="form-control" />
+                                        <br />
+                                        <label htmlFor="phone-number"><strong>Phone Number:</strong></label><br />
+                                        <input type="number" name='phone-number' placeholder='Phone number...(required)' value={phone_number} onChange={this.handlePhoneNumberInput} className="form-control" />
+                                    </div>
+                                    <div className="card-footer text-muted">
+                                        <a href="#/"><button className="btn btn-primary" type='submit'>Enter</button></a>
+                                    </div>
+                                </form>
                             </div>
-                            <form onSubmit={this.handleClick}>
-                                <div className="card-body form-group">
-                                    <select id="food_type" value={food_type} onChange={this.handleToggle} >
-                                        <option defaultValue hidden>Select Restaurant Type</option>
-                                        <option value="Mexican">Mexican</option>
-                                        <option value="Asian">Asian</option>
-                                        <option value="BBQ">BBQ</option>
-                                        <option value="American">American</option>
-                                        <option value="Italian">Italian</option>
-                                    </select>
-                                    <br />
-                                    <br />
-                                    <label htmlFor="name">Restaurant Name</label><br />
-                                    <input type="text" name='name' placeholder='Enter restaurnat name...(required)' value={name} onChange={this.handleRestaurantInput} className='form-group' />
-                                    <br />
-                                    <label htmlFor="address-1">Address 1</label><br />
-                                    <input type="text" name='address-1' placeholder='Street address...(required)' value={address1} onChange={this.handleAddress1} className="form-group" />
-                                    <br />
-                                    <label htmlFor="address-2">Address 2</label><br />
-                                    <input type="text" name='address-2' placeholder='Unit, Spc, Suite...' value={address2} onChange={this.handleAddress2} className="form-group" />
-                                    <br />
-                                    <label htmlFor="city">City</label><br />
-                                    <input type="text" name='city' placeholder='City...(required)' value={city} onChange={this.handleCityInput} className="form-group" />
-                                    <br />
-                                    <label htmlFor="state">State</label><br />
-                                    <input type="text" name='state' placeholder='State...(required)' value={state} onChange={this.handleStateInput} className="form-group" />
-                                    <br />
-                                    <label htmlFor="zip-code">Postal Code</label><br />
-                                    <input type="text" name='zip-code' placeholder='Postal code...(required)' value={zip} onChange={this.handleZipCodeInput} className="form-group" />
-                                    <br />
-                                    <label htmlFor="image">Image</label><br />
-                                    <input type="url" name='image' placeholder='Image url...' value={image} onChange={this.handleImageInput} className="form-group" />
-                                    <br />
-                                    <label htmlFor="phone-number">Phone Number</label><br />
-                                    <input type="number" name='phone-number' placeholder='Phone number...(required)' value={phone_number} onChange={this.handlePhoneNumberInput} className="form-group" />
-                                </div>
-                                <div className="card-footer text-muted">
-                                    <a href="#/"><button className="btn btn-primary" type='submit'>Enter</button></a>
-                                </div>
-                            </form>
                         </div>
                     </div>
-                    <div className="col-3"></div>
                 </div>
                 <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-bottom justify-content-center mt-5">
                     <ul className="navbar-nav">
