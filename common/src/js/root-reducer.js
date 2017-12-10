@@ -10,6 +10,7 @@ import addMenuItemReducer from './reducers/addMenuItemReducer';
 import ownerAdminReducer from './reducers/ownerAdminReducer';
 import UpdateRestaurantReducer from './reducers/updateRestaurantDetailsReducer';
 import ownerViewUpdateReducer from './reducers/ownerViewUpdateReducer';
+import updateOwnerInfoReducer from './reducers/updateOwnerInfoReducer'
 
 const rootReducer = combineReducers({
   restaurantDetails: restaurantDetailsReducers,
@@ -20,7 +21,8 @@ const rootReducer = combineReducers({
   AddMenuItem: addMenuItemReducer,
   // ownerRestaurants: ownerAdminReducer,
   updateRestaurant: UpdateRestaurantReducer,
-  ownerViewUpdate: ownerViewUpdateReducer
+  ownerViewUpdate: ownerViewUpdateReducer,
+  UpdateOwnerInfo: updateOwnerInfoReducer
 })
 
 export default rootReducer;

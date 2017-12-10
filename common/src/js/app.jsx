@@ -14,7 +14,7 @@ import Checkout from './index/checkoutIndex';
 import OwnerAdmin from './index/ownerAdminIndex';
 import OwnerViewUpdateIndex from './index/ownerViewUpdateIndex';
 import UpdateRestaurant from './index/updateRestaurantDetailsIndex';
-import UpdateOwnerInfo from './components/updateOwnerInfo';
+import UpdateOwnerInfo from './index/updateOwnerInfoIndex';
 import UpdateUserInfo from './components/updateUserInfo';
 
 
