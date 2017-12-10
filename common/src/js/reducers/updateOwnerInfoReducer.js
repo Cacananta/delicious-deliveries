@@ -1,10 +1,10 @@
 import { types } from '../actions/updateOwnerInfoActions';
 
 const defaultState = {
-    username: "Email@bing.com",
-    password: "Password",
-    name: "Preston Hill",
-    phonenumber: "9190205067",
+    username: "",
+    password: "",
+    name: "",
+    phonenumber: "",
 };
 
 export default function updateOwnerInfoReducer (state = defaultState, action) {
