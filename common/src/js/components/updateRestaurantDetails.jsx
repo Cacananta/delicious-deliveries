@@ -94,12 +94,13 @@ export default class UpdateRestaurant extends Component {
         const { food_type, name, address1, address2, city, state, zip, image, phone_number, activeOwner, selectedRestaurant } = this.props;
         return (
             <div>
-                <nav className="navbar fixed-top navbar-expand-lg navbar-light bg-light mb-5">
+                <nav className="navbar fixed-top navbar-expand-lg opacity mb-5">
                     <a className="order-1 font-weight-bold nav-link text-dark" href='#/login'>Login</a>
                     <a className="order-2 font-weight-bold nav-link text-dark" href='#/signup'>Sign Up</a>
                     <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                         <div className="navbar-nav">
-                            <a className="nav-item nav-link font-weight-bold" href="#/">Delicious Deliveries</a>
+                            <a className="nav-item nav-link font-weight-bold text-muted" href="#/">Delicious Deliveries</a>
+                            <a href="#/shoppingcart"><img src="../cart.png"/>()</a>
                         </div>
                     </div>
                 </nav>

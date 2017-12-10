@@ -61,6 +61,7 @@ export default class AddMenuItem extends Component {
                     <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                         <div className="navbar-nav">
                             <a className="nav-item nav-link font-weight-bold text-muted" href="#/">Delicious Deliveries</a>
+                            <a href="#/shoppingcart"><img src="../cart.png"/>()</a>
                         </div>
                     </div>
                 </nav>

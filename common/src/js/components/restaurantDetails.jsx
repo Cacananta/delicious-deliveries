@@ -39,6 +39,16 @@ this.addCart = this.addCart.bind(this);
     const drinkList = menuItems.filter(item => item.category === 'Drink');
     return(
       <div className='container'>
+        <nav className="navbar fixed-top navbar-expand-lg opacity mb-5">
+            <a className="order-1 font-weight-bold nav-link text-dark" href='#/login'>Login</a>
+            <a className="order-2 font-weight-bold nav-link text-dark" href='#/signup'>Sign Up</a>
+            <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div className="navbar-nav">
+                    <a className="nav-item nav-link font-weight-bold text-muted" href="#/">Delicious Deliveries</a>
+                    <a href="#/shoppingcart"><img src="../cart.png"/>()</a>
+                </div>
+            </div>
+        </nav>
         <h1 className='text-center'>{ chosenRestaurant.name }</h1>
         <div className='row mb-2'>
           <div className='col-6'>
