@@ -66,35 +66,50 @@ export default class UpdateOwnerInfo extends Component {
                         </div>
                     </div>
                 </nav>
-                <div className="row">
-                    <div className="col-4 offset-4" style={{ marginTop: "200px" }}>
-                        <div >
-                            <div className="card text-center" >
+                <div className="jumbotron jumbotron-fluid mb-0">
+                    <div className="container text-center">
+                        <h1 className="display-3">Update Owner Information</h1>
+                    </div>
+                </div>
+                <div className="container-fluid">
+                    <div className="row mb-5 justify-content-center">
+                        <div className="col-4 mb-5">
+                            <div className="card text-center mt-5" >
                                 <div className="card-header">
-                                    <strong> Update Owner Information </strong>
+                                    <strong>Update Your Information</strong>
                                 </div>
                                 <form id='changeOwnerInfo' onSubmit={this.handleSubmit}>
                                     <div className="card-body form-group">
-                                        <label htmlFor="username">Email:</label>
+                                        <label htmlFor="username"><strong>Email:</strong></label>
                                         <input type="username" name='username' id='username' placeholder='Please enter your email..(required)' value={username} className="form-control" onChange={this.handleUsernameInput} />
                                         <br />
-                                        <label htmlFor="name">Name:</label>
+                                        <label htmlFor="name"><strong>Name:</strong></label>
                                         <input type="text" name='name' id='name' placeholder='Please enter your full name...(required)' value={name} className='form-control' onChange={this.handleNameInput} />
                                         <br />
-                                        <label htmlFor="phonenumber">Phone Number:</label>
+                                        <label htmlFor="phonenumber"><strong>Phone Number:</strong></label>
                                         <input type="text" name='phonenumber' id='phonenumber' placeholder='Please enter your phone number' value={phonenumber} className='form-control' onChange={this.handlePhoneNumberInput} />
                                         <br />
-                                        <label htmlFor="passowrd">Verify Password:</label>
+                                        <label htmlFor="passowrd"><strong>Verify Password:</strong></label>
                                         <input type="password" name='password' id='password' placeholder='Please enter your password...(required)' value={password} className="form-control" onChange={this.handlePasswordInput} />
                                     </div>
                                     <div className="card-footer text-muted">
-                                        <button className="btn btn-primary form-control" type='submit'>Update Information</button>
+                                        <button className="btn btn-primary" type='submit'>Update Information</button>
                                     </div>
                                 </form>
                             </div>
                         </div>
                     </div>
                 </div>
+                <nav className="navbar navbar-expand-lg opacity fixed-bottom justify-content-center mt-5">
+                    <ul className="navbar-nav">
+                        <li className="nav-item active">
+                            <a className="nav-link font-weight-bold text-dark" href="#/about">About Us</a>
+                        </li>
+                        <li className="nav-item">
+                            <a className="nav-link font-weight-bold text-dark" href="#/contact">Contact Us</a>
+                        </li>
+                    </ul>
+                </nav> 
             </div>
         );
     }
