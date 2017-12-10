@@ -80,7 +80,7 @@ export function updatePhoneNumber(phone_number) {
 export function addNewRestaurant(food_type, name, address1, address2, city, state, zip, image, phone_number, currentOwnerId) {
     console.log({ food_type, name, address1, address2, city, state, zip, image, phone_number, currentOwnerId });
     return (dispatch) => {
-        axios.post('http://localhost:3000/api/Owners/' + currentOwnerId + '/restaurants', { food_type, name, address1, address2, city, state, zip, image, phone_number })
+        axios.post('https://delicious-deliveries.herokuapp.com/api/Owners/' + currentOwnerId + '/restaurants', { food_type, name, address1, address2, city, state, zip, image, phone_number })
             .then(results => {
                 dispatch({
                     type: types.ADD_NEW_RESTAURANT,
@@ -90,7 +90,7 @@ export function addNewRestaurant(food_type, name, address1, address2, city, stat
                 return results.data.id;
             })
             .then(product => {
-                axios.post(`http://localhost:3000/api/Restaurants/${product}/menus`)
+                axios.post(`https://delicious-deliveries.herokuapp.com/api/Restaurants/${product}/menus`)
                     .then(product => {
                         console.log('Added menuId to Restaurant', product);
                     })

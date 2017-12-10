@@ -14,7 +14,7 @@ export default function SignUpReducer (state = INITIAL_STATE, action) {
     switch (type) {
         case types.ADD_OWNER: {
             if (payload) {
-                window.location.href= 'http://localhost:3000/#/login';
+                window.location.href= 'https://delicious-deliveries.herokuapp.com/#/login';
                 return {
                     ...state,
                     name: payload.name,
@@ -35,7 +35,7 @@ export default function SignUpReducer (state = INITIAL_STATE, action) {
 
         case types.ADD_CUSTOMER: {
             if (payload) {
-                window.location.href= 'http://localhost:3000/#/login';
+                window.location.href= 'https://delicious-deliveries.herokuapp.com/#/login';
                 return {
                     ...state,
                     name: payload.name,

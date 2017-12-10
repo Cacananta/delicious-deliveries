@@ -11,7 +11,7 @@ export const updateSearchLocation = input => {
         dispatch({
             type: 'UPDATE_SEARCH_LOCATION',
         });
-        Axios.get('http://localhost:3000/api/Restaurants')
+        Axios.get('https://delicious-deliveries.herokuapp.com/api/Restaurants')
         .then(res => {
             dispatch({
                 type: 'UPDATE_SEARCH_LOCATION_SUCCESS',

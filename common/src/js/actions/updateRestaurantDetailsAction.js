@@ -87,7 +87,7 @@ export function pickRestaurant(index) {
 export function updateRestaurant(food_type, name, address1, address2, city, state, zip, image, phone_number, ownerId, restaurantId) {
     console.log({food_type, name, address1, address2, city, state, zip, image, phone_number, ownerId, restaurantId});
     return (dispatch) => {
-        axios.put(`http://localhost:3000/api/Owners/${ownerId}/restaurants/${restaurantId}`, {food_type, name, address1, address2, city, state, zip, image, phone_number})
+        axios.put(`https://delicious-deliveries.herokuapp.com/api/Owners/${ownerId}/restaurants/${restaurantId}`, {food_type, name, address1, address2, city, state, zip, image, phone_number})
             .then(results => {
                 alert('Update Successful')
                 console.log(results.data);
@@ -105,7 +105,7 @@ export const getOwnerRestaurants = ownerId => {
         dispatch({
             type: 'GET_OWNER_RESTAURANTS',
         });
-        axios.get(`http://localhost:3000/api/Owners/${ownerId}/restaurants`)
+        axios.get(`https://delicious-deliveries.herokuapp.com/api/Owners/${ownerId}/restaurants`)
         .then(res => {
             console.log(res.data);
             dispatch({

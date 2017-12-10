@@ -23,11 +23,11 @@ export function chooseRestaurant(index) {
 
 export const getMenuItems = restaurantId => {
   return (dispatch) => {
-      Axios.get(`http://localhost:3000/api/Restaurants/${restaurantId}/menus`)
+      Axios.get(`https://delicious-deliveries.herokuapp.com/api/Restaurants/${restaurantId}/menus`)
       .then(res => res.data.id)
       .then(result => {
         console.log(':)', result);
-        Axios.get(`http://localhost:3000/api/Menus/${result}/menuItems`)
+        Axios.get(`https://delicious-deliveries.herokuapp.com/api/Menus/${result}/menuItems`)
         .then(list => {
           console.log(2, list.data);
           dispatch({
@@ -54,7 +54,7 @@ export const getMenuItems = restaurantId => {
 export function addOrder(delivery_address, order, custId) {
   console.log(4321, { delivery_address, order, custId });
   return (dispatch) => {
-      Axios.post(`http://localhost:3000/api/Customers/${custId}/orders`, { delivery_address, order })
+      Axios.post(`https://delicious-deliveries.herokuapp.com/api/Customers/${custId}/orders`, { delivery_address, order })
           .then(res => {
               alert('Add Successful');
               console.log('heya', res.data);

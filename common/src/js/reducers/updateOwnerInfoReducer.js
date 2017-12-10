@@ -14,7 +14,7 @@ export default function updateOwnerInfoReducer (state = defaultState, action) {
             case types.CHANGE_OWNER_INFO: {
                 if(payload) {
                     console.log('SUCCESS')
-                    window.location.href = `http://localhost:3000/#/owner/${payload.id}/`;
+                    window.location.href = `https://delicious-deliveries.herokuapp.com/#/owner/${payload.id}/`;
                     return {
                         ...state,
                         username: '',
