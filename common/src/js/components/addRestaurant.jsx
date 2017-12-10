@@ -151,7 +151,7 @@ export default class AddRestaurant extends Component {
                                         <input type="number" name='phone-number' placeholder='(required)' value={phone_number} onChange={this.handlePhoneNumberInput} className="form-control"/>
                                     </div>
                                     <div className="card-footer text-muted">
-                                        <a href="/"><button className="btn btn-primary" type='submit'>Enter</button></a>
+                                        <a href="#/"><button className="btn btn-primary" type='submit'>Enter</button></a>
                                     </div>
                                 </form>
                             </div>

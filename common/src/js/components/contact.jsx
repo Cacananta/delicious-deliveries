@@ -21,7 +21,7 @@ export default class Contact extends Component {
                                 <div className="card-body">
                                     <p className="card-text">If you have many questions, comments, or concerns feel free to drop us a message.</p>
                                     <p>DeliciousDeliveriesSD@gmail.com</p>
-                                    <a href="/" className="btn btn-secondary">Back to Home</a>
+                                    <a href="#/" className="btn btn-secondary">Back to Home</a>
                                 </div>
                             </div>
                         </div>

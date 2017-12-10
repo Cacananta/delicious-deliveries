@@ -44,10 +44,9 @@ export default class AddMenuItem extends Component {
     }
 
     handleSubmit(event) {
-    event.preventDefault();
-    const { dispatch, name, price, description, category, activeRestaurant } = this.props;
-    const { data } = { name, price, description, category, activeRestaurant }
-    dispatch(addNewMenuItem(data));
+        event.preventDefault();
+        const { dispatch, name, price, description, category, activeRestaurant } = this.props;
+        dispatch(addNewMenuItem(name, price, description, category, activeRestaurant));
     }
 
 
@@ -89,7 +88,6 @@ export default class AddMenuItem extends Component {
                                             <option value="Drinks">Drinks</option>
                                         </select>
                                         <br />
-                                        <br />
                                         <label htmlFor="itemName"><strong>Menu Item Name:</strong></label><br/>
                                         <input  onChange={this.handleItemName} type="text" name='name' placeholder='Enter item name...' className='form-control' value={name} />
                                         <br />
@@ -100,10 +98,10 @@ export default class AddMenuItem extends Component {
                                         </div>
                                         <br/>
                                         <label htmlFor="description"><strong>Description:</strong></label><br/>
-                                        <input onChange={this.handleItemDescription} type="text" name='description' placeholder='Description...' className="form-control" value={description} />
+                                        <input onChange={this.handleItemDescription} type="text" name='description' placeholder='Description...' className="form-control" value={description} />                             
                                     </div>
                                     <div className="card-footer text-muted">
-                                        <a href="/"><button type="submit" className="btn btn-primary">Enter</button></a>
+                                        <a href="#/"><button type="submit" className="btn btn-primary">Enter</button></a>
                                     </div>                                    
                                 </form>
                             </div>

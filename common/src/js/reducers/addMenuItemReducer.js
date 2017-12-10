@@ -2,23 +2,23 @@ import { types } from '../actions/addMenuItemActions';
 
 const defaultState = {
     name: '',
-    price: '',
+    price: 0,
     description: '',
     category: ''
-    // restaurant: ''
 }
 
 export default function addMenuItemReducer(state = defaultState, action) {
     const { type, payload } = action;
     switch (type) {
         case types.ADD_NEW_MENU_ITEM: {
+            console.log(321, payload);
             if (payload) {
                 return {
                     ...state,
-                    name: payload.name,
-                    price: payload.price,
-                    description: payload.description,
-                    category: payload.category
+                    name: '',
+                    price: '',
+                    description: '',
+                    category: ''
                     // restaurant: payload.activeRestaurant
                 };
             } else {

@@ -1,13 +1,13 @@
 import { types } from '../actions/loginActions';
 
 const INITIAL_STATE = {
-    email: 'mike@mike.com',
-    password: 'mike0',
+    email: 'point@gmail.com',
+    password: 'abc1',
     owner: 'true',
     activeOwner: false,
     activeCustomer: false,
     currentOwnerId: '',
-    currentCustomerId: '5a2b62807a5a9582292802b4',
+    currentCustomerId: '',
     authToken: ''
 };
 
