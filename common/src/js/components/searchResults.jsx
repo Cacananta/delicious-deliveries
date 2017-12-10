@@ -35,7 +35,7 @@ export default class SearchResults extends React.Component {
             </div>
         </nav>
         </section>
-        <section>
+        <section className='my-5'>
           <div className="container">
             <div className="jumbotron text-center pt-5">
               <h1>Search Results</h1>
@@ -47,7 +47,10 @@ export default class SearchResults extends React.Component {
                   <div className="row align-items-center">
                     {/* IMAGE */}
                     <div className="col-lg-4 float-left">
+                    { restaurant.image == '' ?
+                      <img className="text-center img-fluid mx-auto" src='http://sulaindianrestaurant.com/wp-content/uploads/2013/07/menu-placeholder.gif' alt={restaurant.name} /> :
                       <img className="text-center img-fluid mx-auto" src={restaurant.image} alt={restaurant.name} />
+                    }
                     </div>
                     {/* RESTAURANT INFORMATION */}
                     <div className="col-lg-8 float-right px-0">
