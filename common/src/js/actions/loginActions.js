@@ -30,14 +30,14 @@ export function updateLoginPassword(password) {
 }
 
 export function loginAuth(email, password, owner) {
-    console.log('http://localhost:3000/api/Owners', {
+    console.log('https://delicious-deliveries.herokuapp.com/api/Owners', {
         owner,
         email,
         password
     });
     return (dispatch) => {
         if (owner == "true") {
-            axios.post('http://localhost:3000/api/Owners/login', { email, password })
+            axios.post('https://delicious-deliveries.herokuapp.com/api/Owners/login', { email, password })
                 .then(results => {
                     document.cookie = 'ACCESS_TOKEN=' + results.data.id;
                     dispatch({

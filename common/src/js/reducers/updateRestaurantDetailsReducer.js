@@ -21,7 +21,7 @@ export default function UpdateRestaurantReducer (state = INITIAL_STATE, action) 
     switch (type) {
         case types.UPDATE_RESTAURANT: {
             console.log(12, payload);
-            window.location.href= `http://localhost:3000/#/owner/${payload.ownerId}`;
+            window.location.href= `https://delicious-deliveries.herokuapp.com/#/owner/${payload.ownerId}`;
             if (payload) {
                 return {
                     ...state,

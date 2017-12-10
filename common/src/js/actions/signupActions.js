@@ -12,7 +12,7 @@ export const types = {
 };
 
 export function addNewClient(owner, name, email, password, phone_number) {
-    console.log('http://localhost:3000/api/Owners', {
+    console.log('https://delicious-deliveries.herokuapp.com/api/Owners', {
         owner,
         name,
         email,
@@ -23,14 +23,14 @@ export function addNewClient(owner, name, email, password, phone_number) {
         if (owner == "true") {
             dispatch({
                 type: types.ADD_OWNER,
-                payload: axios.post('http://localhost:3000/api/Owners', {name, email, password, phone_number})
+                payload: axios.post('https://delicious-deliveries.herokuapp.com/api/Owners', {name, email, password, phone_number})
                 .then(results => {return results.data})
                 .catch(err => console.log(err))
             })
         } else {
             dispatch({
                 type: types.ADD_CUSTOMER,
-                payload: axios.post('http://localhost:3000/api/Customers', {name, email, password, phone_number})
+                payload: axios.post('https://delicious-deliveries.herokuapp.com/api/Customers', {name, email, password, phone_number})
                 .then(results => {return results.data})
                 .catch(err => console.log(err))
             })

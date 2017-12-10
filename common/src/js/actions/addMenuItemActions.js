@@ -39,10 +39,10 @@ export function updateItemCategory(value) {
 
 export function addNewMenuItem(name, price, description, category, restId) {
     return (dispatch) => {
-        axios.get(`http://localhost:3000/api/Restaurants/${restId}/menus`)
+        axios.get(`https://delicious-deliveries.herokuapp.com/api/Restaurants/${restId}/menus`)
             .then(results => results.data.id)
             .then(res => {
-                axios.post(`http://localhost:3000/api/Menus/${res}/menuItems`, {name, price, description, category})
+                axios.post(`https://delicious-deliveries.herokuapp.com/api/Menus/${res}/menuItems`, {name, price, description, category})
                 .then(response => {
                     alert('Item Added');
                     dispatch({
