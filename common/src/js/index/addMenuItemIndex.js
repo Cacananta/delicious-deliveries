@@ -7,7 +7,7 @@ function mapStoreToProps(store) {
         price: store.AddMenuItem.price,
         description: store.AddMenuItem.description,
         category: store.AddMenuItem.category,
-        restaurantId: store.AddMenuItem.activeRestaurant
+        activeRestaurant: store.ownerViewUpdate.activeRestaurant
     };
 }
 
