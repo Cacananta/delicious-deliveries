@@ -52,7 +52,10 @@ this.addCart = this.addCart.bind(this);
         <h1 className='text-center'>{ chosenRestaurant.name }</h1>
         <div className='row mb-2'>
           <div className='col-6'>
+          { chosenRestaurant.image == '' ?
+            <img src='http://sulaindianrestaurant.com/wp-content/uploads/2013/07/menu-placeholder.gif' className="img-fluid rounded" alt="Responsive image" />:
             <img src={ chosenRestaurant.image } className="img-fluid rounded" alt="Responsive image" />
+          }
           </div>
           <div className='text-center col-6'>
             <p>{ chosenRestaurant.address1 }</p>
