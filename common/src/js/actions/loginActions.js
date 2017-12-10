@@ -47,7 +47,7 @@ export function loginAuth(email, password, owner) {
                 })
                 .catch(err => { console.log(err); alert('Invalid Sign In') });
         } else {
-            axios.post('http://localhost:3000/api/Customers/login', { email, password })
+            axios.post('https://delicious-deliveries.herokuapp.com/api/Customers/login', { email, password })
                 .then(results => {
                     document.cookie = 'ACCESS_TOKEN=' + results.data.id;
                     dispatch({
