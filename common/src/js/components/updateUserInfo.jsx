@@ -57,6 +57,16 @@ export default class UpdateOwnerInfo extends Component {
         
         return (
             <div className="about">
+                <nav className="navbar fixed-top navbar-expand-lg opacity mb-5">
+                    <a className="order-1 font-weight-bold nav-link text-dark" href='#/login'>Login</a>
+                    <a className="order-2 font-weight-bold nav-link text-dark" href='#/signup'>Sign Up</a>
+                    <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+                        <div className="navbar-nav">
+                            <a className="nav-item nav-link font-weight-bold text-muted" href="#/">Delicious Deliveries</a>
+                            <a href="#/shoppingcart"><img src="../cart.png"/>()</a>
+                        </div>
+                    </div>
+                </nav>
             <div className="row">
             <div className="col-4 offset-4" style={{marginTop: "200px"}}>
             <div >
