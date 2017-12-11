@@ -39,26 +39,12 @@ this.addCart = this.addCart.bind(this);
     const snackList = menuItems.filter(item => item.category === 'Snack');
     const drinkList = menuItems.filter(item => item.category === 'Drink');
     return(
-      <div className='container'>
+      <div>
         <NavBar/>
-        <h1 className='text-center'>{ chosenRestaurant.name }</h1>
-        <div className='row mb-2'>
-          <div className='col-6'>
-          { chosenRestaurant.image == '' ?
-            <img src='http://sulaindianrestaurant.com/wp-content/uploads/2013/07/menu-placeholder.gif' className="img-fluid rounded" alt="Responsive image" />:
-            <img src={ chosenRestaurant.image } className="img-fluid rounded" alt="Responsive image" />
-          }
-          </div>
-          <div className='text-center col-6'>
-            <p>{ chosenRestaurant.address1 }</p>
-            <p>
-              { chosenRestaurant.city + ', ' + chosenRestaurant.state + ' ' + chosenRestaurant.zip }
-            </p>
-            <p>{ chosenRestaurant.phone_number }</p>
-            <p>{ chosenRestaurant.food_type }</p>
-            <a className='btn btn-primary mx-2' href='#/searchresults' role='button'>Go Back</a>
-            <a className='btn btn-primary mx-2' href='#/shoppingcart' role='button'>Shopping Cart</a>
-          </div>
+        <div className="jumbotron jumbotron-fluid mb-0">
+            <div className="container text-center">
+                <h1 className="display-3">Restarant Details</h1>
+            </div>
         </div>
         <div className="container-fluid shortbg">
             <h1 className='text-center'>{ chosenRestaurant.name }</h1>
