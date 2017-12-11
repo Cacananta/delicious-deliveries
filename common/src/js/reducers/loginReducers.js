@@ -73,6 +73,16 @@ export default function LoginReducer(state = INITIAL_STATE, action) {
             };
             break;
         }
+        case (types.UPDATE_LOGOUT): {
+            return {
+                ...state,
+                activeOwner: false,
+                activeCustomer: false,
+                currentOwnerId: '',
+                currentCustomerId: ''
+            };
+            break;
+        }
         default: {
             return state;
         }

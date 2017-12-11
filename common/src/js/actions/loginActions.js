@@ -5,7 +5,15 @@ export const types = {
     UPDATE_USERNAME_LOGIN: 'UPDATE_USERNAME_LOGIN',
     UPDATE_PASSWORD_LOGIN: 'UPDATE_PASSWORD_LOGIN',
     LOGIN_OWNER: 'LOGIN_OWNER',
-    LOGIN_CUSTOMER: 'LOGIN_CUSTOMER'
+    LOGIN_CUSTOMER: 'LOGIN_CUSTOMER',
+    UPDATE_LOGOUT: 'UPDATE_LOGOUT'
+}
+
+export function signOut(value) {
+    return {
+        type: types.UPDATE_LOGOUT,
+        payload: value
+    }
 }
 
 export function ownerLoginToggle(value) {
