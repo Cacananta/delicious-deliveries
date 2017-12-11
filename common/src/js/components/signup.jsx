@@ -64,17 +64,12 @@ export default class SignUp extends Component {
         return (
             <div>
                 <NavBar/>
-                <div className="jumbotron jumbotron-fluid mb-0">
-                    <div className="container text-center">
-                        <h1 className="display-3">Sign Up</h1>
-                    </div>
-                </div>
-                <div className="container-fluid shortbg">
+                <div className="container-fluid">
                     <div className="row mb-5 justify-content-center">
                         <div className="col-4 mb-5">
                             <div className="card text-center mt-5">
                                 <div className="card-header">
-                                   <strong>Create An Account</strong>
+                                   <strong><h1>Create An Account</h1></strong>
                                 </div>
                                 <form id='signup-form' onSubmit={this.handleClick}>
                                     <div className="card-body form-group">

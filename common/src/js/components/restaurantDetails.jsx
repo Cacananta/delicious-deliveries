@@ -41,12 +41,7 @@ this.addCart = this.addCart.bind(this);
     return(
       <div>
         <NavBar/>
-        <div className="jumbotron jumbotron-fluid mb-0">
-            <div className="container text-center">
-                <h1 className="display-3">Restarant Details</h1>
-            </div>
-        </div>
-        <div className="container-fluid shortbg">
+        <div className="container-fluid">
             <h1 className='text-center'>{ chosenRestaurant.name }</h1>
             <div className='row mb-2'>
               <div className='col-6'>

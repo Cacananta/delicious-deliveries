@@ -34,15 +34,13 @@ export default class ownerViewUpdate extends Component {
           <NavBar/>
           {/* MAIN AREA */}
           <section>
-            <div className="jumbotron jumbotron-fluid mb-0">
-              <div className="container text-center">
-                <h1 className="display-3">View/Update Restaurants</h1>
-              </div>
-            </div>
-            <div className="container-fluid shortbg">
+            <div className="container-fluid">
               <div className="row mb-5 justify-content-center">
                 {!!ownerRestaurants && ownerRestaurants.map(restaurant =>
                   <div key={restaurant.id} className="card my-2 mx-2 col-5 mt-5">
+                    <div className="card-header">
+                      <strong><h1>View/Update Restaurants</h1></strong>
+                    </div>
                     <div className="card-body">
                       <div className="row align-items-center">
                         {/* IMAGE */}

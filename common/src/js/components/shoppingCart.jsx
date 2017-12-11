@@ -48,13 +48,8 @@ export default class ShoppingCart extends React.Component {
       if(activeCustomer==true) checkoutHref= '#/checkout';
     return(
       <div>
-         <NavBar/>
-         <div className="jumbotron jumbotron-fluid mb-0">
-          <div className="container text-center">
-            <h1 className="display-3">Shopping Cart</h1>
-          </div>
-        </div>
-        <div className="container-fluid shortbg">
+        <NavBar/>
+        <div className="container-fluid">
           <div className='row mb-5'>
             <div className="col-12 mb-5">
             <div className="card mt-5">

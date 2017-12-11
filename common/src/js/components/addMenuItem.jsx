@@ -57,17 +57,12 @@ export default class AddMenuItem extends Component {
         return (
             <div>
                  <NavBar/>
-                <div className="jumbotron jumbotron-fluid mb-0">
-                    <div className="container text-center">
-                        <h1 className="display-3">Add Menu Item</h1>
-                    </div>
-                </div>
-                <div className="container-fluid shortbg">
+                <div className="container-fluid">
                     <div className="row mb-5 justify-content-center">
                         <div className="col-4 mb-5">
                             <div className="card text-center mt-5">
                                 <div className="card-header">
-                                    <strong> What's On Your Menu</strong>
+                                    <strong><h1>What's On Your Menu</h1></strong>
                                 </div>
                                 <form onSubmit={this.handleSubmit}>
                                     <div className="card-body form-group">
