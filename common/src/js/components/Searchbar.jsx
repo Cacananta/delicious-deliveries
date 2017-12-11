@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { updateSearchLocation, captureLocation } from "../actions/searchBarActions";
 import { Link } from 'react-router-dom';
+import NavBar from '../index/navBarIndex';
 
 export default class Searchbar extends Component {
     constructor(props) {
@@ -26,7 +27,8 @@ export default class Searchbar extends Component {
     handleClick() {
         const { dispatch } = this.props;
         var input = document.getElementById('searchBarInput').value;
-        dispatch(updateSearchLocation());
+        dispatch(updateSearchLocation(input));
+        dispatch(captureLocation(input));
     }
 
     render() {
@@ -42,6 +44,7 @@ export default class Searchbar extends Component {
                     placeholder="Enter an address..."
                     id="searchBarInput"
                     className="form-control"
+                    value={location}
                 />
                 { button }
             </div>

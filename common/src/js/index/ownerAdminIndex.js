@@ -5,7 +5,8 @@ function mapStoreToProps(store) {
   return {
     activeOwner: store.login.activeOwner,
     currentOwnerId: store.login.currentOwnerId,
-    ownerRestaurants: store.updateRestaurant.ownerRestaurants
+    ownerRestaurants: store.updateRestaurant.ownerRestaurants,
+    shoppingCart: store.restaurantDetails.shoppingCart,
   };
 }
 

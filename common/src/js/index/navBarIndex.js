@@ -1,12 +1,13 @@
 import { connect } from 'react-redux';
-import Landing from '../components/landing';
+import navBar from '../components/navBar';
 
 function mapStoreToProps(store) {
   return {
     activeOwner: store.login.activeOwner,
     activeCustomer: store.login.activeCustomer,
     shoppingCart: store.restaurantDetails.shoppingCart,
+    currentOwnerId: store.login.currentOwnerId,
   };
 }
 
-export default connect(mapStoreToProps)(Landing);
+export default connect(mapStoreToProps)(navBar);

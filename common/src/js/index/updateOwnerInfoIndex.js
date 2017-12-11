@@ -7,7 +7,8 @@ function mapStoreToProps(store) {
     password: store.UpdateOwnerInfo.password,
     name: store.UpdateOwnerInfo.name,
     phonenumber: store.UpdateOwnerInfo.phonenumber,
-    currentOwnerId: store.login.currentOwnerId
+    currentOwnerId: store.login.currentOwnerId,
+    shoppingCart: store.restaurantDetails.shoppingCart,
   };
 }
 

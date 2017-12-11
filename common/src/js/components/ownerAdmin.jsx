@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { getOwnerRestaurants } from '../actions/updateRestaurantDetailsAction';
+import NavBar from '../index/navBarIndex';
 
 export default class OwnerAdmin extends Component {
     constructor(props) {
@@ -28,20 +29,12 @@ export default class OwnerAdmin extends Component {
 // }
 
     render() {
-        const { activeOwner, currentOwnerId } = this.props;
+        const { activeOwner, currentOwnerId, shoppingCart } = this.props;
         console.log(this.props);
         if (activeOwner == true && !!this.props.match.params.id) {
         return (
             <div>
-                <nav className="navbar fixed-top navbar-expand-lg opacity mb-5">
-                    <p className="order-1 font-weight-bold text-dark">Welcome</p>
-                    <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-                        <div className="navbar-nav">
-                            <a className="nav-item nav-link font-weight-bold text-muted" href="#/">Delicious Deliveries</a>
-                            <a href="#/shoppingcart"><img src="../cart.png"/>()</a>
-                        </div>
-                    </div>
-                </nav>
+                <NavBar/>
                 <div className="jumbotron jumbotron-fluid mb-0">
                     <div className="container text-center">
                         <h1 className="display-3">Owner Admin</h1>
@@ -86,6 +79,7 @@ export default class OwnerAdmin extends Component {
                     <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                         <div className="navbar-nav">
                             <a className="nav-item nav-link font-weight-bold text-muted" href="/">Delicious Deliveries</a>
+                            <a href="#/shoppingcart"><img src="../cart.png"/>({shoppingCart.length})</a>
                         </div>
                     </div>
                 </nav>
