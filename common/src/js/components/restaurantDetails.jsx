@@ -38,7 +38,7 @@ this.addCart = this.addCart.bind(this);
     const snackList = menuItems.filter(item => item.category === 'Snack');
     const drinkList = menuItems.filter(item => item.category === 'Drink');
     return(
-      <div className='container'>
+      <div>
         <nav className="navbar fixed-top navbar-expand-lg opacity mb-5">
             <a className="order-1 font-weight-bold nav-link text-dark" href='#/login'>Login</a>
             <a className="order-2 font-weight-bold nav-link text-dark" href='#/signup'>Sign Up</a>
@@ -49,120 +49,129 @@ this.addCart = this.addCart.bind(this);
                 </div>
             </div>
         </nav>
-        <h1 className='text-center'>{ chosenRestaurant.name }</h1>
-        <div className='row mb-2'>
-          <div className='col-6'>
-          { chosenRestaurant.image == '' ?
-            <img src='http://sulaindianrestaurant.com/wp-content/uploads/2013/07/menu-placeholder.gif' className="img-fluid rounded" alt="Responsive image" />:
-            <img src={ chosenRestaurant.image } className="img-fluid rounded" alt="Responsive image" />
-          }
-          </div>
-          <div className='text-center col-6'>
-            <p>{ chosenRestaurant.address1 }</p>
-            <p>
-              { chosenRestaurant.city + ', ' + chosenRestaurant.state + ' ' + chosenRestaurant.zip }
-            </p>
-            <p>{ chosenRestaurant.phone_number }</p>
-            <p>{ chosenRestaurant.food_type }</p>
-            <a className='btn btn-primary mx-2' href='#/searchresults' role='button'>Go Back</a>
-            <a className='btn btn-primary mx-2' href='#/shoppingcart' role='button'>Shopping Cart</a>
+        <div className="jumbotron jumbotron-fluid mb-0">
+          <div className="container text-center">
+            <h1 className="display-3">Restuarant Details</h1>
           </div>
         </div>
-        { breakfastList.length > 0 ?
-        <div>
-          <div className='mt-2'>
-            <h4>Breakfast</h4>
-            <hr/>
-          </div>
-          <div className='row'>
-          { breakfastList.map((item, index) => 
-              <div className='col-6 px-2 d-flex' key={ index }>
-                <span className='mr-auto pt-2'><p><strong>{ item.name }</strong></p></span>
-                <div className='py-2 ml-auto'>
-                  <span className='pr-5'>${item.price}</span>
-                  <button id={ item.id } className='btn btn-primary btn-sm' onClick={ this.addCart }>Add to Cart</button>
+        <div className="container-fluid shortbg">
+          <div className="row justify-content-center">
+            <h1 className='text-center'>{ chosenRestaurant.name }</h1>
+            <div className='row mb-2'>
+              <div className='col-6'>
+              { chosenRestaurant.image == '' ?
+                <img src='http://sulaindianrestaurant.com/wp-content/uploads/2013/07/menu-placeholder.gif' className="img-fluid rounded" alt="Responsive image" />:
+                <img src={ chosenRestaurant.image } className="img-fluid rounded" alt="Responsive image" />
+              }
+              </div>
+              <div className='text-center col-6'>
+                <p>{ chosenRestaurant.address1 }</p>
+                <p>
+                  { chosenRestaurant.city + ', ' + chosenRestaurant.state + ' ' + chosenRestaurant.zip }
+                </p>
+                <p>{ chosenRestaurant.phone_number }</p>
+                <p>{ chosenRestaurant.food_type }</p>
+                <a className='btn btn-primary mx-2' href='#/searchresults' role='button'>Go Back</a>
+                <a className='btn btn-primary mx-2' href='#/shoppingcart' role='button'>Shopping Cart</a>
+              </div>
+            </div>
+            { breakfastList.length > 0 ?
+            <div>
+              <div className='mt-2'>
+                <h4>Breakfast</h4>
+                <hr/>
+              </div>
+              <div className='row'>
+              { breakfastList.map((item, index) => 
+                  <div className='col-6 px-2 d-flex' key={ index }>
+                    <span className='mr-auto pt-2'><p><strong>{ item.name }</strong></p></span>
+                    <div className='py-2 ml-auto'>
+                      <span className='pr-5'>${item.price}</span>
+                      <button id={ item.id } className='btn btn-primary btn-sm' onClick={ this.addCart }>Add to Cart</button>
+                    </div>
+                  </div>
+                  )}
+              </div>
+            </div>
+            : <div />}
+            { lunchList.length > 0 ?
+            <div>
+              <div className='mt-2'>
+                <h4>Lunch</h4>
+                <hr/>
+              </div>
+              <div className='row'>
+              { lunchList.map((item, index) => 
+                <div className='col-6 px-2 d-flex' key={ index }>
+                  <span className='mr-auto pt-2'><p><strong>{ item.name }</strong></p></span>
+                  <div className='py-2 ml-auto'>
+                    <span className='pr-5'>${item.price}</span>
+                    <button id={ item.id } className='btn btn-primary btn-sm' onClick={ this.addCart }>Add to Cart</button>
+                  </div>
+                </div>
+                )}
+              </div>
+            </div>
+            : <div />}
+            { dinnerList.length > 0 ?
+              <div>
+                <div className='mt-2'>
+                  <h4>Dinner</h4>
+                  <hr/>
+                </div>
+                <div className='row'>
+                { dinnerList.map((item, index) => 
+                  <div className='col-6 px-2 d-flex' key={ index }>
+                    <span className='mr-auto pt-2'><p><strong>{ item.name }</strong></p></span>
+                    <div className='py-2 ml-auto'>
+                      <span className='pr-5'>${item.price}</span>
+                      <button id={ item.id } className='btn btn-primary btn-sm' onClick={ this.addCart }>Add to Cart</button>
+                    </div>
+                  </div>
+                  )}
                 </div>
               </div>
-              )}
+            : <div />}
+            { snackList.length > 0 ?
+              <div>
+                <div className='mt-2'>
+                  <h4>Snacks</h4>
+                  <hr/>
+                </div>
+                <div className='row'>
+                { snackList.map((item, index) => 
+                  <div className='col-6 px-2 d-flex' key={ index }>
+                    <span className='mr-auto pt-2'><p><strong>{ item.name }</strong></p></span>
+                    <div className='py-2 ml-auto'>
+                      <span className='pr-5'>${item.price}</span>
+                      <button id={ item.id } className='btn btn-primary btn-sm' onClick={ this.addCart }>Add to Cart</button>
+                    </div>
+                  </div>
+                  )}
+                </div>
+              </div>
+            : <div />}
+            { drinkList.length > 0 ?
+              <div>
+                <div className='mt-2'>
+                  <h4>Drink</h4>
+                  <hr/>
+                </div>
+                <div className='row'>
+                { drinkList.map((item, index) => 
+                  <div className='col-6 px-2 d-flex' key={ index }>
+                    <span className='mr-auto pt-2'><p><strong>{ item.name }</strong></p></span>
+                    <div className='py-2 ml-auto'>
+                      <span className='pr-5'>${item.price}</span>
+                      <button id={ item.id } className='btn btn-primary btn-sm' onClick={ this.addCart }>Add to Cart</button>
+                    </div>
+                  </div>
+                  )}
+                </div>
+              </div>
+            : <div />}
           </div>
         </div>
-        : <div />}
-        { lunchList.length > 0 ?
-        <div>
-          <div className='mt-2'>
-            <h4>Lunch</h4>
-            <hr/>
-          </div>
-          <div className='row'>
-          { lunchList.map((item, index) => 
-            <div className='col-6 px-2 d-flex' key={ index }>
-              <span className='mr-auto pt-2'><p><strong>{ item.name }</strong></p></span>
-              <div className='py-2 ml-auto'>
-                <span className='pr-5'>${item.price}</span>
-                <button id={ item.id } className='btn btn-primary btn-sm' onClick={ this.addCart }>Add to Cart</button>
-              </div>
-            </div>
-            )}
-          </div>
-        </div>
-        : <div />}
-        { dinnerList.length > 0 ?
-          <div>
-            <div className='mt-2'>
-              <h4>Dinner</h4>
-              <hr/>
-            </div>
-            <div className='row'>
-            { dinnerList.map((item, index) => 
-              <div className='col-6 px-2 d-flex' key={ index }>
-                <span className='mr-auto pt-2'><p><strong>{ item.name }</strong></p></span>
-                <div className='py-2 ml-auto'>
-                  <span className='pr-5'>${item.price}</span>
-                  <button id={ item.id } className='btn btn-primary btn-sm' onClick={ this.addCart }>Add to Cart</button>
-                </div>
-              </div>
-              )}
-            </div>
-          </div>
-          : <div />}
-        { snackList.length > 0 ?
-          <div>
-            <div className='mt-2'>
-              <h4>Snacks</h4>
-              <hr/>
-            </div>
-            <div className='row'>
-            { snackList.map((item, index) => 
-              <div className='col-6 px-2 d-flex' key={ index }>
-                <span className='mr-auto pt-2'><p><strong>{ item.name }</strong></p></span>
-                <div className='py-2 ml-auto'>
-                  <span className='pr-5'>${item.price}</span>
-                  <button id={ item.id } className='btn btn-primary btn-sm' onClick={ this.addCart }>Add to Cart</button>
-                </div>
-              </div>
-              )}
-            </div>
-          </div>
-          : <div />}
-        { drinkList.length > 0 ?
-          <div>
-            <div className='mt-2'>
-              <h4>Drink</h4>
-              <hr/>
-            </div>
-            <div className='row'>
-            { drinkList.map((item, index) => 
-              <div className='col-6 px-2 d-flex' key={ index }>
-                <span className='mr-auto pt-2'><p><strong>{ item.name }</strong></p></span>
-                <div className='py-2 ml-auto'>
-                  <span className='pr-5'>${item.price}</span>
-                  <button id={ item.id } className='btn btn-primary btn-sm' onClick={ this.addCart }>Add to Cart</button>
-                </div>
-              </div>
-              )}
-            </div>
-          </div>
-          : <div />}
       </div>
     )
   }
