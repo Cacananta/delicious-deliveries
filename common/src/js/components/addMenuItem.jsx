@@ -53,7 +53,7 @@ export default class AddMenuItem extends Component {
 
 
     render() {
-        const { name, price, description, category, shoppingCart } = this.props;
+        const { name, price, description, category, shoppingCart, currentOwnerId } = this.props;
         return (
             <div>
                  <NavBar/>
@@ -95,6 +95,7 @@ export default class AddMenuItem extends Component {
                                     </div>
                                     <div className="card-footer text-muted">
                                         <a href="#/"><button type="submit" className="btn btn-primary">Enter</button></a>
+                                        <a href={`#/owner/${currentOwnerId}`} type='button' role='button' className="btn btn-primary ml-2">Back to Owner Homepage</a>
                                     </div>                                    
                                 </form>
                             </div>
