@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {signOut} from '../actions/loginActions';
 
 export default class NavBar extends Component {
     constructor(props) {
@@ -8,7 +9,8 @@ export default class NavBar extends Component {
     }
 
     handleClick(event) {
-
+        const {dispatch} = this.props;
+        dispatch(signOut())
     }
 
 
