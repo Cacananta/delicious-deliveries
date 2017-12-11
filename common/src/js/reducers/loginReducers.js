@@ -33,7 +33,8 @@ export default function LoginReducer(state = INITIAL_STATE, action) {
         }
         case types.LOGIN_CUSTOMER: {
             if (payload) {
-                window.history.go(-1);
+                // window.history.go(-1);
+                window.location.href= `https://delicious-deliveries.herokuapp.com/#/`;
                 return {
                     ...state,
                     currentCustomerId: payload.userId,
