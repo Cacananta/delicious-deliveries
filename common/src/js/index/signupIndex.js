@@ -9,7 +9,8 @@ function mapStoreToProps(store) {
     phone_number: store.signup.phone_number,
     owner: store.signup.owner,
     activeOwner: store.login.activeOwner,
-    activeCustomer: store.login.activeCustomer
+    activeCustomer: store.login.activeCustomer,
+    shoppingCart: store.restaurantDetails.shoppingCart,
   };
 }
 

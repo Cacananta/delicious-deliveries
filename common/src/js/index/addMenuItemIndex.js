@@ -7,7 +7,8 @@ function mapStoreToProps(store) {
         price: store.AddMenuItem.price,
         description: store.AddMenuItem.description,
         category: store.AddMenuItem.category,
-        activeRestaurant: store.ownerViewUpdate.activeRestaurant
+        activeRestaurant: store.ownerViewUpdate.activeRestaurant,
+        shoppingCart: store.restaurantDetails.shoppingCart,
     };
 }
 

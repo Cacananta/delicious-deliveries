@@ -16,8 +16,8 @@ function mapStoreToProps(store) {
         ownerId: store.updateRestaurant.ownerId,
         restaurantId: store.updateRestaurant.restaurantId,
         selectedRestaurant: store.updateRestaurant.selectedRestaurant,
-        activeOwner: store.login.activeOwner
-
+        activeOwner: store.login.activeOwner,
+        shoppingCart: store.restaurantDetails.shoppingCart,
     };
 }
 

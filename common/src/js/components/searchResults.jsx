@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { chooseRestaurant, getMenuItems } from '../actions/restaurantDetailsActions';
+import NavBar from '../index/navBarIndex';
 
 export default class SearchResults extends React.Component {
   constructor(props) {
@@ -18,22 +19,13 @@ export default class SearchResults extends React.Component {
 
 
   render() {
-    const { restaurants, activeOwner, activeCustomer } = this.props;
+    const { restaurants, activeOwner, activeCustomer, shoppingCart } = this.props;
     console.log(restaurants);
     return (
       <div>
         {/* TOP NAV BAR */}
         <section>
-        <nav className="navbar fixed-top navbar-expand-lg opacity mb-5">
-            <a className="order-1 font-weight-bold nav-link text-dark" href='#/login'>Login</a>
-            <a className="order-2 font-weight-bold nav-link text-dark" href='#/signup'>Sign Up</a>
-            <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div className="navbar-nav">
-                    <a className="nav-item nav-link font-weight-bold text-muted" href="#/">Delicious Deliveries</a>
-                    <a href="#/shoppingcart"><img src="../cart.png"/>()</a>
-                </div>
-            </div>
-        </nav>
+        <NavBar/>
         </section>
         <section>
           <div className="jumbotron jumbotron-fluid mb-0">

@@ -5,6 +5,7 @@ import {
     updateLoginPassword,
     loginAuth,
 } from '../actions/loginActions';
+import NavBar from '../index/navBarIndex';
 
 export default class Login extends Component {
     constructor(props) {
@@ -40,19 +41,10 @@ export default class Login extends Component {
         dispatch(loginAuth(email, password, owner));
     }
     render() {
-        const {owner, email, password, activeOwner, activeCustomer} = this.props;
+        const {owner, email, password, activeOwner, activeCustomer, shoppingCart} = this.props;
         return (
             <div>
-                <nav className="navbar fixed-top navbar-expand-lg opacity mb-5">
-                    <a className="order-1 font-weight-bold nav-link text-dark" href='#/login'>Login</a>
-                    <a className="order-2 font-weight-bold nav-link text-dark" href='#/signup'>Sign Up</a>
-                    <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-                        <div className="navbar-nav">
-                            <a className="nav-item nav-link font-weight-bold text-muted" href="#/">Delicious Deliveries</a>
-                            <a href="#/shoppingcart"><img src="../cart.png"/>()</a>
-                        </div>
-                    </div>
-                </nav>
+                <NavBar/>
                 <div className="jumbotron jumbotron-fluid mb-0">
                     <div className="container text-center">
                         <h1 className="display-3">Login</h1>

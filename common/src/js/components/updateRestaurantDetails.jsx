@@ -11,6 +11,7 @@ import {
     updatePhoneNumber,
     updateRestaurant
 } from '../actions/updateRestaurantDetailsAction';
+import NavBar from '../index/navBarIndex';
 
 export default class UpdateRestaurant extends Component {
     constructor(props) {
@@ -91,19 +92,10 @@ export default class UpdateRestaurant extends Component {
     }
 
     render() {
-        const { food_type, name, address1, address2, city, state, zip, image, phone_number, activeOwner, selectedRestaurant } = this.props;
+        const { food_type, name, address1, address2, city, state, zip, image, phone_number, activeOwner, selectedRestaurant, shoppingCart } = this.props;
         return (
             <div>
-                <nav className="navbar fixed-top navbar-expand-lg opacity mb-5">
-                    <a className="order-1 font-weight-bold nav-link text-dark" href='#/login'>Login</a>
-                    <a className="order-2 font-weight-bold nav-link text-dark" href='#/signup'>Sign Up</a>
-                    <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-                        <div className="navbar-nav">
-                            <a className="nav-item nav-link font-weight-bold text-muted" href="#/">Delicious Deliveries</a>
-                            <a href="#/shoppingcart"><img src="../cart.png"/>()</a>
-                        </div>
-                    </div>
-                </nav>
+                 <NavBar/>
                 <div className="jumbotron jumbotron-fluid mb-0">
                     <div className="container text-center">
                         <h1 className="display-3">Update {selectedRestaurant.name}</h1>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { addShoppingCart, updateShoppingCart } from '../actions/restaurantDetailsActions';
+import NavBar from '../index/navBarIndex';
 
 export default class RestaurantDetails extends React.Component {
   constructor(props) {
@@ -29,7 +30,7 @@ this.addCart = this.addCart.bind(this);
   }
 
   render() {
-    const { activeOwner, activeCustomer, menuItems, chosenRestaurant } = this.props;
+    const { activeOwner, activeCustomer, menuItems, chosenRestaurant, shoppingCart } = this.props;
     console.log(4, menuItems);
     console.log(69, chosenRestaurant);
     const breakfastList = menuItems.filter(item => item.category === 'Breakfast');
@@ -38,20 +39,25 @@ this.addCart = this.addCart.bind(this);
     const snackList = menuItems.filter(item => item.category === 'Snack');
     const drinkList = menuItems.filter(item => item.category === 'Drink');
     return(
-      <div>
-        <nav className="navbar fixed-top navbar-expand-lg opacity mb-5">
-            <a className="order-1 font-weight-bold nav-link text-dark" href='#/login'>Login</a>
-            <a className="order-2 font-weight-bold nav-link text-dark" href='#/signup'>Sign Up</a>
-            <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div className="navbar-nav">
-                    <a className="nav-item nav-link font-weight-bold text-muted" href="#/">Delicious Deliveries</a>
-                    <a href="#/shoppingcart"><img src="../cart.png"/>()</a>
-                </div>
-            </div>
-        </nav>
-        <div className="jumbotron jumbotron-fluid mb-0">
-          <div className="container text-center">
-            <h1 className="display-3">Restuarant Details</h1>
+      <div className='container'>
+        <NavBar/>
+        <h1 className='text-center'>{ chosenRestaurant.name }</h1>
+        <div className='row mb-2'>
+          <div className='col-6'>
+          { chosenRestaurant.image == '' ?
+            <img src='http://sulaindianrestaurant.com/wp-content/uploads/2013/07/menu-placeholder.gif' className="img-fluid rounded" alt="Responsive image" />:
+            <img src={ chosenRestaurant.image } className="img-fluid rounded" alt="Responsive image" />
+          }
+          </div>
+          <div className='text-center col-6'>
+            <p>{ chosenRestaurant.address1 }</p>
+            <p>
+              { chosenRestaurant.city + ', ' + chosenRestaurant.state + ' ' + chosenRestaurant.zip }
+            </p>
+            <p>{ chosenRestaurant.phone_number }</p>
+            <p>{ chosenRestaurant.food_type }</p>
+            <a className='btn btn-primary mx-2' href='#/searchresults' role='button'>Go Back</a>
+            <a className='btn btn-primary mx-2' href='#/shoppingcart' role='button'>Shopping Cart</a>
           </div>
         </div>
         <div className="container-fluid shortbg">
