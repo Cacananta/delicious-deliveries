@@ -55,7 +55,7 @@ export default class UpdateOwnerInfo extends Component {
         const { name, username, password, phonenumber } = this.props;
 
         return (
-            <div className="about">
+            <div>
                 <nav className="navbar fixed-top navbar-expand-lg opacity mb-5">
                     <a className="order-1 font-weight-bold nav-link text-dark" href='#/login'>Login</a>
                     <a className="order-2 font-weight-bold nav-link text-dark" href='#/signup'>Sign Up</a>
@@ -71,7 +71,7 @@ export default class UpdateOwnerInfo extends Component {
                         <h1 className="display-3">Update Owner Information</h1>
                     </div>
                 </div>
-                <div className="container-fluid">
+                <div className="container-fluid shortbg">
                     <div className="row mb-5 justify-content-center">
                         <div className="col-4 mb-5">
                             <div className="card text-center mt-5" >

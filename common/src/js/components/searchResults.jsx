@@ -35,12 +35,14 @@ export default class SearchResults extends React.Component {
             </div>
         </nav>
         </section>
-        <section className='my-5'>
-          <div className="container">
-            <div className="jumbotron text-center pt-5">
-              <h1>Search Results</h1>
+        <section>
+          <div className="jumbotron jumbotron-fluid mb-0">
+            <div className="container text-center">
+              <h1 className="display-3">Search Results</h1>
             </div>
-            <div className="row justify-content-lg-center">
+          </div>
+          <div className="container-fluid shortbg">
+            <div className="row mb-5 justify-content-center">
             {!!restaurants && restaurants.map(restaurant =>
               <div key={restaurant.id} className="card my-2 mx-2 col-5 bg-light">
                 <div className="card-body">
@@ -77,14 +79,16 @@ export default class SearchResults extends React.Component {
         </section>
         {/* FOOTER:  */}
         <section>
-          <ul className="nav justify-content-center fixed-bottom">
-            <li className="nav-item">
-              <a className="nav-link font-weight-bold text-dark bg-light" href="#/about">About Us</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link font-weight-bold text-dark bg-light" href="#/contact">Contact Us</a>
-            </li>
-          </ul>
+          <nav className="navbar navbar-expand-lg opacity fixed-bottom justify-content-center mt-5">
+            <ul className="navbar-nav">
+              <li className="nav-item active">
+                <a className="nav-link font-weight-bold text-dark" href="#/about">About Us</a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link font-weight-bold text-dark" href="#/contact">Contact Us</a>
+              </li>
+            </ul>
+          </nav> 
         </section>
       </div >
     )
