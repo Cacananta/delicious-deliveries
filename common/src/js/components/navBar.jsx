@@ -10,7 +10,7 @@ export default class NavBar extends Component {
 
     handleClick(event) {
         const {dispatch} = this.props;
-        dispatch(signOut())
+        dispatch(signOut());
     }
 
 
@@ -20,7 +20,7 @@ export default class NavBar extends Component {
             return (
                 <nav className="navbar fixed-top navbar-expand-lg opacity mb-5">
                     <a className="order-1 font-weight-bold nav-link text-dark" href='#/login'>Login</a>
-                    <a className="order-2 font-weight-bold nav-link text-dark" href='#/signup'>Sign Up</a>
+                    <a className='order-2 font-weight-bold nav-link text-dark' href='#/signup'>Sign Up</a>
                     <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                         <div className="navbar-nav">
                             <a className="navbar-brand nav-link font-weight-bold text-dark" href="#/">Delicious Deliveries</a>
@@ -34,7 +34,7 @@ export default class NavBar extends Component {
                 <nav className="navbar fixed-top navbar-expand-lg opacity mb-5 ">
                     <p className='order-1 pr-3 pt-1 nav-text h5 text center'>Welcome</p>
                     <a className="order-2 font-weight-bold nav-link text-dark" href={`#/owner/${currentOwnerId}/updateOwnerInfo`}>Account</a>
-                    <a className="order-3 font-weight-bold nav-link text-dark" onClick={this.handleClick}>Sign Out</a>
+                    <button className="order-3 font-weight-bold btn-link text-dark" onClick={this.handleClick}>Sign Out</button>
                     <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                         <div className="navbar-nav">
                             <a className="navbar-brand nav-link font-weight-bold text-dark" href="#/">Delicious Deliveries</a>
@@ -48,7 +48,7 @@ export default class NavBar extends Component {
                 <nav className="navbar fixed-top navbar-expand-lg opacity mb-5">
                       <p className='order-1 pr-3 pt-1 nav-text h5 text center'>Welcome</p>
                     {/* <a className="order-2 font-weight-bold nav-link text-dark" href='#/updateUserInfo'>Account</a> */}
-                    <a className="order-2 font-weight-bold nav-link text-dark" onClick={this.handleClick}>Sign Out</a>
+                    <button className="order-2 font-weight-bold btn-link text-dark" onClick={this.handleClick}>Sign Out</button>
                     <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                         <div className="navbar-nav">
                             <a className="navbar-brand nav-link font-weight-bold text-dark" href="#/">Delicious Deliveries</a>
