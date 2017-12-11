@@ -55,7 +55,6 @@ this.addCart = this.addCart.bind(this);
           </div>
         </div>
         <div className="container-fluid shortbg">
-          <div className="row">
             <h1 className='text-center'>{ chosenRestaurant.name }</h1>
             <div className='row mb-2'>
               <div className='col-6'>
@@ -171,7 +170,6 @@ this.addCart = this.addCart.bind(this);
               </div>
             : <div />}
           </div>
-        </div>
       </div>
     )
   }
