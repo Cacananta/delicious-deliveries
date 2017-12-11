@@ -95,8 +95,8 @@ export default class ShoppingCart extends React.Component {
                   <div className='col-4 text-center'>
                     <a className='btn btn-primary' href={ checkoutHref } role='button'>Checkout</a>
                   </div>
-                  <div>
-                    <span className='col-4 text-center'>Final Total: $<strong>{ total.toFixed(2) }</strong></span>
+                  <div className='col-4 text-center'>
+                    <span>Final Total: $<strong>{ total.toFixed(2) }</strong></span>
                   </div>
                 </div>
               </div>
