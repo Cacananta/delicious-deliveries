@@ -16,7 +16,7 @@ export default class Contact extends Component {
                 <NavBar/>
                 <div className="container" id='centerStage'>
                     <div className="row">
-                        <div className="col-md-6 offset-4 align-self-center">
+                        <div className="col-md-6 offset-3 align-self-center">
                             <div className="card text-center form-group">
                                 <div className="card-body ">
                                     <p className="card-text">If you have many questions, comments, or concerns feel free to drop us a message.</p>
