@@ -95,9 +95,9 @@ export default class AddMenuItem extends Component {
                                     </div>
                                     <div className="card-footer text-muted">
                                         <a href="#/"><button type="submit" className="btn btn-primary">Enter</button></a>
-                                        <a href={`#/owner/${currentOwnerId}`} type='button' role='button' className="btn btn-primary ml-2">Back to Owner Homepage</a>
                                     </div>                                    
                                 </form>
+                                <a href={`#/owner/${currentOwnerId}`} className='text-center'>Back to Owner Homepage</a>
                             </div>
                         </div>
                     </div>
