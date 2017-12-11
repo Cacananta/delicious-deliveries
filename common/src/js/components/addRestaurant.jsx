@@ -95,17 +95,12 @@ export default class AddRestaurant extends Component {
         return (
             <div>
                  <NavBar/>
-                <div className="jumbotron jumbotron-fluid mb-0">
-                    <div className="container text-center">
-                        <h1 className="display-3">Add A Restaurant</h1>
-                    </div>
-                </div>
-                <div className="container-fluid shortbg">
+                <div className="container-fluid">
                     <div className="row mb-5 justify-content-center">
                         <div className="col-4 mb-5">
                             <div className="card text-center mt-5">
                                 <div className="card-header">
-                                    <strong>Tell Us About Your Restaurant</strong>
+                                    <strong><h1>Tell Us About Your Restaurant</h1></strong>
                                 </div>
                                 <form onSubmit={this.handleClick}>
                                     <div className="card-body form-group">

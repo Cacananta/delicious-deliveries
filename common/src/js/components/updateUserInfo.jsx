@@ -57,14 +57,14 @@ export default class UpdateOwnerInfo extends Component {
         const {owner, name, email, password, phone_number,  activeOwner, activeCustomer, shoppingCart} = this.props;
         
         return (
-            <div className="about">
+            <div>
                <NavBar/>
             <div className="row">
             <div className="col-4 offset-4" style={{marginTop: "200px"}}>
             <div >
                 <div className="card text-center" >
                     <div className="card-header">
-                       <strong> Update User Information </strong>
+                       <strong><h1>Update User Information</h1></strong>
                     </div>
                     <form id='updateOwnerInfo' onSubmit={this.handleSubmit}>
                         <div className="card-body form-group">

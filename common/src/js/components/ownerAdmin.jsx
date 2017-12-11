@@ -35,17 +35,13 @@ export default class OwnerAdmin extends Component {
         return (
             <div>
                 <NavBar/>
-                <div className="jumbotron jumbotron-fluid mb-0">
-                    <div className="container text-center">
-                        <h1 className="display-3">Owner Admin</h1>
-                    </div>
-                </div>
-                <div className="container-fluid shortbg">
+                <div className="container-fluid">
                     <div className="row mb-5 justify-content-center">
                         <div className="col-4 mb-5">
                             <div className="card text-center mt-5">
                                 <div className="card-header">
-                                    <strong>What would you like to do?</strong>
+                                    <strong><h1>Owner Admin</h1></strong>
+                                    <p className='lead'>What would you like to do?</p>
                                 </div>
                                 <div className="card-body">
                                     <a href={`#/owner/${this.props.match.params.id}/updateOwnerInfo`}><p className="font-weight-bold nav-link">Update Owner Info</p></a>

@@ -28,15 +28,13 @@ export default class SearchResults extends React.Component {
         <NavBar/>
         </section>
         <section>
-          <div className="jumbotron jumbotron-fluid mb-0">
-            <div className="container text-center">
-              <h1 className="display-3">Search Results</h1>
-            </div>
-          </div>
-          <div className="container-fluid shortbg">
+          <div className="container-fluid">
             <div className="row mb-5 justify-content-center">
             {!!restaurants && restaurants.map(restaurant =>
               <div key={restaurant.id} className="card my-2 mx-2 col-5">
+                <div className="card-header">
+                  <strong><h1>Search Results</h1></strong>
+                </div>
                 <div className="card-body">
                   <div className="row align-items-center">
                     {/* IMAGE */}
