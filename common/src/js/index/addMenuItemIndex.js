@@ -8,7 +8,8 @@ function mapStoreToProps(store) {
         description: store.AddMenuItem.description,
         category: store.AddMenuItem.category,
         activeRestaurant: store.ownerViewUpdate.activeRestaurant,
-        shoppingCart: store.restaurantDetails.shoppingCart,
+        currentOwnerId: store.login.currentOwnerId,
+        shoppingCart: store.restaurantDetails.shoppingCart
     };
 }
 
