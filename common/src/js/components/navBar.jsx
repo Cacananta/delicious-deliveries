@@ -22,7 +22,7 @@ export default class NavBar extends Component {
                     <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                         <div className="navbar-nav">
                             <a className="navbar-brand nav-link font-weight-bold text-dark" href="#/">Delicious Deliveries</a>
-                            <a href="#/shoppingcart"><img src="../cart.png" />({shoppingCart.length})</a>
+                            <a href="#/shoppingcart"><img src="../cart.png" /><strong>({shoppingCart.length})</strong></a>
                         </div>
                     </div>
                 </nav>
@@ -36,7 +36,7 @@ export default class NavBar extends Component {
                     <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                         <div className="navbar-nav">
                             <a className="navbar-brand nav-link font-weight-bold text-dark" href="#/">Delicious Deliveries</a>
-                            <a href="#/shoppingcart"><img src="../cart.png" />({shoppingCart.length})</a>
+                            <a href="#/shoppingcart"><img src="../cart.png" /><strong>({shoppingCart.length})</strong></a>
                         </div>
                     </div>
                 </nav>
@@ -50,7 +50,7 @@ export default class NavBar extends Component {
                     <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                         <div className="navbar-nav">
                             <a className="navbar-brand nav-link font-weight-bold text-dark" href="#/">Delicious Deliveries</a>
-                            <a href="#/shoppingcart"><img src="../cart.png" />({shoppingCart.length})</a>
+                            <a href="#/shoppingcart"><img src="../cart.png" /><strong>({shoppingCart.length})</strong></a>
                         </div>
                     </div>
                 </nav>
