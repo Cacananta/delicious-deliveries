@@ -32,7 +32,7 @@ export default class NavBar extends Component {
                 <nav className="navbar fixed-top navbar-expand-lg opacity mb-5 ">
                     <p className='order-1 pr-3 pt-1 nav-text h5 text center'>Welcome</p>
                     <a className="order-2 font-weight-bold nav-link text-dark" href={`#/owner/${currentOwnerId}/updateOwnerInfo`}>Account</a>
-                    <a className="order-3 font-weight-bold nav-link text-dark" onClick={this.handleClick} href='#/signup'>Sign Out</a>
+                    <a className="order-3 font-weight-bold nav-link text-dark" onClick={this.handleClick}>Sign Out</a>
                     <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                         <div className="navbar-nav">
                             <a className="navbar-brand nav-link font-weight-bold text-dark" href="#/">Delicious Deliveries</a>
@@ -46,7 +46,7 @@ export default class NavBar extends Component {
                 <nav className="navbar fixed-top navbar-expand-lg opacity mb-5">
                       <p className='order-1 pr-3 pt-1 nav-text h5 text center'>Welcome</p>
                     {/* <a className="order-2 font-weight-bold nav-link text-dark" href='#/updateUserInfo'>Account</a> */}
-                    <a className="order-2 font-weight-bold nav-link text-dark" onClick={this.handleClick} href='#/signup'>Sign Out</a>
+                    <a className="order-2 font-weight-bold nav-link text-dark" onClick={this.handleClick}>Sign Out</a>
                     <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                         <div className="navbar-nav">
                             <a className="navbar-brand nav-link font-weight-bold text-dark" href="#/">Delicious Deliveries</a>

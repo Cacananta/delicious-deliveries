@@ -35,7 +35,8 @@ export default function restaurantDetailsReducers(state = defaultState, action) 
     case 'ADD_ORDER': {
       console.log('you da man', payload);
       return{
-          ...state
+          ...state,
+          shoppingCart: []
       }
     }
 
