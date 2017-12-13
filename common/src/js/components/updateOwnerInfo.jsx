@@ -59,7 +59,7 @@ export default class UpdateOwnerInfo extends Component {
             <div >
                 <NavBar/>
                 <div className="container-fluid">
-                    <div className="row mb-5 justify-content-center">
+                    <div className="row mb-5 justify-content-center pt-5">
                         <div className="col-4 mb-5">
                             <div className="card text-center mt-5" >
                                 <div className="card-header">
