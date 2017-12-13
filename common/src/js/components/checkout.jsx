@@ -30,16 +30,14 @@ export default class Checkout extends Component {
 
             return (
                 <div>
-                     <NavBar/>
-                    <div className="jumbotron jumbotron-fluid mb-0">
-                        <div className="container text-center">
-                            <h1 className="display-3">Checkout</h1>
-                        </div>
-                    </div>
-                    <div className="container-fluid shortbg">
+                    <NavBar/>
+                    <div className="container-fluid">
                         <div className="row mb-5">
                             <div className="col-12 mb-5">
                                 <div className="card mt-5">
+                                    <div className="card-header">
+                                        <h1><strong>Checkout</strong></h1>
+                                    </div>
                                     <div className="card-header">
                                     <div className="row">
                                         <div className="col-4 text-center">
@@ -105,31 +103,29 @@ export default class Checkout extends Component {
         } else {
             return (
                 <div>
-                    <nav className="navbar fixed-top navbar-expand-lg opacity mb-5">
-                        <a className="order-1 font-weight-bold nav-link text-dark" href='#/login'>Login</a>
-                        <a className="order-2 font-weight-bold nav-link text-dark" href='#/signup'>Sign Up</a>
-                        <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-                            <div className="navbar-nav">
-                                <a className="nav-item nav-link font-weight-bold text-muted" href="#/">Delicious Deliveries</a>
+                    <NavBar/>
+                    <div className="container" id='centerStage'>
+                        <div className="row">
+                            <div className="col-md-6 offset-3 align-self-center">
+                                <div className="card text-center form-group">
+                                    <div className="card-header">
+                                        <h1><strong>Checkout</strong></h1>
+                                    </div>
+                                    <div className="card-body ">
+                                        <h1 className='text-center pt-5'>Please Sign in as a Customer</h1>
+                                        <h1 className='text-center'>To Check Out</h1>
+                                        <div className='text-center'>
+                                            <a href="#/shoppingcart">Back to Shopping Cart</a>
+                                            <br />
+                                            <span>
+                                                <a href="#/login">Log in</a>
+                                                {'     '}
+                                                <a href="#/signup">Sign up</a>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </nav>
-                    <div className="jumbotron jumbotron-fluid mb-0">
-                        <div className="container text-center">
-                            <h1 className="display-3">Checkout</h1>
-                        </div>
-                    </div>
-                    <div className="container-fluid shortbg">
-                        <h1 className='text-center pt-5'>Please Sign in as a Customer</h1>
-                        <h1 className='text-center'>To Check Out</h1>
-                        <div className='text-center'>
-                            <a href="#/shoppingcart">Back to Shopping Cart</a>
-                            <br />
-                            <span>
-                                <a href="#/login">Log in</a>
-                                {'     '}
-                                <a href="#/signup">Sign up</a>
-                            </span>
                         </div>
                     </div>
                     <nav className="navbar navbar-expand-lg opacity fixed-bottom justify-content-center">
@@ -147,7 +143,3 @@ export default class Checkout extends Component {
         }
     }
 }
-
-
-
-// py-1
