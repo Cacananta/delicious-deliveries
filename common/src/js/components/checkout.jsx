@@ -35,7 +35,7 @@ export default class Checkout extends Component {
                         <div className="row mb-5">
                             <div className="col-12 mb-5">
                                 <div className="card mt-5">
-                                    <div className="card-header">
+                                    <div className="card-header text-center">
                                         <h1><strong>Checkout</strong></h1>
                                     </div>
                                     <div className="card-header">
@@ -106,12 +106,12 @@ export default class Checkout extends Component {
                     <NavBar/>
                     <div className="container" id='centerStage'>
                         <div className="row">
-                            <div className="col-md-6 offset-3 align-self-center">
+                            <div className="col-6 offset-3 align-self-center">
                                 <div className="card text-center form-group">
                                     <div className="card-header">
                                         <h1><strong>Checkout</strong></h1>
                                     </div>
-                                    <div className="card-body ">
+                                    <div className="card-body col-6">
                                         <h1 className='text-center pt-5'>Please Sign in as a Customer</h1>
                                         <h1 className='text-center'>To Check Out</h1>
                                         <div className='text-center'>
