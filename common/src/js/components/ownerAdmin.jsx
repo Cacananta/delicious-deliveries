@@ -35,13 +35,15 @@ export default class OwnerAdmin extends Component {
         return (
             <div>
                 <NavBar/>
-                <div className="container-fluid">
-                    <div className="row mb-5 justify-content-center">
-                        <div className="col-4 mb-5">
-                            <div className="card text-center mt-5">
+                <div className="container" id='centerStage'>
+                    <div className="row">
+                        <div className="col-md-6 offset-3 align-self-center">
+                            <div className="card text-center form-group">
                                 <div className="card-header">
                                     <strong><h1>Owner Admin</h1></strong>
-                                    <p className='lead'>What would you like to do?</p>
+                                </div>
+                                <div className="card-header">
+                                    What would you like to do?
                                 </div>
                                 <div className="card-body">
                                     <a href={`#/owner/${this.props.match.params.id}/updateOwnerInfo`}><p className="font-weight-bold nav-link">Update Owner Info</p></a>
@@ -69,21 +71,29 @@ export default class OwnerAdmin extends Component {
      } else {
          return (
              <div>
-                <nav className="navbar fixed-top navbar-expand-lg opacity mb-5">
-                    <a className="order-1 font-weight-bold nav-link text-dark" href='#/login'>Login</a>
-                    <a className="order-2 font-weight-bold nav-link text-dark" href='#/signup'>Sign Up</a>
-                    <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-                        <div className="navbar-nav">
-                            <a className="nav-item nav-link font-weight-bold text-muted" href="/">Delicious Deliveries</a>
-                            <a href="#/shoppingcart"><img src="../cart.png"/>({shoppingCart.length})</a>
+                <NavBar/>
+                <div className="container" id='centerStage'>
+                    <div className="row">
+                        <div className="col-md-6 offset-3 align-self-center">
+                            <div className="card text-center form-group">
+                                <div className="card-header">
+                                    <h1><strong>Owner Admin</strong></h1>
+                                </div>
+                                <div className="card-body">
+                                    <p className='text-center pt-5'><strong>Please Sign in as an Owner</strong></p>
+                                    <p className='text-center'><strong>To access Admin page</strong></p>
+                                    <div className='text-center'>
+                                        <span>
+                                            <a href="#/login">Log in</a>
+                                            {'     '}
+                                            <a href="#/signup">Sign up</a>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </nav>
-                <div>
-                    Come back after you login!
                 </div>
-
-
                 <nav className="navbar navbar-expand-lg opacity fixed-bottom justify-content-center">
                     <ul className="navbar-nav">
                         <li className="nav-item active">
