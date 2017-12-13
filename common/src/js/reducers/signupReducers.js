@@ -5,7 +5,7 @@ const INITIAL_STATE = {
     email: '',
     password: '',
     phone_number: '',
-    owner: 'false'
+    owner: ''
 };
 
 export default function SignUpReducer (state = INITIAL_STATE, action) {
