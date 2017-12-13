@@ -53,6 +53,9 @@ export default class ShoppingCart extends React.Component {
           <div className='row mb-5 pt-5'>
             <div className="col-12 mb-5">
             <div className="card mt-5">
+              <div className="card-header text-center">
+                <h1><strong>Shopping Cart</strong></h1>
+              </div>
               <div className="card-header">
                 <div className="row">
                   <div className='col-4 text-center'>
