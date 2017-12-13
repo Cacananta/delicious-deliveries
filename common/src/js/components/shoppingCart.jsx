@@ -50,7 +50,7 @@ export default class ShoppingCart extends React.Component {
       <div>
         <NavBar/>
         <div className="container-fluid">
-          <div className='row mb-5'>
+          <div className='row mb-5 pt-5'>
             <div className="col-12 mb-5">
             <div className="card mt-5">
               <div className="card-header">
