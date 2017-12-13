@@ -93,7 +93,7 @@ export default class AddRestaurant extends Component {
     render() {
         const { food_type, name, address1, address2, city, state, zip, image, phone_number, shoppingCart, currentOwnerId } = this.props;
         return (
-            <div>
+            <div className='long'>
                  <NavBar/>
                 <div className="container-fluid">
                     <div className="row mb-5 justify-content-center">

@@ -83,6 +83,7 @@ export default class UpdateOwnerInfo extends Component {
                                         <button className="btn btn-primary" type='submit'>Update Information</button>
                                     </div>
                                 </form>
+                                <a href={`#/owner/${currentOwnerId}`} className='text-center'>Back to Owner Homepage</a>
                             </div>
                         </div>
                     </div>
