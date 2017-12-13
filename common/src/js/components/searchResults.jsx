@@ -22,14 +22,14 @@ export default class SearchResults extends React.Component {
     const { restaurants, activeOwner, activeCustomer, shoppingCart } = this.props;
     console.log(restaurants);
     return (
-      <div>
+      <div className='long'>
         {/* TOP NAV BAR */}
         <section>
         <NavBar/>
         </section>
         <section>
           <div className="container-fluid">
-            <div className="row mb-5 justify-content-center">
+            <div className="row mb-5 justify-content-center pt-5">
             {!!restaurants && restaurants.map(restaurant =>
               <div key={restaurant.id} className="card my-2 mx-2 col-5">
                 <div className="card-header">

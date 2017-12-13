@@ -39,10 +39,10 @@ this.addCart = this.addCart.bind(this);
     const snackList = menuItems.filter(item => item.category === 'Snack');
     const drinkList = menuItems.filter(item => item.category === 'Drink');
     return(
-      <div>
+      <div className='long'>
         <NavBar/>
         <div className="container-fluid">
-            <h1 className='text-center'>{ chosenRestaurant.name }</h1>
+            <h1 className='text-center pt-5'>{ chosenRestaurant.name }</h1>
             <div className='row mb-2'>
               <div className='col-6'>
               { chosenRestaurant.image == '' ?
@@ -66,7 +66,7 @@ this.addCart = this.addCart.bind(this);
               </div>
             </div>
             { breakfastList.length > 0 ?
-            <div>
+            <div className='card col-12'>
               <div className='mt-2'>
                 <h4>Breakfast</h4>
                 <hr/>
@@ -85,7 +85,7 @@ this.addCart = this.addCart.bind(this);
             </div>
             : <div />}
             { lunchList.length > 0 ?
-            <div>
+            <div className='card col-12'>
               <div className='mt-2'>
                 <h4>Lunch</h4>
                 <hr/>
@@ -104,7 +104,7 @@ this.addCart = this.addCart.bind(this);
             </div>
             : <div />}
             { dinnerList.length > 0 ?
-              <div>
+              <div className='card col-12'>
                 <div className='mt-2'>
                   <h4>Dinner</h4>
                   <hr/>
@@ -123,7 +123,7 @@ this.addCart = this.addCart.bind(this);
               </div>
             : <div />}
             { snackList.length > 0 ?
-              <div>
+              <div className='card col-12'>
                 <div className='mt-2'>
                   <h4>Snacks</h4>
                   <hr/>
@@ -142,7 +142,7 @@ this.addCart = this.addCart.bind(this);
               </div>
             : <div />}
             { drinkList.length > 0 ?
-              <div>
+              <div className='card col-12'>
                 <div className='mt-2'>
                   <h4>Drink</h4>
                   <hr/>
