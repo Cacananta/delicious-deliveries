@@ -142,7 +142,7 @@ this.addCart = this.addCart.bind(this);
               </div>
             : <div />}
             { drinkList.length > 0 ?
-              <div className='card col-12'>
+              <div className='card col-12 pb-5'>
                 <div className='mt-2'>
                   <h4>Drink</h4>
                   <hr/>
@@ -161,6 +161,16 @@ this.addCart = this.addCart.bind(this);
               </div>
             : <div />}
           </div>
+          <nav className="navbar navbar-expand-lg opacity fixed-bottom justify-content-center mt-5">
+            <ul className="navbar-nav">
+              <li className="nav-item active">
+                <a className="nav-link font-weight-bold text-dark" href="#/about">About Us</a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link font-weight-bold text-dark" href="#/contact">Contact Us</a>
+              </li>
+            </ul>
+          </nav> 
       </div>
     )
   }
