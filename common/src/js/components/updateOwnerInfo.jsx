@@ -53,7 +53,7 @@ export default class UpdateOwnerInfo extends Component {
 
 
     render() {
-        const { name, username, password, phonenumber, shoppingCart } = this.props;
+        const { name, username, password, phonenumber, shoppingCart, currentOwnerId } = this.props;
 
         return (
             <div >
