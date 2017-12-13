@@ -106,14 +106,14 @@ export default class Checkout extends Component {
                     <NavBar/>
                     <div className="container" id='centerStage'>
                         <div className="row">
-                            <div className="col-6 offset-3 align-self-center">
+                            <div className="col-md-6 offset-3 align-self-center">
                                 <div className="card text-center form-group">
                                     <div className="card-header">
                                         <h1><strong>Checkout</strong></h1>
                                     </div>
-                                    <div className="card-body col-6">
-                                        <h1 className='text-center pt-5'>Please Sign in as a Customer</h1>
-                                        <h1 className='text-center'>To Check Out</h1>
+                                    <div className="card-body">
+                                        <p className='text-center pt-5'>Please Sign in as a Customer</p>
+                                        <p className='text-center'>To Check Out</p>
                                         <div className='text-center'>
                                             <a href="#/shoppingcart">Back to Shopping Cart</a>
                                             <br />
